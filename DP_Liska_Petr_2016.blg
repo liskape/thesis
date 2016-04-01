@@ -1,0 +1,64 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: DP_Liska_Petr_2016.aux
+The style file: csn690.bst
+Database file #1: mybibliographyfile.bib
+Warning--I didn't find a database entry for "svgspec"
+Warning--I didn't find a database entry for "needed"
+Warning--I didn't find a database entry for "ruby_performance"
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Warning--to sort, need author or key in fayyad
+Warning--to sort, need author or key in kddb
+Warning--to sort, need author or key in hbcap
+Warning--to sort, need author or key in g_in_g_out
+Warning--to sort, need author or key in eurokomise
+Warning--to sort, need author or key in junkie
+Warning--to sort, need author or key in som_dim_red
+Warning--to sort, need author or key in som_clustering
+Warning--to sort, need author or key in visual
+Warning--to sort, need author or key in hartono14
+Warning--to sort, need author or key in makeit
+Warning--to sort, need author or key in metacentrum
+Warning--to sort, need author or key in analyze
+You've used 13 entries,
+            3151 wiz_defined-function locations,
+            687 strings with 6547 characters,
+and the built_in function-call counts, 3221 in all, are:
+= -- 234
+> -- 13
+< -- 0
++ -- 13
+- -- 0
+* -- 119
+:= -- 245
+add.period$ -- 26
+call.type$ -- 13
+change.case$ -- 39
+chr.to.int$ -- 0
+cite$ -- 26
+duplicate$ -- 351
+empty$ -- 417
+format.name$ -- 0
+if$ -- 755
+int.to.chr$ -- 0
+int.to.str$ -- 13
+missing$ -- 78
+newline$ -- 49
+num.names$ -- 0
+pop$ -- 260
+preamble$ -- 1
+purify$ -- 26
+quote$ -- 0
+skip$ -- 142
+stack$ -- 0
+substring$ -- 91
+swap$ -- 130
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 52
+warning$ -- 13
+while$ -- 0
+width$ -- 15
+write$ -- 100
+(There were 16 warnings)

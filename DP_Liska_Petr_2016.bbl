@@ -1,0 +1,66 @@
+\begin{thebibliography}{10}
+\providecommand{\biburl}[1]{\url{#1}}
+\providecommand{\urlprefix}{Dostupn{\' e} z: }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\selectlanguage}[1]{\relax}
+\providecommand{\eprint}[2][]{\biburl{#2}}
+
+\bibitem{fayyad}
+{MS Windows NT} Kernel Description.
+  \url{http://www.csd.uwo.ca/faculty/ling/cs435/fayyad.pdf}, accessed:
+  2010-09-30.
+
+\bibitem{kddb}
+Knowledge Discovery in Databases.
+  \url{http://www.amazon.com/dp/0262660709/ref=rdr_ext_tmbf}, accessed:
+  2010-09-30.
+
+\bibitem{hbcap}
+Intro .. \url{http://www.ise.bgu.ac.il/faculty/liorr/hbchap1.pdf}, accessed:
+  2010-09-30.
+
+\bibitem{g_in_g_out}
+Intro ..
+  \url{http://searchsoftwarequality.techtarget.com/definition/garbage-in-garbage-out},
+  accessed: 2010-09-30.
+
+\bibitem{eurokomise}
+Eurokomise. \url{http://euromise.vse.cz/kdd/index.php}, accessed: 2010-09-30.
+
+\bibitem{junkie}
+junkie. \url{http://www.ai-junkie.com/ann/som/som1.html}, accessed: 2010-09-30.
+
+\bibitem{som_dim_red}
+Intro ..
+  \url{http://138.100.76.11/visionguided2/sites/files/campoy%20ijcnn09.pdf},
+  accessed: 2010-09-30.
+
+\bibitem{som_clustering}
+Intro ..
+  \url{chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/http://lib.tkk.fi/Diss/2002/isbn951226093X/article4.pdf},
+  accessed: 2010-09-30.
+
+\bibitem{visual}
+Intro .. \url{http://dl.acm.org/citation.cfm?id=614508}, accessed: 2010-09-30.
+
+\bibitem{hartono14}
+HARTONO. \url{http://arxiv.org/pdf/1412.6567.pdf}, accessed: 2010-09-30.
+
+\bibitem{makeit}
+Make It Work Make It Right Make It Fast.
+  \url{http://c2.com/cgi/wiki?MakeItWorkMakeItRightMakeItFast}, accessed:
+  2010-09-30.
+
+\bibitem{metacentrum}
+Metacentrum. \url{https://wiki.metacentrum.cz/wiki/Main_Pagel}, accessed:
+  2010-09-30.
+
+\bibitem{analyze}
+Analyze documentation.
+  \url{developer.echonest.com/docs/v4/_static/AnalyzeDocumentation.pdf},
+  accessed: 2010-09-30.
+
+\end{thebibliography}

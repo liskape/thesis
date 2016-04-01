@@ -3,6 +3,20 @@
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Kroky KDD podle \cite {fayyad}\relax }}{6}{figure.caption.6}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Architektura MLP s jednou skrytou vrstvou\relax }}{9}{figure.caption.18}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Dv\IeC {\v e} mo\IeC {\v z}n\IeC {\'e} topologie, modr\IeC {\'e} zna\IeC {\v c}ky p\IeC {\v r}edstavuj\IeC {\'\i } neurony, zat\IeC {\'\i }mco \IeC {\v c}erven\IeC {\'e} spoje indikuj\IeC {\'\i } sousedstv\IeC {\'\i }\relax }}{10}{figure.caption.21}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces \relax }}{13}{figure.caption.23}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Funkce, kter\IeC {\'a} zobrazuje vzd\IeC {\'a}lenost vektor\IeC {\r u} do intervalu $(0;1]$\relax }}{14}{figure.caption.26}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces P\IeC {\v r}\IeC {\'\i }klad aktivace neuron\IeC {\r u} pro r\IeC {\r u}zn\IeC {\'e} f\IeC {\'a}ze u\IeC {\v c}en\IeC {\'\i }.\relax }}{15}{figure.caption.27}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces M\IeC {\'\i }ra aktivace po cel\IeC {\'e} u\IeC {\v c}en\IeC {\'\i } pro r\IeC {\r u}zn\IeC {\'e} vzd\IeC {\'a}lenosti od BMU\relax }}{15}{figure.caption.28}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Stahov\IeC {\'a}n\IeC {\'\i } dat z API a generov\IeC {\'a}n\IeC {\'\i } dataset\IeC {\r u}\relax }}{21}{figure.caption.36}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Zad\IeC {\'a}v\IeC {\'a}n\IeC {\'\i } \IeC {\'u}loh do MetaCentra\relax }}{23}{figure.caption.42}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces P\IeC {\v r}\IeC {\'\i }klad strojov\IeC {\v e} generovan\IeC {\'e}ho koment\IeC {\'a}\IeC {\v r}e\relax }}{24}{figure.caption.43}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces P\IeC {\v r}\IeC {\'\i }klad strojov\IeC {\v e} generovan\IeC {\'e}ho koment\IeC {\'a}\IeC {\v r}e\relax }}{24}{figure.caption.45}
+\addvspace {10pt}
+\addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
