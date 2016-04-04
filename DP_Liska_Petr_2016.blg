@@ -17,48 +17,49 @@ Warning--to sort, need author or key in som_dim_red
 Warning--to sort, need author or key in som_clustering
 Warning--to sort, need author or key in visual
 Warning--to sort, need author or key in hartono14
+Warning--to sort, need author or key in lms
 Warning--to sort, need author or key in makeit
 Warning--to sort, need author or key in metacentrum
 Warning--to sort, need author or key in analyze
-You've used 13 entries,
+You've used 14 entries,
             3151 wiz_defined-function locations,
-            687 strings with 6547 characters,
-and the built_in function-call counts, 3221 in all, are:
-= -- 234
-> -- 13
+            689 strings with 6696 characters,
+and the built_in function-call counts, 3466 in all, are:
+= -- 252
+> -- 14
 < -- 0
-+ -- 13
++ -- 14
 - -- 0
-* -- 119
-:= -- 245
-add.period$ -- 26
-call.type$ -- 13
-change.case$ -- 39
+* -- 128
+:= -- 263
+add.period$ -- 28
+call.type$ -- 14
+change.case$ -- 42
 chr.to.int$ -- 0
-cite$ -- 26
-duplicate$ -- 351
-empty$ -- 417
+cite$ -- 28
+duplicate$ -- 378
+empty$ -- 449
 format.name$ -- 0
-if$ -- 755
+if$ -- 813
 int.to.chr$ -- 0
-int.to.str$ -- 13
-missing$ -- 78
-newline$ -- 49
+int.to.str$ -- 14
+missing$ -- 84
+newline$ -- 52
 num.names$ -- 0
-pop$ -- 260
+pop$ -- 280
 preamble$ -- 1
-purify$ -- 26
+purify$ -- 28
 quote$ -- 0
-skip$ -- 142
+skip$ -- 153
 stack$ -- 0
-substring$ -- 91
-swap$ -- 130
+substring$ -- 98
+swap$ -- 140
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 52
-warning$ -- 13
+type$ -- 56
+warning$ -- 14
 while$ -- 0
-width$ -- 15
-write$ -- 100
-(There were 16 warnings)
+width$ -- 16
+write$ -- 107
+(There were 17 warnings)

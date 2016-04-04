@@ -13,13 +13,14 @@
 
 \usepackage{graphicx} %graphics files inclusion
 \graphicspath{ {img/} }
-% \usepackage{amsmath} %advanced maths
+\usepackage{amsmath} %advanced maths
 % \usepackage{amssymb} %additional math symbols
 
 
 \usepackage{caption}
 \usepackage{subcaption}
 
+\usepackage{minted}
 
 \usepackage{dirtree} %directory tree visualisation
 
@@ -35,8 +36,8 @@
 % ODTUD DAL VSE ZMENTE
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 
-\department{Katedra \ldots (DOPLŇTE)}
-\title{Doplňte název práce Žluťoučký á kůň aaa}
+\department{Katedra Webové a softwarové inženýrství}
+\title{Hledání a využití struktury multimediálních dat}
 \authorGN{Doplňte Vaše křestní jméno/jména} %(křestní) jméno (jména) autora
 \authorFN{Doplňte Vaše příjmení} %příjmení autora
 \authorWithDegrees{Doplňte Vaše jméno a tituly} %jméno autora včetně současných akademických titulů
@@ -50,7 +51,8 @@
 \keywordsEN{Nahraďte seznamem klíčových slov v angličtině oddělených čárkou.}
 
 \begin{document}
-
+\renewcommand\listingscaption{Ukázka}
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
 % \newacronym{CVUT}{{\v C}VUT}{{\v C}esk{\' e} vysok{\' e} u{\v c}en{\' i} technick{\' e} v Praze}
 % \newacronym{FIT}{FIT}{Fakulta informa{\v c}n{\' i}ch technologi{\' i}}
 
@@ -59,7 +61,6 @@
 \end{introduction}
 
 \chapter{Cíl práce}
-\cite{svgspec}
 
 % POUŽITÉ METODY -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Použité metody}
@@ -147,9 +148,11 @@ Jedna z možností, jak dělit metody je podle způsobu učení. První způsob 
 
  \subsection{Metody učení s učitelem}
  \subsubsection*{Naive Bayes}
+ ENH
  \subsubsection*{KNN}
+ ENH
   \subsubsection*{Trees}
-   
+   ENH
    
   \subsubsection*{MLP}
     \textit{Multilayer perceptron (MLP)} je druh dopředné umělé neuronové sítě.
@@ -179,13 +182,14 @@ MLP se uplatňují při řešení problémů jako je rozpoznávání obrazu a ř
  
  \subsection{Metody učení bez učitele}
   \subsubsection*{Hierarchical clustering}
+  ENH
   \subsubsection*{K-means}
- 
+ TODO
 \section{SOM}
 Self organizing map (SOM), samoorganizující mapa, je umělá neuronová síť navržena Teuvo Kohonenem v 80. letech minulého století. Narozdíl od MLP se SOM skládá z jedné vrstvy speciálně uspořádaných neuronů. Dalším rozdílem je, že se učí bez učitele a to pomocí tzv. \textit{kompetitivní učení}.\cite{junkie}
 
 \subsection{Struktura sítě}
-SOM se typicky skládá z jedné vrstvy neuronů uspořádaných do pravidelné 2D nebo 3D mřížky. Topologie takové mřížky bývá zpravidla pravidelná a to hexagonání nebo pravoúhlá (obr. \ref{fig:top}). Složky vstupu jsou propojeny se všemi neurony.
+SOM se typicky skládá z jedné vrstvy neuronů uspořádaných do pravidelné 2D mřížky\footnote{Je možné použít také 3D mřížky, nicméně v tomto textu budou použity výhradně 2D}. Topologie takové mřížky bývá zpravidla pravidelná a to hexagonání nebo pravoúhlá (obr. \ref{fig:top}). Složky vstupu jsou propojeny se všemi neurony.
 Stejně jako dopředné sítě, SOM má ve spojích uložené váhy. Tuto skutečnost je však názornější zachycovat jako tzv.: \textit{prototypové vektory}, které jsou uloženy u jednotlivých neuronů. Každý prototypové vektor  má stejnou dimenzi jako je dimenze vstupních dat.
 
 \begin{figure}
@@ -202,7 +206,7 @@ Stejně jako dopředné sítě, SOM má ve spojích uložené váhy. Tuto skute�
   \caption{Topologie organizovaná do pravoúhlé mřížky}
   \label{fig:sub2}
 \end{subfigure}
-\caption{Dvě možné topologie, modré značky představují neurony, zatímco červené spoje indikují sousedství}
+\caption{Modré značky představují neurony, zatímco červené spoje indikují sousedství.}
 \label{fig:top}
 \end{figure}
 
@@ -216,7 +220,7 @@ Konkrétně lze učení popsat pseudokódem:
 \item Inicializace vektorů.
 \item Jeden vstupní vektor je předložen síti.
 \item Je nalezen neuron, který má se vstupem nejpodobnější váhový vektor. Pro tuto podobnost se dá použít např. euklidovská vzdálenost. Takový neuron se nazývá Best matching unit (BMU).
-\item Váhový vektor každého neuronu je pak přiblížen vstupnímu vektoru. Velikost tohoto příblížení je určena vztahem ().
+\item Váhový vektor každého neuronu je pak přiblížen vstupnímu vektoru. Velikost tohoto příblížení je určena \textit{neighborhood function} $\sigma(win, i, t)$ .
 Závisí tedy na vzdálenosti neuronu od BMU, meřené v mřížce -- čím dále jsou neurony od sebe, tím je přiblížení slabší. Dále velikost těchto změn slábnou s každou iterací učení. Celý vztah pro úpravu váhového vektoru W neuronu i je určen vztahem \ref{eq:1}.
 
 
@@ -224,12 +228,18 @@ Závisí tedy na vzdálenosti neuronu od BMU, meřené v mřížce -- čím dál
 \end{enumerate}
 
 \begin{equation} \label{eq:1}
-\sum_{i=0}^{\infty} a_i x^i
+    \mathcal{W}_i(t+1) = \mathcal{W}_i(t) + \alpha \sigma(win, i, t)(\mathcal{X}(t) - \mathcal{W}_i(t))    
 \end{equation}
 
-\begin{equation} \label{eq:weights_adjust}
-\mathcal{W}_i(t+1) = \mathcal{W}_i(t) + \alpha \sigma(win, i, t)(\mathcal{X}(t) - \mathcal{W}_i(t))
- \begin{equation} 
+Kde:\\
+\hspace*{3em}
+\begin{tabular}{rl}
+    $\mathcal{X}(t)$:& vstupní vektor \\
+    $\mathcal{W}_i(t)$:& váhový vektor neuronu $i$ \\
+    $\alpha$:& \textit{learning rate} -- zvolená konstanta, může být i funkcí epochy \\
+\end{tabular}
+
+
 \subsection{Vlastnosti}
 SOM, stejně jako mnoho dalších dataminingových metod, předpokládá, že příslušnost tříd je definovaná podobností atributů.
 
@@ -256,15 +266,47 @@ Dále je možné zkoumat naučenou \textit{mapu}. Tato mapa je určena prototypo
 
 
 \subsubsection*{Vizualizace map}
-Vizualizace je mocný nástroj pro extrakci znalostí a hypotéz z dat, převážně protože do procesu zahrnuje lidské vnímání, zkušenosti a kreativitu, které jsou při takové činnosti klíčové\cite{visual}. Bohužel tyto lidské schopnosti, stejně tak jako možnosti vizualizace, jsou značně omezené, pokud jsou data vysoce dimenzionální. Jak již bylo zmíněno, samoorganizující mapy poskytují dvou-demenzionální reprezentaci dat, kterou je možné snadno vizualizovat.
+Vizualizace je mocný nástroj pro extrakci znalostí a hypotéz z dat, převážně protože do procesu zahrnuje lidské vnímání, zkušenosti a kreativitu, které jsou při takové činnosti klíčové\cite{visual}. Bohužel tyto lidské schopnosti, stejně tak jako možnosti vizualizace, jsou značně omezené, pokud jsou data vysoce dimenzionální. Jak již ale bylo zmíněno, samoorganizující mapy poskytují dvou-dimenzionální reprezentaci dat, kterou je možné snadno vizualizovat.
+
+Jedním způsobem jak zobrazovat natrénovanou mapu, je zobrazit vstupní data spolu s pozicemi neuronů. Tímto přístupem ovšem získáme náhled pouze na dvě dimenze. Na obrázku \ref{fig:plotsompos} je příklad takového vykreslení pro dvou-dimenzionální problém. Zelené body představují vstupní vektory, modré značky jsou neurony a červené spoje znázorňují sousedství mezi neurony. Neurony jsou na mapě vykresleny na místě podle svého prototypového vektoru, který je stejně jako vstupní prostor, dvou-dimenzionální.
 
 
 
-http://stackoverflow.com/questions/18233994/interpreting-a-self-organizing-map
+\begin{figure}[htbp]
+\begin{center}
+	\includegraphics[scale=0.5]{iris_plotsompos.png}
+\caption{Zobrazení natrénované SOM s neurony uspořádanými do pravoúhlé mřížky 5x5 pro náhodný dvoudimenzionální problém.}
+\label{fig:plotsompos}
+\end{center}
+\end{figure}
+
+
+Další možností je vizualizovat mřížku spolu s dalšími informacemi (třídy), které mohou být již obsaženy ve vstupních vektorech. Pro každý vstupní vektor se spočítá jeho BMU na natrénované SOM. Takovému neuronu se pak přiřadí třída patřící onomu vstupnímu vektoru. Po aplikaci všech vstupních vektorů nastane pro každý neuron jedna z následujících možností:
+
+\begin{itemize}
+\item neuron má přiřazenu třídu $k$ -- vykreslí se s barvou přiřazené třídě $k$,
+\item  neuron má přiřazené dvě a více tříd -- vykreslí se s černou barvou.
+\end{itemize}
+ 
+Velikost každého neuronu pak roste s počtem přiřazených tříd, přičemž neuron bez přiřazené třídy má nulovou velikost a na mapě se vůbec nebjeví. Takové vykreslení se nazývá \textit{sémantická mapa}, jejíž příklad je na obr. \ref{fig:semanticmap}.
+
+
+\begin{figure}[htbp]
+\begin{center}
+	\includegraphics[scale=0.4]{semantic_map.png}
+\caption{Příklad sémantické mapy pro dvě třídy.}
+\label{fig:semanticmap}
+\end{center}
+\end{figure}
+
+
+ENH: další možnosti
+
+% http://stackoverflow.com/questions/18233994/interpreting-a-self-organizing-map
 
 
 \section{CRSOM}
-Context-relevant self organizing map, Samoorganizující mapa se zahrnutým sémantickým kontextem (CRSOM) je umělá neuronová síť navržena Pitoyo Hartonem. Narozdíl od kasické SOM se CRSOM učí s učitelem, z čehož vyplývá, že k učení je nutné znát dvojice vstupní a výstupní vektor. Právě výstupní vektory určují tzv. \textit{kontext učení}, což mohou být například třídy vstupních vektorů.
+\textit{Context-relevant self organizing map, Samoorganizující mapa se zahrnutým sémantickým kontextem (CRSOM)} je umělá neuronová síť navržena Pitoyo Hartonem. Narozdíl od kasické SOM se CRSOM učí s učitelem, z čehož vyplývá, že k učení je nutné znát dvojice vstupní a výstupní vektor. Právě výstupní vektory určují tzv. \textit{kontext učení}, což mohou být například třídy vstupních vektorů.
 
 \subsection{Struktura sítě}
 CRSOM se skládá ze tří vrstev neuronů. Prostřední (skrytá) vrstva je organizovaná do 2D mřížky neuronů, tzn. stejně jako u klasické samoorganizující mapy.
@@ -283,53 +325,68 @@ CRSOM se skládá ze tří vrstev neuronů. Prostřední (skrytá) vrstva je org
 
 \subsubsection*{Výstup sítě}
 Výstup celé sítě je složená funkce vstupního vektoru. 
-Jínými slovy první z vrstev aplikuje svou funkci na vstupní vektor a každá další vrstva aplikuje svou funkci na výstup neuronů z předchozí vrstvy. Tento přístup je stejný jako u MLP.
+Jínými slovy první z vrstev aplikuje svou funkci na vstupní vektor a každá další vrstva aplikuje svou funkci na výstup neuronů z předchozí vrstvy. Tento přístup je stejný jako u MLP. V následujícím odstavci budou probrány jednotlivé funkce vrstev a jejich význam.
 
-V následujícím odstavci budou probrány jednotlivé funkce vrstev a jejich význam.
+\subsubsection*{Skrytá vrstva}
+První funkce, jejíž vstupem je konkrétní vstupní vektor, je $ \mathcal{O}_h^i(t) $. Tato funkce představuje míru aktivace i-tého neuronu ve skryté vrstvě. $ \mathcal{O}_h^i(t) $ se skládá ze dvou multiplikativních členů \ref{eq:2}.
 
-\subsubsection*{Výstup skryté vrstvy}
-První funkce, jejíž vstupem je konkrétní vstupní vektor, je $ \mathcal{O}_h^i(t) $. Tato funkce představuje míru aktivace i-tého neuronu ve skryté vrstvě. $ \mathcal{O}_h^i(t) $ se skládá ze dvou multiplikativních členů.
-
-$$ \mathcal{O}_h^i(t) = e^{-\mathcal{I}_i^h(t)} \sigma(win, i, t) $$
-
-První z členů představuje vztah aktivace neuronu $i$  a podobnosti vstupního a příslušného váhového vektoru. Tato funkce zobrazuje vzdálenost dvou vektorů do intervalu $(0;1]$. Průběh této funkce je zobrazen na obr. (\ref{fig:exp}).
-
-$$ \mathcal{I}_h^i(t) = \|\mathcal{X}(t)-\mathcal{W}_i(t)\|^2 $$
-
-        \begin{description}
-            \item[ $\mathcal{X}(t)$] vstupní vektor
-            \item[ $\mathcal{W}_i(t)$] váhový vektor neuronu $i$
-             \item[ $\|\|$] norma \dots
-        \end{description}   
+\begin{equation} \label{eq:2}
+    \mathcal{O}_h^i(t) = e^{-\mathcal{I}_i^h(t)} \sigma(win, i, t)
+\end{equation}
 
 
-\begin{figure}[htbp]
-\begin{center}
-	\includegraphics[scale=0.5]{exp.png}
-\caption{Funkce, která zobrazuje vzdálenost vektorů do intervalu $(0;1]$}
-\label{fig:exp}
-\end{center}
-\end{figure}
+První z členů představuje vztah aktivace neuronu $i$  a podobnosti vstupního a příslušného váhového vektoru -- \textit{prostorovou aktivaci}. Tato funkce (\ref{eq:3}) zobrazuje vzdálenost dvou vektorů do intervalu $(0;1]$.
+
+
+\vspace{\baselineskip}
+\noindent
+\begin{minipage}[c]{\textwidth }
+\begin{equation} \label{eq:3}
+    \mathcal{I}_h^i(t) = \|\mathcal{X}(t)-\mathcal{W}_i(t)\|^2   
+\end{equation}
+
+Kde:\\
+\hspace*{3em}
+\begin{tabular}{rl}
+    $\mathcal{X}(t)$:& vstupní vektor \\
+    $\mathcal{W}_i(t)$:& váhový vektor neuronu $i$ \\
+\end{tabular}
+\end{minipage} 
+\vspace{\baselineskip}
+\noindent
+
  
 
-Druhý člen představuje topologickou restrikci v mapě neuronů. Jinými slovy jde o aktivování neuronů v závislosti na pozici v mřížce. Čím blíže je neuron k BMU, tím je tato aktivace vyšší, zároveň tato aktivace klesá s časem, které je zajištěné funkcí $s(t)$.  
+Druhý člen představuje \textit{topologickou restrikci} v mapě neuronů (\ref{eq:4}). Jinými slovy jde o aktivování neuronů v závislosti na pozici v mřížce. Čím blíže je neuron k BMU, tím je tato aktivace vyšší, zároveň tato aktivace klesá s časem, které je zajištěné funkcí $s(t)$ popsanou vztahem \ref{eq:5}.  
 V této praci byly parametry $s_0$ a $s_{end}$ nastaveny na $200$ a $0.01$, stejně tak, jak je navrženo a empiricky otestováno v originální publikaci \cite{hartono14}.
 
-$$\sigma(win, i, t)=e^-\frac{dist(win, i)}{s(t)}$$
-$$ {s(t)=s_0(\frac{s_{end}}{s_0})^\frac{t}{t_{end}}}$$ 
 
-         \begin{description}
-            \item[ $dist(win, i)$] vzdálenost BMU a neuronu $i$, měřeno na mřížce 
-            \item[ $s_0, s_{end}$] $200$, $0.01$
-             \item[ $t$] současná epocha
-             \item[ $t_{end}$] počet epoch 
-        \end{description}   
+\vspace{\baselineskip}
+\noindent
+\begin{minipage}[c]{\textwidth }
+
+\begin{equation} \label{eq:4}
+    \sigma(win, i, t)=e^-\frac{dist(win, i)}{s(t)}  
+\end{equation}
+
+\begin{equation} \label{eq:5}
+    {s(t)=s_0(\frac{s_{end}}{s_0})^\frac{t}{t_{end}}}  
+\end{equation}
+
+Kde:\\
+\hspace*{3em}
+\begin{tabular}{rl}
+    $dist(win, i)$:& vzdálenost BMU a neuronu $i$, měřeno na mřížce \\
+    $s_0$, $s_{end}$ :& $200$, $0.01$ \\
+     $t$, $t_{end}$:& současná epocha, celkový počet epoch \\
+\end{tabular}
+\end{minipage} 
+\vspace{\baselineskip}
+\noindent
 
 Na obrázku \ref{fig:top_restr} jsou zobrazeny tři mřížky neuronů. Každý z obrázků představuje výstup skryté vrstvy pro stejný vstup, ale v různých fázích učení (v různých epochách). Každá diskrétní pozice $(x, y)$ tedy představuje jeden neuron a velikost značky na pozici $(x, y)$ představuje relativní míru aktivace s tím, že BMU je v těchto případech na pozici  $(7, 7)$.
 
 Grafy se liší pouze fází účení -- tedy epochou. V prvním případě je stav aktivace neuronů zobrazen na počátku učení, konkrétně v $8.$ epoše z celkových $50$. Graf dokumentuje skutečnost, že v této fázi jsou do formování mapy zahrnuty velkou měrou všechny neurony na mapě. V dalších dvou případech, které zobrazují stav ve $20.$ resp. $30.$ epoše, je rozpoznatelné zmenšující se okolí BMU, které je řízeno funkcí $s(t)$.
-
-
 
 
 Oproti tomu na obr \ref{fig:sigma} je zobrazena závislost míry aktivace pro celý průběh učení pro fixní vzdálenost neuronů. V prvním grafu je vykreslena funkce $\sigma$ pro neurony vzdálené $1$, což se dá interpretovat jako míru topologické aktivace pro nejbližší neuron k BMU.
@@ -339,8 +396,8 @@ Na zbylých grafech jsou zobrazeny průběhy pro větší vzdálenost od BMU -- 
 
 \centering
 \hspace*{-1cm}
-\includegraphics[width=.33\textwidth]{top_restr_8.png}\hspace*{-1cm}
-\includegraphics[width=.33\textwidth]{top_restr_20.png}\hspace*{-1cm}
+\includegraphics[width=.33\textwidth]{top_restr_8.png}
+\includegraphics[width=.33\textwidth]{top_restr_20.png}
 \includegraphics[width=.33\textwidth]{top_restr_30.png}
 \hspace*{-1cm}
 \caption{Příklad aktivace neuronů pro různé fáze učení.}
@@ -353,9 +410,9 @@ Na zbylých grafech jsou zobrazeny průběhy pro větší vzdálenost od BMU -- 
 
 \centering
 
-\includegraphics[width=.33\textwidth]{sigma_1.png}\hspace*{-1cm}
-\includegraphics[width=.33\textwidth]{sigma_7.png}\hspace*{-1cm}
-\includegraphics[width=.33\textwidth]{sigma_25.png}
+\includegraphics[width=.32\textwidth]{sigma_1.png}
+\includegraphics[width=.32\textwidth]{sigma_7.png}
+\includegraphics[width=.32\textwidth]{sigma_25.png}
 \caption{Míra aktivace po celé učení pro různé vzdálenosti od BMU}
 \label{fig:sigma}
 
@@ -363,122 +420,224 @@ Na zbylých grafech jsou zobrazeny průběhy pro větší vzdálenost od BMU -- 
 
 
 \subsubsection*{Výstupní vrstva}
-Výstup neuronů skryté vrstvy slouží jako vstup do výstupní vrstvy sítě. Výstupní vrstva funguje jako jedna obyčejná vrstva MLP. Tedy výstup neuronu  $k$ ve výstupní vrstvě je dán funkcí $\mathcal{O}_k(t)$.
+Výstup neuronů skryté vrstvy slouží jako vstup do výstupní vrstvy sítě. Výstupní vrstva funguje jako jedna běžná vrstva MLP. Tedy výstup neuronu  $k$ ve výstupní vrstvě je dán funkcí $\mathcal{O}_k(t)$ (\ref{eq:6}).
 
-$$ \mathcal{O}_k(t) = f(\mathcal{I}_k(t))   $$
-$$ \mathcal{I}_k(t) = \sum\limits_i{v_{ik}(t)\mathcal{O}_i^h - \theta_k(t)} $$
+\vspace{\baselineskip}
+\noindent
+\begin{minipage}[c]{\textwidth }
+
+\begin{equation*}
+   \mathcal{I}_k(t) = \sum\limits_i{v_{ik}(t)\mathcal{O}_i^h - \theta_k(t)}  
+\end{equation*}
+
+\begin{equation} \label{eq:6}
+   \mathcal{O}_k(t) = f(\mathcal{I}_k(t))
+\end{equation}
 
 
-  
-           \begin{description}
-             \item[ $\theta_k(t)  $] bias pro neuron $k$
-            \item[ $f(x) $] sigmoida 
-        \end{description}  
+Kde:\\
+\hspace*{3em}
+\begin{tabular}{rl}
+    $\theta_k(t)$:& bias pro neuron $k$ \\
+    $f(x) $ :& sigmoida, $\frac{1}{1+e^{-x}}$ \\
 
- 
+\end{tabular}
+\end{minipage} 
+\vspace{\baselineskip}
+\noindent
 
 \subsection{Učení}
 Protože se CRSOM učí s učitelem, ke každému vstupnímu vektoru máme požadovaný výstupní vektor. Lze zavést funci $E(t)$, která bude sloužit jako chybová funkce.
 
- $$ E(t)=\frac{1}{2}\sum\limits_k{(\mathcal{O}_k(t)-\mathcal{T}_k(t))^2}$$
+\vspace{\baselineskip}
+\noindent
+\begin{minipage}[c]{\textwidth }
 
-   \begin{description}
-     \item[ $\mathcal{O}_k(t)$] výstup neuronu $k$
-    \item[ $\mathcal{T}_k(t) $] požadovaný výstup pro neuron $k$
-\end{description}  
+\begin{equation}
+   E(t)=\frac{1}{2}\sum\limits_k{(\mathcal{O}_k(t)-\mathcal{T}_k(t))^2}  
+\end{equation}
+
+
+Kde:\\
+\hspace*{3em}
+\begin{tabular}{rl}
+    $\mathcal{O}_k(t)$:& výstup neuronu $k$ \\
+    $\mathcal{T}_k(t) $ :& požadovaný výstup pro neuron $k$ \\
+
+\end{tabular}
+\end{minipage} 
+\vspace{\baselineskip}
+\noindent
+
 
 Funkce $E(t)$ představuje chybu pro vstupní vektor a nastavení sítě v podobě vah. Jedním ze způsobů jak optimalizovat takovou funkci je \textit{metoda nejstrmějšího sestupu}, tedy pomocí gradientu funkce $E(t)$. Změny ve výstupní vrstvě -- tedy váhových vektorů $v_{ik}$ a biasu $ \theta_k$ -- se řídí podle následujících vztahů:
 
+\vspace{\baselineskip}
+\noindent
+\begin{minipage}[c]{\textwidth }
 
-  $$ v_{ik}(t+1)=v_ik(t) - \eta_1\frac{\partial{E(t)}}{\partial{v_{ik}(t)}} =  v_{ik}(t) - \eta_1\delta_k(t)\mathcal{O}_h^i(t)  $$
-  $$ \theta_k(t+1)=\theta_k(t) - \eta_1\frac{\partial{E(t)}}{\partial{\theta(t)}} = \theta(t)  + \eta_1\delta_k(t) $$
-$$ \delta_k(t) = (O_k(t) - T_k(t))O_k(t)(1-O_k(t)) $$
+\begin{equation*}
+   v_{ik}(t+1)=v_ik(t) - \eta_1\frac{\partial{E(t)}}{\partial{v_{ik}(t)}} =  v_{ik}(t) - \eta_1\delta_k(t)\mathcal{O}_h^i(t) 
+\end{equation*}
 
-     \begin{description}
-        \item[ $\eta_1$] learning rate pro výstupní vrstvu
-    \end{description}  
+\begin{equation*}
+   \theta_k(t+1)=\theta_k(t) - \eta_1\frac{\partial{E(t)}}{\partial{\theta(t)}} = \theta(t)  + \eta_1\delta_k(t)
+\end{equation*}
+
+\begin{equation*}
+   \delta_k(t) = (O_k(t) - T_k(t))O_k(t)(1-O_k(t)) 
+\end{equation*}
+
+Kde:\\
+\hspace*{3em}
+\begin{tabular}{rl}
+    $\eta_1$:& \textit{learning rate} pro výstupní vrstvu \\
+\end{tabular}
+\end{minipage} 
+\vspace{\baselineskip}
+\noindent
+
     
 
-Stejným spůsobem se pak upravují i váhové vektory neuronů ve skryté vrstvě:
+Stejným spůsobem se pak upravují i váhové vektory neuronů ve skryté vrstvě \ref{eq:adj}
   
-  $$ \mathcal{W}_i(t+1)=W_i(t) -  \eta_2\frac{\partial{E(t)}}{\partial{W_i(t)}} $$
-	
+  \vspace{\baselineskip}
+\noindent
+  \begin{minipage}[c]{\textwidth }
 
-	
+\begin{equation*}
+   \mathcal{W}_i(t+1)=W_i(t) -  \eta_2\frac{\partial{E(t)}}{\partial{W_i(t)}} 
+\end{equation*}
 
-$$\delta_i^h(t)=-e^{-I_i^h(t)}(\sum\limits_k{\delta_k(t)v_{ik}(t)}) $$
-$$ \mathcal{W}_i(t+1)=\mathcal{W}_i(t) -  \eta_2\delta_i^h(t)\sigma(win, i, t)(\mathcal{X}(t) - \mathcal{W}_i(t)) $$
+\begin{equation*}
+   \delta_i^h(t)=-e^{-I_i^h(t)}(\sum\limits_k{\delta_k(t)v_{ik}(t)})
+\end{equation*}
 
+\begin{equation}\label{eq:adj}
+   \mathcal{W}_i(t+1)=\mathcal{W}_i(t) -  \eta_2\delta_i^h(t)\sigma(win, i, t)(\mathcal{X}(t) - \mathcal{W}_i(t))
+\end{equation}
 
-         \begin{description}
-             \item[ $\eta_2$] learning rate pro skrytou vrstvu
-            \item[ $\mathcal{X}(t)$] vstupní vektor
-            \item[ $\mathcal{W}_i(t)$] váhový vektor neuronu $i$
-        \end{description}  
-
-
+Kde:\\
+\hspace*{3em}
+\begin{tabular}{rl}
+    $\eta_2$:& \textit{learning rate} pro skrytou vrstvu \\
+        $\mathcal{X}(t)$:& vstupní vektor \\
+            $\mathcal{W}_i(t)$:& prototypový vektor neuronu $i$ \\
+\end{tabular}
+\end{minipage} 
+\vspace{\baselineskip}
+\noindent
  
 
 \subsection{Srovnání se SOM }
 \subsubsection*{Rozdíl ve formování SOM a CRSOM}
-Narozdíl od vztahu, který popisuje úpravy prototypových vektorů v sítích typů SOM, se v úpravách prototypových vektorů CRSOM navíc vyskytuje člen $\delta_i^h(t)$.
+Narozdíl od vztahu, který popisuje úpravy prototypových vektorů v sítích typů SOM (\ref{eq:1}), se v úpravách prototypových vektorů CRSOM (\ref{eq:adj}) navíc vyskytuje člen $\delta_i^h(t)$.
 
 Tento člen slouží jako \textit{regulační signál}, který je určen velikostí chyby na výstupu. Slouží tak jako zpětná vazba z kontextové sítě, která řídí formování skryté vrstvy podle zadaného kontextu.
 
-Pouze v případě $ \delta_i^h(t) > 0 $, je neuron $i$ přiblížen ke vstupnímu vektoru. V případě $ \delta_i^h(t) < 0 $ je naopak oddálen. Z toho vyplývá, že ke vstupnímu vektoru jsou přiblíženy pouze prototypové vektory neuronů, které přispívají ke snížení chyby, ostatní jsou naopak pokutovány oddálením. V případě, že $ \delta_i^h(t) = 1 $, CRSOM simuluje chování SOM: prototypové vektory jsou ke vstupnímu vektoru přiblíženy vždy, bez ohledu na sémantický kontext a výstup sítě. Rozdílné formování sítě je doloženo na obr \ref{fig:dunno}.
+Pouze v případě $ \delta_i^h(t) > 0 $, je neuron $i$ přiblížen ke vstupnímu vektoru. V případě $ \delta_i^h(t) < 0 $ je naopak oddálen. Z toho vyplývá, že ke vstupnímu vektoru jsou přiblíženy pouze prototypové vektory neuronů, které přispívají ke snížení chyby, ostatní jsou naopak pokutovány oddálením. To má za důsledek rozdílné chování oproti SOM, kde mapa je formována pouze na základě vstupního prostoru, zatímco u CRSOM je mapa formována na základě vstupního prostoru a dodaného semantického kontextu. 
+
+Formování mapy CRSOM je ukázáno na obr. \ref{fig:cr}. Vstupní data tvoří dataset Iris\footnote{Známý dataset dostupný na adrese: https://archive.ics.uci.edu/ml/datasets/Iris} omezený na dvě dimenze \ref{fig:iris2d}. Toto omezení umožní vizualizovat mapu a vstupní data na jednom grafu bez ztráty informace. Ze série obrázků (\ref{fig:cr}) je vidět, že formování respektuje sémantický kontext, kterým jsou v tomto případě jednotlivé třídy datasetu Iris. Mapa vytváří shluky, které odpovídají rozložení tříd ve vstupním prostoru.
+
+
+
+
+\begin{figure}[htp]    
+    \centering
+    \includegraphics[width=0.6\textwidth]{feature_space_with_classes.png}
+    \caption{Dataset Iris omezený na dvě dimenze.}
+    \label{fig:iris2d}
+\end{figure}
+
+
+V případě, že $ \delta_i^h(t)$ je zafixováno na $1$, CRSOM simuluje chování SOM: prototypové vektory jsou ke vstupnímu vektoru přiblíženy vždy, bez ohledu na sémantický kontext a výstup sítě. Simulace klasické samoorganizující mapy pomocí CRSOM je doložen na obr. \ref{fig:delta_1}.
+
+
+\begin{figure}[htp]
+    \centering
+    
+    \includegraphics[width=.32\textwidth]{cr1.png}
+    \includegraphics[width=.32\textwidth]{cr2.png}
+    \includegraphics[width=.32\textwidth]{cr3.png}
+    \caption{Mapa CRSOM se formuje s ohledem na sémantický kontext.}
+    \label{fig:cr}
+\end{figure}
+
+\begin{figure}[htp]
+    \centering
+    
+    \includegraphics[width=.32\textwidth]{s1.png}
+    \includegraphics[width=.32\textwidth]{s2.png}
+    \includegraphics[width=.32\textwidth]{s3.png}
+    \caption{CRSOM se chová stejně jako SOM pro zafixované $ \delta_i^h(t) = 1 $ }
+    \label{fig:delta_1}
+\end{figure}
 
 
 \subsubsection*{Rozdíl v interpretaci SOM a CRSOM}
-Samoorganizující mapy jsou schopné vysoce dimenzionální prostor mapovat do 2D a zachovat při tom některé topologické vlastnosti vstupního prostoru. Pokud máme k datům nějaký konktext (třídy) a chceme je nějakým způsobem využít pro formování mapy, není jiná možnost, než využít třídy jako další atributy. Naopak CRSOM s těmito informacemi zachází explicitně a pomocí těchto tříd prostřednictvím regulačního signálu řídí formování mapy podle zadaného kontextu. SOM je schopný vizualizovat prostor, zatímco CRSOM je schopná vizualizovat problém.\cite{hartono14}
+Samoorganizující mapy jsou schopné vysoce dimenzionální prostor mapovat do 2D a zachovat při tom některé topologické vlastnosti vstupního prostoru. Pokud máme k datům nějaký kontext (třídy) a chceme je nějakým způsobem využít pro formování mapy, není jiná možnost, než využít třídy jako další atributy. Naopak CRSOM s těmito informacemi zachází explicitně a pomocí těchto tříd prostřednictvím regulačního signálu řídí formování mapy podle zadaného kontextu. SOM je schopný vizualizovat strukturu vstupního prostoru, zatímco CRSOM je schopná vizualizovat strukturu problému\cite{hartono14}.
 
 
 
 \subsection{Vlastnosti a využití}
 
-CRSOM naučená na konkrétní sémantický kontext může být využita jako klasifikátor tohoto kontextu pro nová data. V takovém případě mapa, která je definovaná skrytou SOM vrstou, představuje vedlejší produkt takového učení. Tato mapa nám dává intuitivní pochopení výkonnosti takového klasifikátoru.
+	CRSOM naučená na konkrétní sémantický kontext může být využita jako klasifikátor tohoto kontextu pro nová data. V takovém případě mapa, která je definovaná skrytou SOM vrstou, představuje vedlejší produkt takového učení. Tato mapa nám dává intuitivní pochopení výkonnosti takového klasifikátoru.
 
-Dále je možné považovat mapu jako cílový produkt učení a pokládat účel CRSOM jako definování mapování  N-dimenzionálního prostoru do dvou dimenzionálního, které bere v úvahu rozložení vstupního prostoru a využívá sémantický kontext. Vzniklá mapa pak může sloužit na vizualizování klasifikačního problému pro daný sémantický kontext. Dále je možné z mapy extrahovat znalosti a strukturu v podobě vytvořených shluků
+Kromě toho je možné považovat mapu jako cílový produkt učení. Vzniklá mapa pak může sloužit k vizualizacím klasifikačního problému pro daný sémantický kontext. Dále je možné z mapy extrahovat znalosti a strukturu v podobě vytvořených shluků, stejně jako u SOM s tím rozdílem, že výsledek CRSOM respektuje při formování sémantiku a je možné z něho extrahovat rozdílné znalosti \cite{lms}.
 
 % -------------------------------------- Návrh a implementace ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Návrh a implementace}
+V této kapitole jsou rozebrány nutné kroky pro použití vybraných metod. Zaprvé bylo nutné zajistit implementace oněch metod a zadruhé navrhnout a implementovat platformu pro experimentování s metodami. Pro implementaci metod bylo zvoleno prostředí \textit{Matlab}. Pro práci s experimenty byly zvoleny \textit{Ruby}, \textit{MongoDb}, \textit{Git} a \textit{MetaCentrum}. V této kapitole jsou popsány důvody pro zvolení právě těchto technologií a nástrojů, spolu s popisem jejich využití a vzájemného fungování. 
+
 
 \section{SOM}
+Hotová implementace samoorganizujících map je dostupná pro mnoho platforem, Matlab byl zvolen zejména kvůli existenci speciálního toolboxu\footnote{Toolbox je označení pro rozšíření Matlabu a jeho IDE} pro neuronové sítě. Kromě toho Matlab nabízí širokou škálu vykreslování a jednoduchou manipulaci s maticemi. Je třeba také zmínit, že ČVUT vlastní licence na Matlab a příslušné toolboxy pro akademické použití, čímž odpadá finanční stránka rozhodování, která by v neakademickém použití hrála významnou roli.
+Pro samoorganizující mapy se v Matlabu používá funkce \texttt{selforgmap}\footnote{Dokumentace je dostupná na http://www.mathworks.com/help/nnet/ref/selforgmap.html}. Kód pro natrénování samoorganizující mapy o velikosti 10x10 stačí kód zobrazen v ukázce \ref{somcode}.
 
-
-\subsection{Matlab}
-
+\begin{listing}
+    \begin{minted}[linenos=true,bgcolor=bg]{matlab}
+        som = selforgmap([10 10])
+        trained_som = train(som, inputs)
+    \end{minted} 
+    \caption{Vytvoření samoorganizující mapy v prostředí Matlab.} 
+    \label{somcode}
+\end{listing}
 
 \section{CRSOM}
 
+
 Implementace CRSOM byla mnohem náročnější. Jedním z důvodů bylo to, že v době implementace bylo k dispozici pouze analytické vyjádření fungování sítě, bez jakékoliv vzorové implementace.
-Správnost sítě tak bylo možné verifikovat pouze na základě výstupů z experimentů provedených Hartonem na známých datových sadách.\cite{hartono14}.
+Správnost sítě tak bylo možné verifikovat pouze na základě výstupů z experimentů provedených Hartonem na známých datových sadách\cite{hartono14}.
 
 Další překážkou bylo, že prováděné experimenty byly spouštěny pro $30 000$ epoch, což by znamenalo několik dní výpočtů pro první naivní implementace.
 	
-Postup pro implementaci sítě tak, jak byla navržena Hartonem, byl inspirován přístupem \uv{Make it work, make it right, make it fast}.\cite{makeit} 
+Postup pro implementaci sítě tak, jak byla navržena Hartonem, byl inspirován přístupem \textit{\uv{Make it work, make it right, make it fast}}\cite{makeit}. 
 Tento přístup logicky prioritizuje vývoj software: jako první by měla být zaručena korektní implementace. Až poté je možné implementaci vylepšovat ve směrech designu, robustnosti a výkonu. Pro zachování správnosti software je nutné zavést regresní testování, které zaručí pokračující korektnost i po změnách v rámci \uv{Make it right} a \uv{make it fast}.
 
 \subsection{Make it work}
- Jak bylo zmíněno, první naivní implementace sítě není možné verifikovat oproti Hartonovým experimentům, nadruhou stranu je z definice sítě a z dostupných publikací (např.: \cite{hartono14}) zřejmé, jak se bude mapa formovat pro jednoduché příklady. Takovým jednoduchým příkladem je například dobře známý dataset Iris. Tento dataset byl navíc omezen na $2$ dimenze, což nám poskytne možnost vizualizovat neurony, určené prototypovými vektory, spolu se vstupními daty v jednom grafu. Vizualizace formování se ukazala, jako velmi platná pro pochopení a ladění fungování sítě. Kromě zobrazování neuronů na mapě spolu se vstupními daty, byly ukládány a zanášeny do grafů další hodnoty významné pro průběh učení. Mezi takové hodnoty patří například hodnota funkce $E(t)$, průměrné výstupy neuronů ze skryté vrstvy, průměrná topologická restrikce a další.
+ Jak bylo zmíněno, první naivní implementace sítě není možné verifikovat oproti Hartonovým experimentům, nadruhou stranu je z definice sítě a z dostupných publikací (např.: \cite{hartono14}) zřejmé, jak se bude mapa formovat pro jednoduché příklady. Takovým jednoduchým příkladem je například dobře známý dataset Iris. Tento dataset byl navíc omezen na dvě dimenze, což poskytuje možnost vizualizovat neurony, určené prototypovými vektory, spolu se vstupními daty v jednom vykreslení. Vizualizace formování se ukázala, jako velmi platná pro pochopení a ladění fungování sítě. Kromě zobrazování neuronů na mapě spolu se vstupními daty, byly ukládány a zanášeny do grafů další hodnoty významné pro průběh učení. Mezi takové hodnoty patří například hodnota funkce $E(t)$, průměrné výstupy neuronů ze skryté vrstvy, průměrná topologická restrikce a další.
  
-Další překážkou byla vysoká citlivost metody na nastavení parametrů učení\cite{hartono14}. Slabé výsledky tak mohou být způsobeny nesprávným nastavením sítě a ne vždy musí znamenat chybu v implementaci. Tomuto problému bylo čeleno pomocí prohledávání prostoru parametrů a kontrolování všech výsledků, alespoň z počátku verifikace.
-Pomocí těchto přístupů se podařilo naimplementovat CRSOM, která dávala srovnatelné výsledky na stejných datasetech podle originálních publikací \cite{hartono14}.
+Další překážkou byla vysoká citlivost metody na nastavení parametrů učení\cite{hartono14}. Slabé výsledky tak nemusí vždy znamenat chybu v implementaci, nýbrž například nevhodné nastavení učících parametrů. Tomuto problému bylo čeleno pomocí prohledávání prostoru parametrů a kontrolování všech výsledků, alespoň z počátku verifikace.
+Pomocí těchto přístupů se podařilo naimplementovat CRSOM, která dávala srovnatelné výsledky na stejných datasetech podle originálních publikací \cite{hartono14}. (ENH: doložení obrázky)
 
 \subsection{Make it right and make it fast}
 
 První verze sítě byla sice funkční, trpěla ale několika prohřešky jak z výkonového hlediska, tak z designového. Ještě před jakýmikoliv úpravami bylo nutné vytvořit sadu regresních testů, které budou zajišťovat stálou správnost sítě. Toho bylo docíleno odebráním všech nedeterministických nastavení a uložení stavu sítě po několika epochách učení \textit{(expected net)} pro daný testovací dataset.  Regresní testování upravené sítě pak spočívalo ve spuštění učení se stejným nastavením a pro stejný dataset jako pro síť \textit{expected net}. Za předpokladu deterministického učení, naučená síť musí mít stejné hodnoty prototypových vektorů jako \textit{expected net}.
 
-Výkon sítě se měřil pomocí učení na datasetu, který byl výrazně větší, než dataset určený pro testování. K určení problémových míst implemetace, z hlediska výkonu, byl výhradně používán Matlab profiler, který je vestavěný do IDE. (pozn pod čarou: http://www.mathworks.com/help/matlab/matlab_prog/profiling-for-improving-performance.html). Zlepšování sítě bylo provádělo iteračně, postupné pokroky jsou zaneseny do tabulky (\dots). Od první naivní implementace se učení zrychlilo více než $15x$.  Nejvyšší pokroky ve výkonu byly dosaženy následujícími upravami:
+Výkon sítě se měřil pomocí učení na datasetu, který byl výrazně větší, než dataset určený pro testování. K určení problémových míst implemetace, z hlediska výkonu, byl výhradně používán Matlab profiler\footnote{http://www.mathworks.com/help/matlab/matlab\_prog/profiling-for-improving-performance.html}, který je vestavěný do IDE. Zlepšování sítě bylo provádělo iteračně, postupné pokroky jsou zaneseny do tabulky (TODO:změřit a zobrazit). Od první naivní implementace se učení zrychlilo více než $15$x.  Nejvýraznější pokroky ve výkonu byly dosaženy následujícími upravami:
+
 
 \subsubsection*{Funkce adapt}
-
+TODO
 \subsubsection*{Maticové počítání}
-
+TODO
 \subsubsection*{Prealokace}
-
-
+TODO
 \subsection{Konečný design}
+TODO
 
+\subsubsection{Publikování sítě}
+TODO
 
 \section{Implementace experimentů}
 
@@ -501,18 +660,18 @@ Je třeba zmínit, že všechny vytvořené datové sady pocházely z jednoho zd
 \end{figure}
 
 \subsubsection*{MongoDb}
-MongoDb je dokumentově orientovaná databáze, tedy patří mezi tzv. NoSql databáze. MongoDB umožňuje ukládat data bez dopředu známého schématu, což byl nejvýznamější důvod pro použití právě takové databáze v rámci této práce.
+MongoDb je dokumentově orientovaná databáze, tedy patří mezi tzv. \textit{NoSQL} databáze. MongoDB umožňuje ukládat data bez dopředu známého schématu, což byl nejvýznamější důvod pro použití právě takové databáze.
 
 Data v MongoDb jsou interně uložena a navenek prezentována ve formátu BSON, což je specifikace a knihovna pro převod JSONu do binární podoby. Data, která poskytuje The Echo Nest prostřednictvím webového API, jsou taktéž ve formátu JSON, Tato skutečnost dělá dokumentovou databázi mnohem lepším kandidátem, než by tomu byly tradiční relační databáze. Navíc, pro využítí databáze jako lokální cache, jsou nepotřebné další vlastnosti, které nabízejí relační databáze, jako jsou transakční zpracování, integritní omezení a další.
 
 \subsubsection*{Ruby}
 Pro ukládání dat do MongoDB a následné generování datasetů ve formátu csv by zvolen jazyk Ruby. Ruby je interpretovaný skriptovací jazyk, který vznikl v roce 1995 v Japonsku.
-Jazyk Ruby byl zvolen pro svou jednoduchou syntax, možnost krátkého zápisu kódu a širokou dostupnost gemů (pozn: \dots). Jedním takovým gemem, který byl použit je Mongoid, který slouží jako ODM (Object-Document-Mapper) framework pro databázi MongoDb.
-Jednou ze slabých stránek jazyka Ruby je výkon \cite{ruby_performance}, alespoň ve srovnání s kompilovanými jazyky jako je např C++. Tato nevýhoda je ovšem pro toto konkrétní použítí nevýznamná, naopak snadný zápis kódu a dostupnost gemů znamená obrovskou časovou úsporu a snadnou modifikaci kódu.
+Jazyk Ruby byl zvolen pro svou jednoduchou syntax, možnost krátkého zápisu kódu a širokou dostupnost \textit{gemů}\footnote{Gem je označení pro balíček kódu v jazyce Ruby}. Příkladem použitého gemu je Mongoid, který slouží jako ODM\footnote{Object-Document-Mapper -- mapování mezi dokumenty v databázi a ruby objekty.} framework pro databázi MongoDb.
+Jednou ze slabých stránek jazyka Ruby je výkon \cite{ruby_performance}, alespoň ve srovnání s kompilovanými jazyky jako je např \texttt{C++}. Tato nevýhoda je ovšem pro toto konkrétní použítí nevýznamná, naopak snadný zápis kódu a dostupnost gemů znamená obrovskou časovou úsporu a snadnou modifikaci kódu.
 
 
 \subsection{Framework na experimenty}
-Jak již bylo zmíněno, velké množství experimetů pro různé verze kódu a konfigurace metod přinesly spousty požadavků. Mezi požadavky mimo jiné patřilo napřiklad jednoduché nasazování kódu, logování  …\dots…. . Pro naplnění těchto požadavků byly zvoleny dvě hlavní technologie: výpočetní centrum MetaCentrum a verzovací nástroj Git.
+Jak již bylo zmíněno, velké množství experimetů pro různé verze kódu a konfigurace metod přinesly spousty požadavků. Mezi požadavky mimo jiné patřilo napřiklad jednoduché nasazování kódu, logování, paralelní pouštění experimentů, uchovávání výsledků a další. Pro naplnění těchto požadavků byly zvoleny dvě hlavní technologie: výpočetní centrum \textit{MetaCentrum} a verzovací nástroj \textit{Git}.
 
 
 \subsubsection*{MetaCentrum}
@@ -522,17 +681,17 @@ Na čelní uzly je možné se přihlásit a zadávat úlohy spolu s požadavky n
 Druhým typem jsou \textit{výpočetní uzly}, které jsou vytěžovány plánovacím systémem \textit{Torque}. Torque dohlíží na efektivní a férové využívání zdrojů uživateli, a plánuje, kdy kdo dostane vyžádané stroje k dispozici. \cite{metacentrum}
 
 \subsubsection*{Git}
-Git je distribuovaný systém správy verzí. Git umožňuje snadným způsobem uchovávat různé verze souboru spolu s jejich kompletní historií. Nová verze se vytváří tzv. \textit{větvemi (branch)}, ucelené změny v souborech se nazývají \textit{commity}, které také obsahují krátký text, který změnu kometuje. 
+Git je distribuovaný systém správy verzí. Git umožňuje snadným způsobem uchovávat různé verze souboru spolu s jejich kompletní historií. Nová verze se vytváří tzv. \textit{větvemi (branch)}. Ucelené změny v souborech se nazývají \textit{commity}, které  obsahují krátký text, který změnu kometuje. (ENH: pojmy co budou potřeba)
 
 
 \subsubsection*{Zadávání úloh}
-Z důvodu vysoké náročnosti úloh na prostředky byly v drtivé většině případů všechny sítě učeny na výpočetních uzlech v MetaCentru. Pro spuštění učení sítí pro jeden dataset je nutné mít v MetaCentru k dispozici kód v matlabu, vstupní soubory a skript, který zadá úlohy s různými parametry učení. Všechna tato data byla do MetaCentra dopravena přes vzdálený Git repozitář. Jeden experiment tak spočíval ve vytvoření commitu, který byl dopraven přes vzdálený repozitář do MetaCentra. V MetaCentru pak byl spuštěn skript, který zadal úlohy. Všechna tato práce lze automatizovat jedním bash skriptem (\ref{fig:up}). 
+Z důvodu vysoké náročnosti úloh na prostředky byly v drtivé většině případů všechny sítě učeny na výpočetních uzlech v MetaCentru. Pro spuštění učení sítí pro jeden dataset je nutné mít v MetaCentru k dispozici kód v matlabu, vstupní soubory a skript, který zadá úlohy s různými parametry učení. Všechna tato data byla do MetaCentra dopravena přes vzdálený Git repozitář. Spuštění jednoho experimentu tak spočívalo ve vytvoření commitu, který byl dopraven přes vzdálený repozitář do MetaCentra. V MetaCentru pak byl spuštěn skript, který zadal úlohy. Všechna tato práce lze automatizovat jedním bash skriptem (\ref{fig:up}). 
 Jednou z výhod takového přístupu je uchování kompletní historie experimentů spolu se smysluplnými komentáři, které lze generovat strojově. Přiklad takového vygenerovaného komentáře (obr. \ref{fig:semantic_commit}) je část skriptu, který zadává úlohy s různými parametry učení. Dále jsou automaticky generována jména sítí -- jako složenina datasetu a parametrů učení. Toto jméno je pak použito jako identifikátor úlohy pro snadnou inspekci dostupnou přes uživatelské rozhraní MetaCentra. Dále je jméno použito na pojmenovávání vytvářených souborů -- např. logu, kdo kterého se ukládají informace o současné epoše a chybě.
 
 \begin{figure}[htbp]
 \begin{center}
 	\includegraphics[scale=0.9]{up.png}
-\caption{Zadávání úloh do MetaCentra}
+\caption{Zadávání úloh do MetaCentra.}
 \label{fig:up}
 \end{center}
 \end{figure}
@@ -541,7 +700,7 @@ Jednou z výhod takového přístupu je uchování kompletní historie experimen
 \begin{figure}[htbp]
 \begin{center}
 	\includegraphics[scale=0.7]{semantic_commit}
-\caption{Příklad strojově generovaného komentáře}
+\caption{Příklad strojově generovaného komentáře.}
 \label{fig:semantic_commit}
 \end{center}
 \end{figure}
@@ -549,12 +708,12 @@ Jednou z výhod takového přístupu je uchování kompletní historie experimen
 
 
 \subsubsection*{Vyzvedávání výsledků}
-Kromě logů jsou do souborového systému v MetaCentru ukládany také další soubory. Po dokončení učení je celý \textit{workspace} serializován a uložen na disk. Stejně tak je uložena vizualizace výsledků. Protože jsou tyto výsledky uloženy na disku, je snadné je prostřednictvím Gitu přenést zpět na lokální stroj (\ref{fig:down}). Zpravidla jsou nejdříve přenášeny výsledky v obrázkových podobách -- slouží jako rychlé náhledy na výsledky. Po zhodnocení výsledků je možné vybrat konkrétní uložené workspace a přenést na lokální stroj pro další inspekci a vizualizace.
+Kromě logů jsou do souborového systému v MetaCentru ukládany také další soubory. Po dokončení učení je celý \textit{workspace}\footnote{Workspace je množina proměnných v paměti.} serializován a uložen na disk. Stejně tak je uložena vizualizace výsledků. Protože jsou tyto výsledky uloženy na disku, je snadné je prostřednictvím Gitu přenést zpět na lokální stroj (\ref{fig:down}). Zpravidla jsou nejdříve přenášeny výsledky v obrázkových podobách -- slouží jako rychlé náhledy na výsledky. Po zhodnocení výsledků je možné vybrat konkrétní uložené workspace a přenést jej na lokální stroj. Na lokálním stroji lze workspace načíst a pokračovat v práci stejně, jako kdyby byla síť učena tam.
 
 \begin{figure}[htbp]
 \begin{center}
 	\includegraphics[scale=0.9]{down.png}
-\caption{Příklad strojově generovaného komentáře}
+\caption{Vyzvedávání výsledků z MetaCentra.}
 \label{fig:down}
 \end{center}
 \end{figure}
@@ -563,27 +722,83 @@ Kromě logů jsou do souborového systému v MetaCentru ukládany také další 
 % -------------------------------------- POUŽITÁ DATA ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Použitá data}
 \section{Úvod do hudební problematiky}
-Timbre and  pitch
+TODO: Timbre and  pitch, akustika
 
 % https://www.youtube.com/watch?v=mE1ZwLTZ1Bw
 
 
 \section{MillionSongDataset a The Echo Nest}
-MillionSongDataset je volně dostupná kolekce hudebních atributů a metadat pro více než milion skladeb populární hudby. Tento dataset je vytvořený za účelem podpory výzkumu v oblastech algoritmů pro hudební data, MRI a další. MillionSongDataset byl vytvořen společností The Echo Nest, která se zabývá hudební analýzou, porozuměním hudebního obsahu a vztahem hudby a posluchači. MillionSongDataset slouží jako zkratka k hudebním datům, které jinak The Echo Nest poskytuje prostřednictvím svého webového API.
+MillionSongDataset je volně dostupná kolekce hudebních atributů a metadat pro více než milion skladeb populární hudby. Tento dataset je vytvořený za účelem podpory výzkumu v oblastech algoritmů pro hudební data, MIR\footnote{Music information retrieval} a další. MillionSongDataset byl vytvořen společností The Echo Nest, která se zabývá hudební analýzou, porozuměním hudebního obsahu a vztahem hudby a posluchači. MillionSongDataset slouží jako zkratka k hudebním datům, které jinak The Echo Nest poskytuje prostřednictvím svého webového API.
 
-	Při náročnosti používaných metod v této práci, je zřejmé, že není možné použít celý tento dataset, který má přibližně 280GB. S takto velkým objemem dat je také velmi komplikovaná manipulace. Nejen z těchto důvodů byl využit konkrétní zdroj dat a to již zmíněné API. Tímto přístupem je možné jednoduše vytvářet datasety pro předem zvolené sémantiky. Takové sémantiky mohou být například žánr hudby, období vzniku, oblíbenost, autor a další. Další výhodu, kterou přinesl tento přístup, je vyšší aktuálnost metadat, zejména těch, které jsou odvozeny na základě aktuálních trendů a sociálního vnímání jako je například oblíbenost konkrétní skladby nebo míra známosti hudebního autora.
+	Při náročnosti metod používaných v této práci, je zřejmé, že není možné použít celý tento dataset, který má přibližně 280 GB. Manipulace s takto velkým objemem dat je velmi komplikovaná a tak zmenšování původního datasetu není vhodné řešení. Nejen z těchto důvodů byl využit konkrétní zdroj dat a to již zmíněné API. Tímto přístupem je možné jednoduše vytvářet datasety pro předem zvolené sémantiky. Takové sémantiky mohou být například žánr hudby, období vzniku, oblíbenost, autor a další. Další výhodu, kterou přinesl tento přístup, je vyšší aktuálnost metadat, zejména těch, které jsou odvozeny na základě aktuálních trendů a sociálního vnímání jako je například oblíbenost konkrétní skladby nebo míra známosti hudebního autora.
 	
 \section{Dostupné atributy}
 \subsection{Nástroj Analyze}
 
 Analyze je nástroj pro analýzu hudebních dat, který používá společnost The Echo Nest. 
-Tento nástroj je volně dostupný prostřednictvím webového API. Vstupem programu je digitální audio soubor (např.:  mp3, m4a, wav, mpeg, flv), který je programem analyzován. Výstupní informace programu jsou poskytuty JSON souborem, který popisuje strukturu nahrávky a hudební obsah včetně rytmu, výšek a tónů. Program využívá techniniky pro simulování fyzického a kognitivního vnímání hudby člověkem. Konkrétní fungování programu je ale proprietární. 
+Tento nástroj je volně dostupný prostřednictvím webového API. Vstupem programu je digitální audio soubor (např.:  mp3, m4a, wav, mpeg, flv), který je programem analyzován. Výstupní informace programu jsou poskytuty JSON souborem (\ref{json-example}), který popisuje strukturu nahrávky a hudební obsah včetně rytmu, výšek a tónů. Program využívá techniniky pro simulování fyzického a kognitivního vnímání hudby člověkem. Konkrétní fungování programu je ale proprietární. 
 
-Příklad schématu JSON souboru, který popisuje skladbu Billie Jean je :TODO:. Pro účely této práce je nejdůležitější analýza s názvem “segments”. Jeden segment představuje množinu zvukových entit, které jsou relativně neměnné v hudebních atributech. Segmenty jsou charakterizovány začátkem a trváním v sekundách, hlasitostí a popisem výšek a tónů.
+ Pro účely této práce je nejdůležitější analýza s názvem “segments”. Jeden segment představuje množinu zvukových entit, které jsou relativně neměnné v hudebních atributech. Segmenty jsou charakterizovány začátkem a trváním v sekundách, hlasitostí a popisem výšek a tónů.
+
+
+
+\begin{listing}
+\begin{minted}[frame=single,
+               framesep=3mm,
+               linenos=true,
+               xleftmargin=21pt,
+               tabsize=4]{js}
+
+
+{  
+   "meta":{  
+      "analyzer_version":"3.08b", "detailed_status":"OK",
+      "artist":"Michael Jackson", "album":"Thriller",
+      "title":"Billie Jean", "genre":"Rock",
+      "bitrate":192, "sample_rate":44100,
+      "seconds":294, "status_code":0,
+      "timestamp":1279120425, "analysis_time":3.83081,
+      ...
+   },
+   "track":{  
+      "duration":294.15293, "loudness":-7.078,
+      "tempo":117.152, "tempo_confidence":0.848,
+      "time_signature":4,
+      "time_signature_confidence":0.42, "key":6,
+      "key_confidence":0.019, "mode":1,
+      "mode_confidence":0.416,
+      ...
+   },
+   "bars": [...],
+   "beats": [...],
+   "tatums": [...],
+   "sections": [...],
+   "segments":
+     [{ 
+        "start":0.00000, "duration":0.31887,
+        "confidence":1.000, "loudness_start":-60.000,
+        "loudness_max_time":0.10242,
+        "loudness_max":-16.511,"pitches":[0.370,
+        0.067, 0.055, 0.073, 0.108, 0.082, 0.123,
+        0.180, 0.327, 1.000, 0.178, 0.234],
+        "timbre":[24.736, 110.034, 57.822, -171.580,
+        92.572, 230.158, 48.856, 10.804,
+        1.371, 41.446, -66.896, 11.207]
+      },
+      ... ]
+}
+
+
+\end{minted}
+\caption{Výstup nástroje Analyze pro skladbu Billie Jean.} 
+\label{json-example}
+\end{listing}
+
+
 
 \begin{description}
-\item[loudness] 
-\item[pitches] 
+\item[loudness] TODO
+\item[pitches]  TODO
 \item[timbre] Nástroj Analyze popisuje timbre jako 12-dimezionální vektor. Pro účely této práce je důležité, že takové vektory jsou vhodné na porovnávání mezi sebou. Toto tvrzení a další informace o způsobu získávání vektorů, které je mimo rámec této práce, jsou k naleznutí v oficiální dokumentaci nástroje \cite{analyze}.
 \item[confidence] desetinné číslo mezi 0 a 1, které symbolizuje jistotu analyzátoru pro konkrétní atribut. Z důvodu zjednodušení nebude v této práci tento atribut vůbec uvažován.
 \end{description}
@@ -591,7 +806,7 @@ Příklad schématu JSON souboru, který popisuje skladbu Billie Jean je :TODO:.
 \subsection{Další atributy}
 Mimo akustické atributy, které je možné získat z nástroje Analyze, The Echo Nest poskytuje velké množství dalších prostřednictví svého webového API.
 
-Poskytované atributy je možné rozdělit do tří kategorií. První kategorie jsou metadata. Do této kategorie patří například název skladby, jméno autora nebo rok vzniku. Další kategorií jsou atributy tzv.: socilání. Do sociálních atributů jsou zařazeny míry oblíbenosti, známosti apod. Poslední kategorií jsou algoritmicky získané atributy, které popisují sladbu jako celek. Příkladem takových atributů jsou danceability (míra vhodnosti skladby pro tancování) a valence (míra pozitivní energie, kterou skladba vyzařuje). Vyčerpávající popis dostupných atributů je k nalezení: ()
+Poskytované atributy je možné rozdělit do tří kategorií. První kategorie jsou metadata. Do této kategorie patří například název skladby, jméno autora nebo rok vzniku. Další kategorií jsou atributy tzv.: socilání. Do sociálních atributů jsou zařazeny míry oblíbenosti, známosti apod. Poslední kategorií jsou algoritmicky získané atributy, které popisují sladbu jako celek. Příkladem takových atributů jsou danceability (míra vhodnosti skladby pro tancování) a valence (míra pozitivní energie, kterou skladba vyzařuje). Vyčerpávající popis dostupných atributů je k nalezení: (\dots TODO -- příloha nebo odkazy)
 
 
 % -------------------------------------- Experimenty ---------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -613,8 +828,8 @@ Poskytované atributy je možné rozdělit do tří kategorií. První kategorie
 \chapter{Seznam použitých zkratek}
 % \printglossaries
 \begin{description}
-	\item[GUI] Graphical user interface
-	\item[XML] Extensible markup language
+	\item[KDD] \dots
+	\item[CPU] \dots
 \end{description}
 
 

@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+        \PYGdefault{n}{som} \PYGdefault{p}{=} \PYGdefault{n}{selforgmap}\PYGdefault{p}{([}\PYGdefault{l+m+mi}{10} \PYGdefault{l+m+mi}{10}\PYGdefault{p}{])}
+        \PYGdefault{n}{trained\PYGdefaultZus{}som} \PYGdefault{p}{=} \PYGdefault{n}{train}\PYGdefault{p}{(}\PYGdefault{n}{som}\PYGdefault{p}{,} \PYGdefault{n}{inputs}\PYGdefault{p}{)}
+\end{Verbatim}

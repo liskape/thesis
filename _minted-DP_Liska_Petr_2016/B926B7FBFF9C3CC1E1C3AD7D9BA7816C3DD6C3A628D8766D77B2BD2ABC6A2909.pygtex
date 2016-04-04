@@ -1,0 +1,39 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{p}{\PYGdefaultZob{}}
+   \PYGdefault{l+s+s2}{\PYGdefaultZdq{}meta\PYGdefaultZdq{}}\PYGdefault{o}{:}\PYGdefault{p}{\PYGdefaultZob{}}
+      \PYGdefault{l+s+s2}{\PYGdefaultZdq{}analyzer\PYGdefaultZus{}version\PYGdefaultZdq{}}\PYGdefault{o}{:}\PYGdefault{l+s+s2}{\PYGdefaultZdq{}3.08b\PYGdefaultZdq{}}\PYGdefault{p}{,} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}detailed\PYGdefaultZus{}status\PYGdefaultZdq{}}\PYGdefault{o}{:}\PYGdefault{l+s+s2}{\PYGdefaultZdq{}OK\PYGdefaultZdq{}}\PYGdefault{p}{,}
+      \PYGdefault{l+s+s2}{\PYGdefaultZdq{}artist\PYGdefaultZdq{}}\PYGdefault{o}{:}\PYGdefault{l+s+s2}{\PYGdefaultZdq{}Michael Jackson\PYGdefaultZdq{}}\PYGdefault{p}{,} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}album\PYGdefaultZdq{}}\PYGdefault{o}{:}\PYGdefault{l+s+s2}{\PYGdefaultZdq{}Thriller\PYGdefaultZdq{}}\PYGdefault{p}{,}
+      \PYGdefault{l+s+s2}{\PYGdefaultZdq{}title\PYGdefaultZdq{}}\PYGdefault{o}{:}\PYGdefault{l+s+s2}{\PYGdefaultZdq{}Billie Jean\PYGdefaultZdq{}}\PYGdefault{p}{,} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}genre\PYGdefaultZdq{}}\PYGdefault{o}{:}\PYGdefault{l+s+s2}{\PYGdefaultZdq{}Rock\PYGdefaultZdq{}}\PYGdefault{p}{,}
+      \PYGdefault{l+s+s2}{\PYGdefaultZdq{}bitrate\PYGdefaultZdq{}}\PYGdefault{o}{:}\PYGdefault{l+m+mi}{192}\PYGdefault{p}{,} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}sample\PYGdefaultZus{}rate\PYGdefaultZdq{}}\PYGdefault{o}{:}\PYGdefault{l+m+mi}{44100}\PYGdefault{p}{,}
+      \PYGdefault{l+s+s2}{\PYGdefaultZdq{}seconds\PYGdefaultZdq{}}\PYGdefault{o}{:}\PYGdefault{l+m+mi}{294}\PYGdefault{p}{,} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}status\PYGdefaultZus{}code\PYGdefaultZdq{}}\PYGdefault{o}{:}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{,}
+      \PYGdefault{l+s+s2}{\PYGdefaultZdq{}timestamp\PYGdefaultZdq{}}\PYGdefault{o}{:}\PYGdefault{l+m+mi}{1279120425}\PYGdefault{p}{,} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}analysis\PYGdefaultZus{}time\PYGdefaultZdq{}}\PYGdefault{o}{:}\PYGdefault{l+m+mf}{3.83081}\PYGdefault{p}{,}
+      \PYGdefault{p}{...}
+   \PYGdefault{p}{\PYGdefaultZcb{},}
+   \PYGdefault{l+s+s2}{\PYGdefaultZdq{}track\PYGdefaultZdq{}}\PYGdefault{o}{:}\PYGdefault{p}{\PYGdefaultZob{}}
+      \PYGdefault{l+s+s2}{\PYGdefaultZdq{}duration\PYGdefaultZdq{}}\PYGdefault{o}{:}\PYGdefault{l+m+mf}{294.15293}\PYGdefault{p}{,} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}loudness\PYGdefaultZdq{}}\PYGdefault{o}{:\PYGdefaultZhy{}}\PYGdefault{l+m+mf}{7.078}\PYGdefault{p}{,}
+      \PYGdefault{l+s+s2}{\PYGdefaultZdq{}tempo\PYGdefaultZdq{}}\PYGdefault{o}{:}\PYGdefault{l+m+mf}{117.152}\PYGdefault{p}{,} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}tempo\PYGdefaultZus{}confidence\PYGdefaultZdq{}}\PYGdefault{o}{:}\PYGdefault{l+m+mf}{0.848}\PYGdefault{p}{,}
+      \PYGdefault{l+s+s2}{\PYGdefaultZdq{}time\PYGdefaultZus{}signature\PYGdefaultZdq{}}\PYGdefault{o}{:}\PYGdefault{l+m+mi}{4}\PYGdefault{p}{,}
+      \PYGdefault{l+s+s2}{\PYGdefaultZdq{}time\PYGdefaultZus{}signature\PYGdefaultZus{}confidence\PYGdefaultZdq{}}\PYGdefault{o}{:}\PYGdefault{l+m+mf}{0.42}\PYGdefault{p}{,} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}key\PYGdefaultZdq{}}\PYGdefault{o}{:}\PYGdefault{l+m+mi}{6}\PYGdefault{p}{,}
+      \PYGdefault{l+s+s2}{\PYGdefaultZdq{}key\PYGdefaultZus{}confidence\PYGdefaultZdq{}}\PYGdefault{o}{:}\PYGdefault{l+m+mf}{0.019}\PYGdefault{p}{,} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}mode\PYGdefaultZdq{}}\PYGdefault{o}{:}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,}
+      \PYGdefault{l+s+s2}{\PYGdefaultZdq{}mode\PYGdefaultZus{}confidence\PYGdefaultZdq{}}\PYGdefault{o}{:}\PYGdefault{l+m+mf}{0.416}\PYGdefault{p}{,}
+      \PYGdefault{p}{...}
+   \PYGdefault{p}{\PYGdefaultZcb{},}
+   \PYGdefault{l+s+s2}{\PYGdefaultZdq{}bars\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{p}{[...],}
+   \PYGdefault{l+s+s2}{\PYGdefaultZdq{}beats\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{p}{[...],}
+   \PYGdefault{l+s+s2}{\PYGdefaultZdq{}tatums\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{p}{[...],}
+   \PYGdefault{l+s+s2}{\PYGdefaultZdq{}sections\PYGdefaultZdq{}}\PYGdefault{o}{:} \PYGdefault{p}{[...],}
+   \PYGdefault{l+s+s2}{\PYGdefaultZdq{}segments\PYGdefaultZdq{}}\PYGdefault{o}{:}
+     \PYGdefault{p}{[\PYGdefaultZob{}}
+        \PYGdefault{l+s+s2}{\PYGdefaultZdq{}start\PYGdefaultZdq{}}\PYGdefault{o}{:}\PYGdefault{l+m+mf}{0.00000}\PYGdefault{p}{,} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}duration\PYGdefaultZdq{}}\PYGdefault{o}{:}\PYGdefault{l+m+mf}{0.31887}\PYGdefault{p}{,}
+        \PYGdefault{l+s+s2}{\PYGdefaultZdq{}confidence\PYGdefaultZdq{}}\PYGdefault{o}{:}\PYGdefault{l+m+mf}{1.000}\PYGdefault{p}{,} \PYGdefault{l+s+s2}{\PYGdefaultZdq{}loudness\PYGdefaultZus{}start\PYGdefaultZdq{}}\PYGdefault{o}{:\PYGdefaultZhy{}}\PYGdefault{l+m+mf}{60.000}\PYGdefault{p}{,}
+        \PYGdefault{l+s+s2}{\PYGdefaultZdq{}loudness\PYGdefaultZus{}max\PYGdefaultZus{}time\PYGdefaultZdq{}}\PYGdefault{o}{:}\PYGdefault{l+m+mf}{0.10242}\PYGdefault{p}{,}
+        \PYGdefault{l+s+s2}{\PYGdefaultZdq{}loudness\PYGdefaultZus{}max\PYGdefaultZdq{}}\PYGdefault{o}{:\PYGdefaultZhy{}}\PYGdefault{l+m+mf}{16.511}\PYGdefault{p}{,}\PYGdefault{l+s+s2}{\PYGdefaultZdq{}pitches\PYGdefaultZdq{}}\PYGdefault{o}{:}\PYGdefault{p}{[}\PYGdefault{l+m+mf}{0.370}\PYGdefault{p}{,}
+        \PYGdefault{l+m+mf}{0.067}\PYGdefault{p}{,} \PYGdefault{l+m+mf}{0.055}\PYGdefault{p}{,} \PYGdefault{l+m+mf}{0.073}\PYGdefault{p}{,} \PYGdefault{l+m+mf}{0.108}\PYGdefault{p}{,} \PYGdefault{l+m+mf}{0.082}\PYGdefault{p}{,} \PYGdefault{l+m+mf}{0.123}\PYGdefault{p}{,}
+        \PYGdefault{l+m+mf}{0.180}\PYGdefault{p}{,} \PYGdefault{l+m+mf}{0.327}\PYGdefault{p}{,} \PYGdefault{l+m+mf}{1.000}\PYGdefault{p}{,} \PYGdefault{l+m+mf}{0.178}\PYGdefault{p}{,} \PYGdefault{l+m+mf}{0.234}\PYGdefault{p}{],}
+        \PYGdefault{l+s+s2}{\PYGdefaultZdq{}timbre\PYGdefaultZdq{}}\PYGdefault{o}{:}\PYGdefault{p}{[}\PYGdefault{l+m+mf}{24.736}\PYGdefault{p}{,} \PYGdefault{l+m+mf}{110.034}\PYGdefault{p}{,} \PYGdefault{l+m+mf}{57.822}\PYGdefault{p}{,} \PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mf}{171.580}\PYGdefault{p}{,}
+        \PYGdefault{l+m+mf}{92.572}\PYGdefault{p}{,} \PYGdefault{l+m+mf}{230.158}\PYGdefault{p}{,} \PYGdefault{l+m+mf}{48.856}\PYGdefault{p}{,} \PYGdefault{l+m+mf}{10.804}\PYGdefault{p}{,}
+        \PYGdefault{l+m+mf}{1.371}\PYGdefault{p}{,} \PYGdefault{l+m+mf}{41.446}\PYGdefault{p}{,} \PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mf}{66.896}\PYGdefault{p}{,} \PYGdefault{l+m+mf}{11.207}\PYGdefault{p}{]}
+      \PYGdefault{p}{\PYGdefaultZcb{},}
+      \PYGdefault{p}{...} \PYGdefault{p}{]}
+\PYGdefault{p}{\PYGdefaultZcb{}}
+\end{Verbatim}

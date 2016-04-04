@@ -4,18 +4,18 @@
 \BOOKMARK [1][-]{section.2.1}{Dob\375v\341n\355 znalost\355 z datab\341z\355 \(KDD\)}{chapter.2}% 4
 \BOOKMARK [1][-]{section.2.2}{Metody dataminingu}{chapter.2}% 5
 \BOOKMARK [1][-]{section.2.3}{SOM}{chapter.2}% 6
-\BOOKMARK [1][-]{section*.22}{CRSOM}{chapter.2}% 7
-\BOOKMARK [0][-]{section*.31}{N\341vrh a implementace}{}% 8
-\BOOKMARK [1][-]{section*.32}{SOM}{section*.31}% 9
-\BOOKMARK [1][-]{section*.32}{CRSOM}{section*.31}% 10
-\BOOKMARK [1][-]{section*.35}{Implementace experimentu}{section*.31}% 11
-\BOOKMARK [0][-]{figure.caption.45}{Pou\236it\341 data}{}% 12
-\BOOKMARK [1][-]{section*.46}{\332vod do hudebn\355 problematiky}{figure.caption.45}% 13
-\BOOKMARK [1][-]{section*.46}{MillionSongDataset a The Echo Nest}{figure.caption.45}% 14
-\BOOKMARK [1][-]{section*.46}{Dostupn\351 atributy}{figure.caption.45}% 15
-\BOOKMARK [0][-]{section*.46}{Experimenty}{}% 16
-\BOOKMARK [0][-]{section*.46}{Vyu\236it\355}{}% 17
-\BOOKMARK [0][-]{chapter*.47}{Z\341ver}{}% 18
-\BOOKMARK [0][-]{section*.49}{Literatura}{}% 19
-\BOOKMARK [0][-]{section*.49}{Seznam pou\236it\375ch zkratek}{}% 20
-\BOOKMARK [0][-]{section*.49}{Obsah prilo\236en\351ho CD}{}% 21
+\BOOKMARK [1][-]{section.2.4}{CRSOM}{chapter.2}% 7
+\BOOKMARK [0][-]{chapter.3}{N\341vrh a implementace}{}% 8
+\BOOKMARK [1][-]{section.3.1}{SOM}{chapter.3}% 9
+\BOOKMARK [1][-]{section.3.2}{CRSOM}{chapter.3}% 10
+\BOOKMARK [1][-]{section.3.3}{Implementace experimentu}{chapter.3}% 11
+\BOOKMARK [0][-]{chapter.4}{Pou\236it\341 data}{}% 12
+\BOOKMARK [1][-]{section.4.1}{\332vod do hudebn\355 problematiky}{chapter.4}% 13
+\BOOKMARK [1][-]{section.4.2}{MillionSongDataset a The Echo Nest}{chapter.4}% 14
+\BOOKMARK [1][-]{section.4.3}{Dostupn\351 atributy}{chapter.4}% 15
+\BOOKMARK [0][-]{chapter.5}{Experimenty}{}% 16
+\BOOKMARK [0][-]{chapter.6}{Vyu\236it\355}{}% 17
+\BOOKMARK [0][-]{chapter*.49}{Z\341ver}{}% 18
+\BOOKMARK [0][-]{section*.51}{Literatura}{}% 19
+\BOOKMARK [0][-]{appendix.A}{Seznam pou\236it\375ch zkratek}{}% 20
+\BOOKMARK [0][-]{appendix.B}{Obsah prilo\236en\351ho CD}{}% 21

@@ -9,35 +9,35 @@
 \contentsline {section}{\numberline {2.2}Metody dataminingu}{7}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Metody u\IeC {\v c}en\IeC {\'\i } s u\IeC {\v c}itelem}{8}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Metody u\IeC {\v c}en\IeC {\'\i } bez u\IeC {\v c}itele}{9}{subsection.2.2.2}
-\contentsline {section}{\numberline {2.3}SOM}{9}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Struktura s\IeC {\'\i }t\IeC {\v e}}{9}{subsection.2.3.1}
+\contentsline {section}{\numberline {2.3}SOM}{10}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Struktura s\IeC {\'\i }t\IeC {\v e}}{10}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}U\IeC {\v c}en\IeC {\'\i }}{10}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Vlastnosti}{11}{equation.2.3.2}
-\contentsline {subsection}{\numberline {2.3.4}Vyu\IeC {\v z}it\IeC {\'\i }}{11}{equation.2.3.2}
-\contentsline {section}{\numberline {2.4}CRSOM}{12}{section*.22}
-\contentsline {subsection}{\numberline {2.4.1}Struktura s\IeC {\'\i }t\IeC {\v e}}{12}{section*.22}
-\contentsline {subsection}{\numberline {2.4.2}U\IeC {\v c}en\IeC {\'\i }}{15}{section*.29}
-\contentsline {subsection}{\numberline {2.4.3}Srovn\IeC {\'a}n\IeC {\'\i } se SOM }{16}{section*.29}
-\contentsline {subsection}{\numberline {2.4.4}Vlastnosti a vyu\IeC {\v z}it\IeC {\'\i }}{17}{section*.31}
-\contentsline {chapter}{\chapternumberline {3}N\IeC {\'a}vrh a implementace}{19}{section*.31}
-\contentsline {section}{\numberline {3.1}SOM}{19}{section*.32}
-\contentsline {subsection}{\numberline {3.1.1}Matlab}{19}{section*.32}
-\contentsline {section}{\numberline {3.2}CRSOM}{19}{section*.32}
-\contentsline {subsection}{\numberline {3.2.1}Make it work}{19}{section*.32}
-\contentsline {subsection}{\numberline {3.2.2}Make it right and make it fast}{20}{section*.32}
-\contentsline {subsection}{\numberline {3.2.3}Kone\IeC {\v c}n\IeC {\'y} design}{20}{section*.35}
-\contentsline {section}{\numberline {3.3}Implementace experiment\IeC {\r u}}{20}{section*.35}
-\contentsline {subsection}{\numberline {3.3.1}Tvorba dataset\IeC {\r u}}{21}{section*.35}
-\contentsline {subsection}{\numberline {3.3.2}Framework na experimenty}{22}{section*.38}
-\contentsline {chapter}{\chapternumberline {4}Pou\IeC {\v z}it\IeC {\'a} data}{25}{figure.caption.45}
-\contentsline {section}{\numberline {4.1}\IeC {\'U}vod do hudebn\IeC {\'\i } problematiky}{25}{section*.46}
-\contentsline {section}{\numberline {4.2}MillionSongDataset a The Echo Nest}{25}{section*.46}
-\contentsline {section}{\numberline {4.3}Dostupn\IeC {\'e} atributy}{25}{section*.46}
-\contentsline {subsection}{\numberline {4.3.1}N\IeC {\'a}stroj Analyze}{25}{section*.46}
-\contentsline {subsection}{\numberline {4.3.2}Dal\IeC {\v s}\IeC {\'\i } atributy}{26}{section*.46}
-\contentsline {chapter}{\chapternumberline {5}Experimenty}{27}{section*.46}
-\contentsline {chapter}{\chapternumberline {6}Vyu\IeC {\v z}it\IeC {\'\i }}{29}{section*.46}
-\contentsline {chapter}{Z{\' a}v{\v e}r}{31}{chapter*.47}
-\contentsline {chapter}{Literatura}{33}{section*.49}
-\contentsline {appendix}{\chapternumberline {A}Seznam pou\IeC {\v z}it\IeC {\'y}ch zkratek}{35}{section*.49}
-\contentsline {appendix}{\chapternumberline {B}Obsah p\IeC {\v r}ilo\IeC {\v z}en\IeC {\'e}ho CD}{37}{section*.49}
+\contentsline {subsection}{\numberline {2.3.3}Vlastnosti}{11}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Vyu\IeC {\v z}it\IeC {\'\i }}{11}{subsection.2.3.4}
+\contentsline {section}{\numberline {2.4}CRSOM}{12}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Struktura s\IeC {\'\i }t\IeC {\v e}}{14}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}U\IeC {\v c}en\IeC {\'\i }}{17}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Srovn\IeC {\'a}n\IeC {\'\i } se SOM }{18}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.4}Vlastnosti a vyu\IeC {\v z}it\IeC {\'\i }}{19}{subsection.2.4.4}
+\contentsline {chapter}{\chapternumberline {3}N\IeC {\'a}vrh a implementace}{21}{chapter.3}
+\contentsline {section}{\numberline {3.1}SOM}{21}{section.3.1}
+\contentsline {section}{\numberline {3.2}CRSOM}{22}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Make it work}{22}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Make it right and make it fast}{22}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Kone\IeC {\v c}n\IeC {\'y} design}{23}{subsection.3.2.3}
+\contentsline {subsubsection}{\numberline {3.2.3.1}Publikov\IeC {\'a}n\IeC {\'\i } s\IeC {\'\i }t\IeC {\v e}}{23}{subsubsection.3.2.3.1}
+\contentsline {section}{\numberline {3.3}Implementace experiment\IeC {\r u}}{23}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Tvorba dataset\IeC {\r u}}{24}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Framework na experimenty}{25}{subsection.3.3.2}
+\contentsline {chapter}{\chapternumberline {4}Pou\IeC {\v z}it\IeC {\'a} data}{29}{chapter.4}
+\contentsline {section}{\numberline {4.1}\IeC {\'U}vod do hudebn\IeC {\'\i } problematiky}{29}{section.4.1}
+\contentsline {section}{\numberline {4.2}MillionSongDataset a The Echo Nest}{29}{section.4.2}
+\contentsline {section}{\numberline {4.3}Dostupn\IeC {\'e} atributy}{30}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}N\IeC {\'a}stroj Analyze}{30}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Dal\IeC {\v s}\IeC {\'\i } atributy}{30}{subsection.4.3.2}
+\contentsline {chapter}{\chapternumberline {5}Experimenty}{33}{chapter.5}
+\contentsline {chapter}{\chapternumberline {6}Vyu\IeC {\v z}it\IeC {\'\i }}{35}{chapter.6}
+\contentsline {chapter}{Z{\' a}v{\v e}r}{37}{chapter*.49}
+\contentsline {chapter}{Literatura}{39}{section*.51}
+\contentsline {appendix}{\chapternumberline {A}Seznam pou\IeC {\v z}it\IeC {\'y}ch zkratek}{41}{appendix.A}
+\contentsline {appendix}{\chapternumberline {B}Obsah p\IeC {\v r}ilo\IeC {\v z}en\IeC {\'e}ho CD}{43}{appendix.B}
