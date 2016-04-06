@@ -30,6 +30,16 @@ Intro ..
 \bibitem{eurokomise}
 Eurokomise. \url{http://euromise.vse.cz/kdd/index.php}, accessed: 2010-09-30.
 
+\bibitem{k-means-nphard}
+HARTONO.
+  \url{chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/http://www.imsc.res.in/~meena/papers/kmeans.pdf},
+  accessed: 2010-09-30.
+
+\bibitem{k-means-algo}
+HARTONO.
+  \url{https://www.coursera.org/learn/machine-learning/lecture/93VPG/k-means-algorithm},
+  accessed: 2010-09-30.
+
 \bibitem{junkie}
 junkie. \url{http://www.ai-junkie.com/ann/som/som1.html}, accessed: 2010-09-30.
 
@@ -59,9 +69,24 @@ Make It Work Make It Right Make It Fast.
   \url{http://c2.com/cgi/wiki?MakeItWorkMakeItRightMakeItFast}, accessed:
   2010-09-30.
 
+\bibitem{vector}
+HARTONO.
+  \url{http://www.mathworks.com/help/matlab/matlab_prog/vectorization.html},
+  accessed: 2010-09-30.
+
+\bibitem{preallocate}
+HARTONO.
+  \url{http://www.mathworks.com/help/matlab/matlab_prog/preallocating-arrays.html},
+  accessed: 2010-09-30.
+
 \bibitem{metacentrum}
 Metacentrum. \url{https://wiki.metacentrum.cz/wiki/Main_Pagel}, accessed:
   2010-09-30.
+
+\bibitem{zvuk-ency}
+Metacentrum.
+  \url{http://fyzika.jreichl.com/main.article/view/152-zvukove-vlneni},
+  accessed: 2010-09-30.
 
 \bibitem{analyze}
 Analyze documentation.

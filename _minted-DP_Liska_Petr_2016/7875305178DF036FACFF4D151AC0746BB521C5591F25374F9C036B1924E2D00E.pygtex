@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{n}{delta\PYGdefaultZus{}h} \PYGdefault{p}{=} \PYGdefault{n+nb}{zeros}\PYGdefault{p}{(}\PYGdefault{n}{NEURONS}\PYGdefault{p}{,}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{);}
+\PYGdefault{k}{for} \PYGdefault{n+nb}{i} \PYGdefault{p}{=} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{:}\PYGdefault{n}{NEURONS}
+    \PYGdefault{n}{s} \PYGdefault{p}{=} \PYGdefault{n}{sum}\PYGdefault{p}{(}\PYGdefault{n}{delta\PYGdefaultZus{}k}\PYGdefault{o}{.*} \PYGdefault{n}{cn}\PYGdefault{p}{.}\PYGdefault{n}{IW}\PYGdefault{p}{\PYGdefaultZob{}}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{\PYGdefaultZcb{}(}\PYGdefault{n+nb}{i}\PYGdefault{p}{));}
+    \PYGdefault{n}{delta\PYGdefaultZus{}h}\PYGdefault{p}{(}\PYGdefault{n+nb}{i}\PYGdefault{p}{)} \PYGdefault{p}{=}  \PYGdefault{n}{first\PYGdefaultZus{}part}\PYGdefault{p}{(}\PYGdefault{n+nb}{i}\PYGdefault{p}{)} \PYGdefault{o}{*} \PYGdefault{n}{s}\PYGdefault{p}{;}
+\PYGdefault{k}{end}
+\end{Verbatim}

@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{n}{s} \PYGdefault{p}{=} \PYGdefault{n}{sum}\PYGdefault{p}{((}\PYGdefault{n+nb}{repmat}\PYGdefault{p}{(}\PYGdefault{n}{delta\PYGdefaultZus{}k}\PYGdefault{o}{\PYGdefaultZsq{}}\PYGdefault{p}{,} \PYGdefault{n}{NEURONS}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1}\PYGdefault{p}{)}\PYGdefault{o}{.*}\PYGdefault{p}{(}\PYGdefault{n}{cn}\PYGdefault{p}{.}\PYGdefault{n}{IW}\PYGdefault{p}{\PYGdefaultZob{}}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{\PYGdefaultZcb{}}\PYGdefault{l+s}{\PYGdefaultZsq{}))\PYGdefaultZsq{}}\PYGdefault{p}{)}\PYGdefault{o}{\PYGdefaultZsq{}}\PYGdefault{p}{;}
+\PYGdefault{n}{delta\PYGdefaultZus{}h} \PYGdefault{p}{=} \PYGdefault{n}{first\PYGdefaultZus{}part} \PYGdefault{o}{.*} \PYGdefault{n}{s}\PYGdefault{p}{;}
+\end{Verbatim}

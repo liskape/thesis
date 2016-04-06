@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+         \PYGdefault{n}{t} \PYGdefault{p}{=} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{:.}\PYGdefault{l+m+mi}{01}\PYGdefault{p}{:}\PYGdefault{l+m+mi}{10}\PYGdefault{p}{;}
+        \PYGdefault{n}{y} \PYGdefault{p}{=} \PYGdefault{n+nb}{sin}\PYGdefault{p}{(}\PYGdefault{n}{t}\PYGdefault{p}{);}
+\end{Verbatim}

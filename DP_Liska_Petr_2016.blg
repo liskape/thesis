@@ -3,7 +3,6 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: DP_Liska_Petr_2016.aux
 The style file: csn690.bst
 Database file #1: mybibliographyfile.bib
-Warning--I didn't find a database entry for "svgspec"
 Warning--I didn't find a database entry for "needed"
 Warning--I didn't find a database entry for "ruby_performance"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
@@ -12,6 +11,8 @@ Warning--to sort, need author or key in kddb
 Warning--to sort, need author or key in hbcap
 Warning--to sort, need author or key in g_in_g_out
 Warning--to sort, need author or key in eurokomise
+Warning--to sort, need author or key in k-means-nphard
+Warning--to sort, need author or key in k-means-algo
 Warning--to sort, need author or key in junkie
 Warning--to sort, need author or key in som_dim_red
 Warning--to sort, need author or key in som_clustering
@@ -19,47 +20,50 @@ Warning--to sort, need author or key in visual
 Warning--to sort, need author or key in hartono14
 Warning--to sort, need author or key in lms
 Warning--to sort, need author or key in makeit
+Warning--to sort, need author or key in vector
+Warning--to sort, need author or key in preallocate
 Warning--to sort, need author or key in metacentrum
+Warning--to sort, need author or key in zvuk-ency
 Warning--to sort, need author or key in analyze
-You've used 14 entries,
+You've used 19 entries,
             3151 wiz_defined-function locations,
-            689 strings with 6696 characters,
-and the built_in function-call counts, 3466 in all, are:
-= -- 252
-> -- 14
+            698 strings with 7152 characters,
+and the built_in function-call counts, 4691 in all, are:
+= -- 342
+> -- 19
 < -- 0
-+ -- 14
++ -- 19
 - -- 0
-* -- 128
-:= -- 263
-add.period$ -- 28
-call.type$ -- 14
-change.case$ -- 42
+* -- 173
+:= -- 353
+add.period$ -- 38
+call.type$ -- 19
+change.case$ -- 57
 chr.to.int$ -- 0
-cite$ -- 28
-duplicate$ -- 378
-empty$ -- 449
+cite$ -- 38
+duplicate$ -- 513
+empty$ -- 609
 format.name$ -- 0
-if$ -- 813
+if$ -- 1103
 int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 84
-newline$ -- 52
+int.to.str$ -- 19
+missing$ -- 114
+newline$ -- 67
 num.names$ -- 0
-pop$ -- 280
+pop$ -- 380
 preamble$ -- 1
-purify$ -- 28
+purify$ -- 38
 quote$ -- 0
-skip$ -- 153
+skip$ -- 208
 stack$ -- 0
-substring$ -- 98
-swap$ -- 140
+substring$ -- 133
+swap$ -- 190
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 56
-warning$ -- 14
+type$ -- 76
+warning$ -- 19
 while$ -- 0
-width$ -- 16
-write$ -- 107
-(There were 17 warnings)
+width$ -- 21
+write$ -- 142
+(There were 21 warnings)

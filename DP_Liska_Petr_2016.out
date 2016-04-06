@@ -1,21 +1,29 @@
 \BOOKMARK [0][-]{chapter*.5}{\332vod}{}% 1
-\BOOKMARK [0][-]{chapter.1}{C\355l pr\341ce}{}% 2
-\BOOKMARK [0][-]{chapter.2}{Pou\236it\351 metody}{}% 3
-\BOOKMARK [1][-]{section.2.1}{Dob\375v\341n\355 znalost\355 z datab\341z\355 \(KDD\)}{chapter.2}% 4
-\BOOKMARK [1][-]{section.2.2}{Metody dataminingu}{chapter.2}% 5
-\BOOKMARK [1][-]{section.2.3}{SOM}{chapter.2}% 6
-\BOOKMARK [1][-]{section.2.4}{CRSOM}{chapter.2}% 7
-\BOOKMARK [0][-]{chapter.3}{N\341vrh a implementace}{}% 8
-\BOOKMARK [1][-]{section.3.1}{SOM}{chapter.3}% 9
-\BOOKMARK [1][-]{section.3.2}{CRSOM}{chapter.3}% 10
-\BOOKMARK [1][-]{section.3.3}{Implementace experimentu}{chapter.3}% 11
-\BOOKMARK [0][-]{chapter.4}{Pou\236it\341 data}{}% 12
-\BOOKMARK [1][-]{section.4.1}{\332vod do hudebn\355 problematiky}{chapter.4}% 13
-\BOOKMARK [1][-]{section.4.2}{MillionSongDataset a The Echo Nest}{chapter.4}% 14
-\BOOKMARK [1][-]{section.4.3}{Dostupn\351 atributy}{chapter.4}% 15
-\BOOKMARK [0][-]{chapter.5}{Experimenty}{}% 16
-\BOOKMARK [0][-]{chapter.6}{Vyu\236it\355}{}% 17
-\BOOKMARK [0][-]{chapter*.49}{Z\341ver}{}% 18
-\BOOKMARK [0][-]{section*.51}{Literatura}{}% 19
-\BOOKMARK [0][-]{appendix.A}{Seznam pou\236it\375ch zkratek}{}% 20
-\BOOKMARK [0][-]{appendix.B}{Obsah prilo\236en\351ho CD}{}% 21
+\BOOKMARK [1][-]{section*.6}{C\355l pr\341ce}{chapter*.5}% 2
+\BOOKMARK [0][-]{chapter.1}{Pou\236it\351 metody}{}% 3
+\BOOKMARK [1][-]{section.1.1}{Dob\375v\341n\355 znalost\355 z datab\341z\355 \(KDD\)}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.2}{Metody dataminingu}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.3}{SOM}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.4}{CRSOM}{chapter.1}% 7
+\BOOKMARK [0][-]{chapter.2}{N\341vrh a implementace}{}% 8
+\BOOKMARK [1][-]{section.2.1}{SOM}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.2}{CRSOM}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.3}{Implementace experimentu}{chapter.2}% 11
+\BOOKMARK [0][-]{chapter.3}{Pou\236it\341 data a predzpracov\341n\355}{}% 12
+\BOOKMARK [1][-]{section.3.1}{\332vod do hudebn\355 problematiky}{chapter.3}% 13
+\BOOKMARK [1][-]{section.3.2}{MillionSongDataset a The Echo Nest}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.3}{Dostupn\351 atributy}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.4}{V\375ber dat a predzpracov\341n\355}{chapter.3}% 16
+\BOOKMARK [0][-]{chapter.4}{Experimenty}{}% 17
+\BOOKMARK [1][-]{section.4.1}{Citlivost CRSOM / vliv nastaven\355 / normalizace / fenom\351ny}{chapter.4}% 18
+\BOOKMARK [1][-]{section.4.2}{Jednoduch\351 datasety}{chapter.4}% 19
+\BOOKMARK [1][-]{section.4.3}{Slo\236it\351 datasety}{chapter.4}% 20
+\BOOKMARK [1][-]{section.4.4}{Velk\375 dataset}{chapter.4}% 21
+\BOOKMARK [1][-]{section.4.5}{Zhodnocen\355 experimentu}{chapter.4}% 22
+\BOOKMARK [0][-]{chapter.5}{Vyu\236it\355}{}% 23
+\BOOKMARK [0][-]{chapter*.51}{Z\341ver}{}% 24
+\BOOKMARK [1][-]{section*.52}{Pr\355nosy}{chapter*.51}% 25
+\BOOKMARK [1][-]{section*.53}{Mo\236n\341 roz\235\355ren\355}{chapter*.51}% 26
+\BOOKMARK [0][-]{section*.55}{Literatura}{}% 27
+\BOOKMARK [0][-]{appendix.A}{Seznam pou\236it\375ch zkratek}{}% 28
+\BOOKMARK [0][-]{appendix.B}{Obsah prilo\236en\351ho CD}{}% 29

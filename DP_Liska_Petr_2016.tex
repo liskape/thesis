@@ -17,9 +17,10 @@
 % \usepackage{amssymb} %additional math symbols
 
 
+\usepackage{parcolumns}
 \usepackage{caption}
 \usepackage{subcaption}
-
+\usepackage{listings}
 \usepackage{minted}
 
 \usepackage{dirtree} %directory tree visualisation
@@ -58,9 +59,9 @@
 
 \begin{introduction}
 	%sem napište úvod Vaší práce
+	
+	\section{Cíl práce}
 \end{introduction}
-
-\chapter{Cíl práce}
 
 % POUŽITÉ METODY -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Použité metody}
@@ -171,7 +172,7 @@ MLP se uplatňují při řešení problémů jako je rozpoznávání obrazu a ř
 
 \begin{figure}[htbp]
 \begin{center}
-	\includegraphics[scale=0.6]{mlp.jpeg}
+	\includegraphics[scale=0.4]{mlp.jpeg}
 \caption{Architektura MLP s jednou skrytou vrstvou}
 \label{fig:mlp}
 \end{center}
@@ -184,7 +185,17 @@ MLP se uplatňují při řešení problémů jako je rozpoznávání obrazu a ř
   \subsubsection*{Hierarchical clustering}
   ENH
   \subsubsection*{K-means}
- TODO
+
+K-means je oblíbený algoritmus shlukové analýzy, kde počet shluků je předem určen parametrem $k$. Těchto $k$ shluků je definováno svými \textit{centroidy}, což jsou body ve stejném prostoru, jako vstupní vektory. Vstupní vektor náleží centroidu, kterému je nejblíže podle např. euklidovské vzdálenosti. Nalezení centroidů s optimálním shlukováním (minimální průměry shluků) je NP-tězký problém\cite{k-means-nphard}, proto se  používá následující heuristika\cite{k-means-algo}:
+
+\begin{enumerate}
+\item Náhodně vybereme $k$ centroidů,
+\item  vstupní vektory přiřadíme nejbližším centroidům, čímž vznikne $k$ shluků,
+\item těžiště každého shluku představuje centroid pro novou iteraci,
+\item kroky 2-3 se stále opakují, dokud nedojde k ustálení.
+\end{enumerate}
+
+
 \section{SOM}
 Self organizing map (SOM), samoorganizující mapa, je umělá neuronová síť navržena Teuvo Kohonenem v 80. letech minulého století. Narozdíl od MLP se SOM skládá z jedné vrstvy speciálně uspořádaných neuronů. Dalším rozdílem je, že se učí bez učitele a to pomocí tzv. \textit{kompetitivní učení}.\cite{junkie}
 
@@ -254,7 +265,7 @@ Naopak pro sítě s počtem neuronů srovnatelným s počtem vstupních dat, SOM
 
 Jelikož se vlastnosti samoorganizujících map různí podle počtu použitých neuronů, využití se liší taktéž podle tohoto parametru.
 
-SOM s malým počtem neuronů je možné využít tam, kde je možné použít K-means. \dots výhody, nevýhody, rozdíly
+SOM s malým počtem neuronů je možné využít tam, kde je možné použít K-means. (\dots TODO: výhody, nevýhody, rozdíly)
 
 
 Naopak samoorganizující mapy s velkým\footnote{Velký počet v tomto smyslu představuje řádově srovnatelný s počtem vstupních vektorů.} počtem neuronů se používají převážně jako nástroj pro redukci dimenzionality.  Toho lze využít v transformaci dat při procesu KDD (\ref{subsec:transformace}), podobně, jako ostatní metody s tímto účelem\cite{som_dim_red}. Kterýkoliv vektor ze vstupního prostoru je namapován na pozici v mřížce -- ta je určena pozicí neuronu, který se aktivuje pro příslušný vstupní vektor, jinými slovy je pro něj BMU.
@@ -624,15 +635,75 @@ Pomocí těchto přístupů se podařilo naimplementovat CRSOM, která dávala s
 
 První verze sítě byla sice funkční, trpěla ale několika prohřešky jak z výkonového hlediska, tak z designového. Ještě před jakýmikoliv úpravami bylo nutné vytvořit sadu regresních testů, které budou zajišťovat stálou správnost sítě. Toho bylo docíleno odebráním všech nedeterministických nastavení a uložení stavu sítě po několika epochách učení \textit{(expected net)} pro daný testovací dataset.  Regresní testování upravené sítě pak spočívalo ve spuštění učení se stejným nastavením a pro stejný dataset jako pro síť \textit{expected net}. Za předpokladu deterministického učení, naučená síť musí mít stejné hodnoty prototypových vektorů jako \textit{expected net}.
 
-Výkon sítě se měřil pomocí učení na datasetu, který byl výrazně větší, než dataset určený pro testování. K určení problémových míst implemetace, z hlediska výkonu, byl výhradně používán Matlab profiler\footnote{http://www.mathworks.com/help/matlab/matlab\_prog/profiling-for-improving-performance.html}, který je vestavěný do IDE. Zlepšování sítě bylo provádělo iteračně, postupné pokroky jsou zaneseny do tabulky (TODO:změřit a zobrazit). Od první naivní implementace se učení zrychlilo více než $15$x.  Nejvýraznější pokroky ve výkonu byly dosaženy následujícími upravami:
+Výkon sítě se měřil pomocí učení na datasetu, který byl výrazně větší, než dataset určený pro testování. K určení problémových míst implemetace, z hlediska výkonu, byl výhradně používán Matlab profiler\footnote{http://www.mathworks.com/help/matlab/matlab\_prog/profiling-for-improving-performance.html}, který je vestavěný do IDE. Zlepšování sítě bylo provádělo iteračně, od první naivní implementace se učení zrychlilo více než $15$x, výsledky a měření samotné je popsáno v \ref{measure}. Nejvýraznější pokroky ve výkonu byly dosaženy následujícími upravami:
+
+
+
+
+
+\subsubsection*{Vektorizace}
+Matlab je optimalizován pro práci s vektory a maticemi, tím pádem kód, který je \textit{vektorizovaný}(ukázka \ref{vector-code}) je mnohem rychlejší\cite{vector}, než ten vyvořený pomocí \textit{smyček}(ukázka \ref{for-code}).
+
+
+\begin{listing}
+\begin{minted}[linenos=true,bgcolor=bg]{matlab}
+delta_h = zeros(NEURONS,1);
+for i = 1:NEURONS
+    s = sum(delta_k.* cn.IW{1}(i));
+    delta_h(i) =  first_part(i) * s;
+end
+\end{minted} 
+\caption{Kód zapsaný pomocí for smyčky.} 
+\label{for-code}
+\end{listing}
+
+\begin{listing}
+\begin{minted}[linenos=true,bgcolor=bg]{matlab}
+s = sum((repmat(delta_k', NEURONS, 1).*(cn.IW{1}'))')';
+delta_h = first_part .* s;
+\end{minted} 
+\caption{Vektorizovaný kód.} 
+\label{vector-code}
+\end{listing}
+
+
+
+
+
+
+
+\subsubsection*{Prealokace}
+Pokud je předem známá velikost požadované matice, je vždy rychlejší naalokovat celkový kus paměti dopředu, než požadovanou iterativně navyšovat\cite{preallocate}.
+
+
 
 
 \subsubsection*{Funkce adapt}
-TODO
-\subsubsection*{Maticové počítání}
-TODO
-\subsubsection*{Prealokace}
-TODO
+První verze používaly oddělenou kontextovou síť vytvořenou pomocí funkce \texttt{network}. Tato síť se pak doučovala pomocí funkce \texttt{adapt}. Tento přístup však není vhodný pro cyklické opakování, zejména kvůli znovuvytváření všech obecných struktur s informacemi o učení. Pozdější verze sítě již tento přístup vůbec nevyužívaly.
+
+
+\subsubsection{Měření výkonu}\label{measure}
+\ref{my-measure}
+dataset
+tic-toc
+stroj
+kolikrát
+
+\begin{table}[]
+\centering
+\caption{Délka učení pro různé verze implementace}
+\label{my-measurel}
+    \begin{tabular}{|l|c|c|}
+        \hline
+        Verze                         & \multicolumn{1}{l|}{průměrný čas} & \multicolumn{1}{l|}{odchylka} \\ \hline
+        bench0                        & 10000s                                           & 10s                                    \\ \hline
+        bench2                        & 10000s                                           & 10s                                    \\ \hline
+        bench3                        & 10000s                                          & 10s                                    \\ \hline
+        \textbf{bench4}               & \textbf{2087s}                                    & \textbf{15s}                           \\ \hline
+    \end{tabular}
+\end{table}
+
+
 \subsection{Konečný design}
 TODO
 
@@ -720,12 +791,20 @@ Kromě logů jsou do souborového systému v MetaCentru ukládany také další 
 
 
 % -------------------------------------- POUŽITÁ DATA ---------------------------------------------------------------------------------------------------------------------------------------------------------------
-\chapter{Použitá data}
+\chapter{Použitá data a předzpracování}
 \section{Úvod do hudební problematiky}
-TODO: Timbre and  pitch, akustika
+Zvuk je mechanické vlnění v látkovém prostředí, které je schopno vyvolat sluchový vjem. Zvuky můžeme rozdělit na \textit{tóny} a \textit{hluky}. Tóny bývají označovány jako zvuky hudební, hluky jako zvuky nehudební. Tóny vznikají při pravidelném, v čase přibližně periodicky probíhajícím pohybu -- kmitání. Při jejich poslechu vzniká v uchu vjem zvuku určité výšky, proto se tónů využívá v hudbě. Tóny se dále dělí na \textit{jednoduché} -- určené jednou sinusoidou(základní) a \textit{složené} -- obsahují kromě frekvence základní navíc i tzv. vyšší harmonické. Nejdůležitějšími vlastnostmi tónu jsou: \textit{pitch(výška)}, \textit{síla(hlasitost, loudness)} a \textit{timbre(barva tónu)}.
+
+Výška tónu je dána především frekvencí. Rozeznáváme sedm základních tónů a pět půltónů označené C, C\#, D, D\#, E, F, F\#, G, G\#, A, A\#, B, kde každý z nich představuje určitou frekvenci.
+
+Hlasitost tónu je subjektivní veličina, která se měří v jednotce \texttt{bel[B]}.
+
+Barva tónu je vlastnost, která umožňuje sluchem rozlišit dva složené tóny, které mohou mít stejnou absolutní výšku a které jsou vydávány dvěma různými zdroji zvuku. Je určena nejen počtem vyšších harmonických tónů obsažených ve složeném tónu, ale také jejich amplitudami. \cite{zvuk-ency}
+ 
+
 
 % https://www.youtube.com/watch?v=mE1ZwLTZ1Bw
-
+%http://www.wikiskripta.eu/index.php/V%C3%BD%C5%A1ka_t%C3%B3nu
 
 \section{MillionSongDataset a The Echo Nest}
 MillionSongDataset je volně dostupná kolekce hudebních atributů a metadat pro více než milion skladeb populární hudby. Tento dataset je vytvořený za účelem podpory výzkumu v oblastech algoritmů pro hudební data, MIR\footnote{Music information retrieval} a další. MillionSongDataset byl vytvořen společností The Echo Nest, která se zabývá hudební analýzou, porozuměním hudebního obsahu a vztahem hudby a posluchači. MillionSongDataset slouží jako zkratka k hudebním datům, které jinak The Echo Nest poskytuje prostřednictvím svého webového API.
@@ -738,7 +817,7 @@ MillionSongDataset je volně dostupná kolekce hudebních atributů a metadat pr
 Analyze je nástroj pro analýzu hudebních dat, který používá společnost The Echo Nest. 
 Tento nástroj je volně dostupný prostřednictvím webového API. Vstupem programu je digitální audio soubor (např.:  mp3, m4a, wav, mpeg, flv), který je programem analyzován. Výstupní informace programu jsou poskytuty JSON souborem (\ref{json-example}), který popisuje strukturu nahrávky a hudební obsah včetně rytmu, výšek a tónů. Program využívá techniniky pro simulování fyzického a kognitivního vnímání hudby člověkem. Konkrétní fungování programu je ale proprietární. 
 
- Pro účely této práce je nejdůležitější analýza s názvem “segments”. Jeden segment představuje množinu zvukových entit, které jsou relativně neměnné v hudebních atributech. Segmenty jsou charakterizovány začátkem a trváním v sekundách, hlasitostí a popisem výšek a tónů.
+ Pro účely této práce je nejdůležitější analýza s názvem "segments”. Jeden segment představuje množinu zvukových entit, které jsou relativně neměnné v hudebních atributech. Segmenty jsou charakterizovány začátkem a trváním v sekundách, hlasitostí a popisem výšek a tónů:
 
 
 
@@ -794,30 +873,105 @@ Tento nástroj je volně dostupný prostřednictvím webového API. Vstupem prog
 \label{json-example}
 \end{listing}
 
-
-
 \begin{description}
-\item[loudness] TODO
-\item[pitches]  TODO
-\item[timbre] Nástroj Analyze popisuje timbre jako 12-dimezionální vektor. Pro účely této práce je důležité, že takové vektory jsou vhodné na porovnávání mezi sebou. Toto tvrzení a další informace o způsobu získávání vektorů, které je mimo rámec této práce, jsou k naleznutí v oficiální dokumentaci nástroje \cite{analyze}.
-\item[confidence] desetinné číslo mezi 0 a 1, které symbolizuje jistotu analyzátoru pro konkrétní atribut. Z důvodu zjednodušení nebude v této práci tento atribut vůbec uvažován.
+\item[loudness]
+
+je reprezentována celkem třemi údaji: \textit{loudness\_start}, \textit{loudness\_max} a \textit{loudness\_max\_time}, které popořadě reprezentují: relativní hlasitost na začátku segmentu, maximální relativní hlasitost v segmentu a čas, který specifikuje nejhlasitější místo v segmentu,
+ 
+\item[pitches] je 12-dimenzionální vektor, kde každá dimenze představuje dominanci hudebního tónu v segmentu. Hudební tóny jsou popořadě: C, C\#, D, D\#, E, F, F\#, G, G\#, A, A\#, B,
+
+\item[timbre] je 12-dimezionální vektor reprezentující jeden segment z hlediska barev tónů. Pro účely této práce je důležité, že takové vektory jsou vhodné na porovnávání mezi sebou. Toto tvrzení a další informace o způsobu získávání vektorů, které je mimo rámec této práce, jsou k naleznutí v oficiální dokumentaci nástroje \cite{analyze},
+
+\item[confidence] je číslo mezi 0 a 1, které symbolizuje jistotu analyzátoru pro konkrétní segment. Z důvodu zjednodušení nebude v této práci vůbec uvažován.
 \end{description}
 
 \subsection{Další atributy}
 Mimo akustické atributy, které je možné získat z nástroje Analyze, The Echo Nest poskytuje velké množství dalších prostřednictví svého webového API.
 
-Poskytované atributy je možné rozdělit do tří kategorií. První kategorie jsou metadata. Do této kategorie patří například název skladby, jméno autora nebo rok vzniku. Další kategorií jsou atributy tzv.: socilání. Do sociálních atributů jsou zařazeny míry oblíbenosti, známosti apod. Poslední kategorií jsou algoritmicky získané atributy, které popisují sladbu jako celek. Příkladem takových atributů jsou danceability (míra vhodnosti skladby pro tancování) a valence (míra pozitivní energie, kterou skladba vyzařuje). Vyčerpávající popis dostupných atributů je k nalezení: (\dots TODO -- příloha nebo odkazy)
+Poskytované atributy je možné rozdělit do tří kategorií. První kategorie jsou metadata. Do této kategorie patří například název skladby, jméno autora nebo rok vzniku. Další kategorií jsou atributy tzv.: socilání. Do sociálních atributů jsou zařazeny míry oblíbenosti, známosti apod. Poslední kategorií jsou algoritmicky získané atributy, které popisují sladbu jako celek. Příkladem takových atributů jsou danceability (míra vhodnosti skladby pro tancování) a valence (míra pozitivní energie, kterou skladba vyzařuje).\footnote{Vyčerpávající popis dostupných atributů je k nalezení na adrese: http://developer.echonest.com/docs/v4/song.html}
+
+\section{Výběr dat a předzpracování}
+Jak ilustrují předchozí sekce, možnosti výběru dat a způsobů předzpracování jsou rozsáhlé. Nicméně z důvodu jednoduchosti byly zvoleny pouze timbre vektory, které mají ambice reprezentovat hudení znaky skladby. Při zvolení čistě akustického atributu se také předejde vytváření něchtěných závislostí mezi daty a zvolenou sémantikou. Každá skladba je reprezentována rozdílným počtem segmentů a tím pádém také rozdílným počtem timbre vektorů. Pro získání konečných atributů byla použita kovarianční matice a průměrný vektor, stejně tak jako \textit{YearPredictionMSD datasetu}\footnote{Dostupný na https://archive.ics.uci.edu/ml/datasets/YearPredictionMSD.}. Tímto přístupem je možné pro každou skladbu získat $90$ atributů.
+
+
+
 
 
 % -------------------------------------- Experimenty ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Experimenty}
+\section{Citlivost CRSOM / vliv nastavení / normalizace / fenomény}
+
+Hartonem ukázána citlivost na LR. 
+
+Představení datasetu na kterém se bude zkoušet. 
+
+  \begin{minipage}{\textwidth}
+  
+    \begin{minipage}[b]{0.39\textwidth}
+    \centering
+    \begin{tabular}{cc}\hline
+      Třída & \#záznamů \\ \hline
+        Katy Perry & 90 \\ \hline
+        Ramones & 100 \\ \hline
+
+      \end{tabular}
+      \captionof{table}{A table beside a figure}
+    \end{minipage}
+    \hfill
+  \begin{minipage}[b]{0.59\textwidth}
+    \centering
+    \includegraphics[scale=0.6]{trained_som_exampl}
+   \captionof{figure}{A table beside a figure}
+  \end{minipage}
+
+  \end{minipage}
+
+
+
+
+
+\subsection{Normalizace}
+(Transformace)
+SOM
++
+
+
+\section{Jednoduché datasety}
+
+\subsection{David Bowie, Elvis Presley a AC/DC}
+% db_stones_acdc_ep=1000_norm=4_size=1.00_LR2=0.10_.mat
+
+\subsection{Metallica, Maddona a Louis Armstrong}
+
+%met_mad_la_ep=2500_norm=4_size=1.00_LR2=0.05_.mat
+
+\subsection{Offspring a Sex Pistols}
+% off-sexp_ep=2500_norm=4_size=1.00_LR2=0.10_.mat
+
+\section{Složité datasety}
+
+\subsection{Historie uživatele}
+
+\subsection{Rok 1960 a 1970}
+
+\section{Velký dataset}
+
+\section{Zhodnocení experimentů}
+- síla atributů, předzpracování a metod
+- Výpočetní náročnost
+
 
 
 % -------------------------------------- Využití ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Využití}
 
 \begin{conclusion}
-	%sem napište závěr Vaší práce
+	co se všechno udělalo v této práci (mělo by sedět s cílem)
+	+ nějaké další návrhy
+	
+	\section{Přínosy}
+	
+	\section{Možná rozšíření}
 \end{conclusion}
 
 \bibliographystyle{csn690}
