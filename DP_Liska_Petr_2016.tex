@@ -899,46 +899,132 @@ Jak ilustrují předchozí sekce, možnosti výběru dat a způsobů předzpraco
 
 % -------------------------------------- Experimenty ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Experimenty}
-\section{Citlivost CRSOM / vliv nastavení / normalizace / fenomény}
+\section{Protokol}
 
-Hartonem ukázána citlivost na LR. 
+V rámci této práce se konkrétní protokoly experimentů mohou lišit v rozdílných částech. V této sekci je uveden abstraktní protokol, který definuje nutné části a společná nastavení pro všechny experimenty.
 
-Představení datasetu na kterém se bude zkoušet. 
+\subsubsection*{Cíl experimentu}
 
-  \begin{minipage}{\textwidth}
+\subsubsection*{Dataset}
+
+\subsubsection*{Metody}
+Pro experimentování byly využity metody SOM a CRSOM tak, jak jsou popsány v tomto textu. TODO
+
+
+\subsubsection*{Nastavení metod}
+
+
+\subsubsection*{Výsledky}
+
+    \begin{itemize}
+        \item MSE při učení CRSOM
+        \item SOM mapa
+        \item CRSOM mapa před učením
+        \item CRSOM mapa
+        \item SRI CRSOM mapy
+        \item Další v závislosti na cíli experimentu
+    \end{itemize}
+
+\subsubsection*{Interpretace}
+
+
+\subsection{Semantic relevance index}
+Semantic relevance index (SRI) je míra, která kvantifikuje schopnost výsledných map zachovávat sémantický význam dat v nízce dimenzionální mapě \cite{hartono14}. SRI je poměr mezi $I_{class}$ a $O_{class}$. $O_{class}$ je míra, která určuje jak moc jsou data s rozdílným významem (třídou) na mapě rozdělena (\ref{eq:oclass}). Oproti tomu $I_{class}$ udává, jak moc jsou data se stejným významem mapována k sobě (\ref{eq:iclass}).
+
+
+
+\vspace{\baselineskip}
+\noindent
+\begin{minipage}[c]{\textwidth }
+
+\begin{equation} \label{eq:sri}
+    SRI=\frac{I_{class}}{O_{class}}
+\end{equation}
+
+\begin{equation} \label{eq:oclass}
+	I_{class}  = \frac{1}{N}\sum_{i=1}^{N}  \| H(X_i) - H(max_{in}(X_i, j)) \|
+\end{equation}
+
+
+\begin{equation} \label{eq:iclass}
+	O_{class}= \frac{1}{N(M-1)}\sum_{i=1}^{N}\sum_{k \neq C(X_i)} \| H(X_i) - H(min_{out}(X_i, j)) \|
+\end{equation}
+
+
+
+Kde:\\
+\hspace*{3em}
+\begin{tabular}{rl}
+    $H(X_i)$:&  souřadnice $BMU$ na mapě pro vstupní vektor $X_i$  \\
+    $min_{out}(X_i, j)$: & nejbližší vstupní vektor k $X_i$ s třídou $j$  \\
+     $C(X_i)$:& třída vektoru  $X_i$\\
+     $N$, $M$:& počet vstupních vektorů, počet tříd\\
+     $max_{in}(X_i)$:& vektor s třídou $C(X_i)$ a nejvyšší vzdáleností od $X_i$ \\
+\end{tabular}
+\end{minipage} 
+\vspace{\baselineskip}
+\noindent
+
+
   
-    \begin{minipage}[b]{0.39\textwidth}
-    \centering
-    \begin{tabular}{cc}\hline
-      Třída & \#záznamů \\ \hline
-        Katy Perry & 90 \\ \hline
-        Ramones & 100 \\ \hline
 
-      \end{tabular}
-      \captionof{table}{A table beside a figure}
-    \end{minipage}
-    \hfill
-  \begin{minipage}[b]{0.59\textwidth}
-    \centering
-    \includegraphics[scale=0.6]{trained_som_exampl}
-   \captionof{figure}{A table beside a figure}
-  \end{minipage}
 
-  \end{minipage}
+
+\section{Normalizace dat a učení CRSOM}
+Skutečnost, že učení CRSOM je citlivé na nastavení učících parametrů (learning rate), je experimentálně ukázáno v \cite{hartono14}. Při implementaci CRSOM byla zjištěna další citlivost a to na způsobu normalizace dat.
 
 
 
 
+\subsubsection*{Cíl experimentu}
+Cílem experimentu je ukázat závislost způsobu normalizace dat a průběhu učení. 
 
-\subsection{Normalizace}
-(Transformace)
-SOM
-+
+\subsubsection*{Dataset}
+
+\subsubsection*{Nastavení metod}
+Pro všechny experimenty v této sekci platí TODO
+
+\subsection{Bez normalizace dat}
+
+\subsection{mapstd}
+
+\subsection{mapminmax}
+
+
+\subsection{mapminmax}
+
+\subsection{mapminmax}
+
+\subsection{Závěr}
 
 
 \section{Jednoduché datasety}
 
 \subsection{David Bowie, Elvis Presley a AC/DC}
+\subsubsection*{Cíl experimentu}
+\subsubsection*{Dataset}
+\subsubsection*{Nastavení metod}
+\subsubsection*{Výsledky}
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{db_ep_acdc_som}
+  \caption{}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{db_ep_acdc_crsom}
+  \caption{}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{}
+\label{fig:top}
+\end{figure}
+
+\subsubsection*{Interpretace}
 % db_stones_acdc_ep=1000_norm=4_size=1.00_LR2=0.10_.mat
 
 \subsection{Metallica, Maddona a Louis Armstrong}
@@ -960,6 +1046,27 @@ SOM
 - síla atributů, předzpracování a metod
 - Výpočetní náročnost
 
+
+  \begin{minipage}{\textwidth}
+  
+    \begin{minipage}[b]{0.39\textwidth}
+    \centering
+    \begin{tabular}{cc}\hline
+      Třída & \#záznamů \\ \hline
+        Katy Perry & 90 \\ \hline
+        Ramones & 100 \\ \hline
+
+      \end{tabular}
+      \captionof{table}{A table beside a figure}
+    \end{minipage}
+    \hfill
+  \begin{minipage}[b]{0.59\textwidth}
+    \centering
+    \includegraphics[scale=0.6]{trained_som_exampl}
+   \captionof{figure}{A table beside a figure}
+  \end{minipage}
+
+  \end{minipage}
 
 
 % -------------------------------------- Využití ---------------------------------------------------------------------------------------------------------------------------------------------------------------
