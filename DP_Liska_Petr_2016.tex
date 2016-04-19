@@ -196,7 +196,7 @@ K-means je oblíbený algoritmus shlukové analýzy, kde počet shluků je před
 \end{enumerate}
 
 
-\section{SOM}
+\section{SOM}\label{sec:som_teo}
 Self organizing map (SOM), samoorganizující mapa, je umělá neuronová síť navržena Teuvo Kohonenem v 80. letech minulého století. Narozdíl od MLP se SOM skládá z jedné vrstvy speciálně uspořádaných neuronů. Dalším rozdílem je, že se učí bez učitele a to pomocí tzv. \textit{kompetitivní učení}.\cite{junkie}
 
 \subsection{Struktura sítě}
@@ -215,7 +215,7 @@ Stejně jako dopředné sítě, SOM má ve spojích uložené váhy. Tuto skute�
   \centering
   \includegraphics[width=.73\linewidth]{grid_top}
   \caption{Topologie organizovaná do pravoúhlé mřížky}
-  \label{fig:sub2}
+  \label{fig:grid_top}
 \end{subfigure}
 \caption{Modré značky představují neurony, zatímco červené spoje indikují sousedství.}
 \label{fig:top}
@@ -316,7 +316,7 @@ ENH: další možnosti
 % http://stackoverflow.com/questions/18233994/interpreting-a-self-organizing-map
 
 
-\section{CRSOM}
+\section{CRSOM}\label{sec:crsom_teo}
 \textit{Context-relevant self organizing map, Samoorganizující mapa se zahrnutým sémantickým kontextem (CRSOM)} je umělá neuronová síť navržena Pitoyo Hartonem. Narozdíl od kasické SOM se CRSOM učí s učitelem, z čehož vyplývá, že k učení je nutné znát dvojice vstupní a výstupní vektor. Právě výstupní vektory určují tzv. \textit{kontext učení}, což mohou být například třídy vstupních vektorů.
 
 \subsection{Struktura sítě}
@@ -464,7 +464,7 @@ Protože se CRSOM učí s učitelem, ke každému vstupnímu vektoru máme poža
 \noindent
 \begin{minipage}[c]{\textwidth }
 
-\begin{equation}
+\begin{equation} \label{eq:e}
    E(t)=\frac{1}{2}\sum\limits_k{(\mathcal{O}_k(t)-\mathcal{T}_k(t))^2}  
 \end{equation}
 
@@ -601,7 +601,7 @@ Kromě toho je možné považovat mapu jako cílový produkt učení. Vzniklá m
 V této kapitole jsou rozebrány nutné kroky pro použití vybraných metod. Zaprvé bylo nutné zajistit implementace oněch metod a zadruhé navrhnout a implementovat platformu pro experimentování s metodami. Pro implementaci metod bylo zvoleno prostředí \textit{Matlab}. Pro práci s experimenty byly zvoleny \textit{Ruby}, \textit{MongoDb}, \textit{Git} a \textit{MetaCentrum}. V této kapitole jsou popsány důvody pro zvolení právě těchto technologií a nástrojů, spolu s popisem jejich využití a vzájemného fungování. 
 
 
-\section{SOM}
+\section{SOM}\label{sec:som_impl}
 Hotová implementace samoorganizujících map je dostupná pro mnoho platforem, Matlab byl zvolen zejména kvůli existenci speciálního toolboxu\footnote{Toolbox je označení pro rozšíření Matlabu a jeho IDE} pro neuronové sítě. Kromě toho Matlab nabízí širokou škálu vykreslování a jednoduchou manipulaci s maticemi. Je třeba také zmínit, že ČVUT vlastní licence na Matlab a příslušné toolboxy pro akademické použití, čímž odpadá finanční stránka rozhodování, která by v neakademickém použití hrála významnou roli.
 Pro samoorganizující mapy se v Matlabu používá funkce \texttt{selforgmap}\footnote{Dokumentace je dostupná na http://www.mathworks.com/help/nnet/ref/selforgmap.html}. Kód pro natrénování samoorganizující mapy o velikosti 10x10 stačí kód zobrazen v ukázce \ref{somcode}.
 
@@ -614,7 +614,7 @@ Pro samoorganizující mapy se v Matlabu používá funkce \texttt{selforgmap}\f
     \label{somcode}
 \end{listing}
 
-\section{CRSOM}
+\section{CRSOM}\label{sec:crsom_impl}
 
 
 Implementace CRSOM byla mnohem náročnější. Jedním z důvodů bylo to, že v době implementace bylo k dispozici pouze analytické vyjádření fungování sítě, bez jakékoliv vzorové implementace.
@@ -791,7 +791,7 @@ Kromě logů jsou do souborového systému v MetaCentru ukládany také další 
 
 
 % -------------------------------------- POUŽITÁ DATA ---------------------------------------------------------------------------------------------------------------------------------------------------------------
-\chapter{Použitá data a předzpracování}
+\chapter{Použitá data a předzpracování}\label{ch:empl_prepro}
 \section{Úvod do hudební problematiky}
 Zvuk je mechanické vlnění v látkovém prostředí, které je schopno vyvolat sluchový vjem. Zvuky můžeme rozdělit na \textit{tóny} a \textit{hluky}. Tóny bývají označovány jako zvuky hudební, hluky jako zvuky nehudební. Tóny vznikají při pravidelném, v čase přibližně periodicky probíhajícím pohybu -- kmitání. Při jejich poslechu vzniká v uchu vjem zvuku určité výšky, proto se tónů využívá v hudbě. Tóny se dále dělí na \textit{jednoduché} -- určené jednou sinusoidou(základní) a \textit{složené} -- obsahují kromě frekvence základní navíc i tzv. vyšší harmonické. Nejdůležitějšími vlastnostmi tónu jsou: \textit{pitch(výška)}, \textit{síla(hlasitost, loudness)} a \textit{timbre(barva tónu)}.
 
@@ -901,17 +901,30 @@ Jak ilustrují předchozí sekce, možnosti výběru dat a způsobů předzpraco
 \chapter{Experimenty}
 \section{Protokol}
 
-V rámci této práce se konkrétní protokoly experimentů mohou lišit v rozdílných částech. V této sekci je uveden abstraktní protokol, který definuje nutné části a společná nastavení pro všechny experimenty.
+V rámci této práce se konkrétní protokoly experimentů mohou lišit v rozdílných částech. V této sekci je uveden abstraktní protokol, který definuje nutné části a společná nastavení pro všechny experimenty. TODO: výčet
 
 \subsubsection*{Cíl experimentu}
 
-\subsubsection*{Dataset}
+
+\subsubsection*{Vstupní data}
+Pro experimentování jsou použita data, která jsou popsána v kapitole \ref{ch:empl_prepro}. Kromě předzpracování popsaného v kapitole je dále aplikovaná normalizace, jejíž význam je popsán hned v prvním experimentu (TODO).
+Vstupním vektorům jsou dále přiřazeny třídy, které představují sémantiku. Jednotlivé sémantiky budou upřesněny u konkrétních experimentů.
+
 
 \subsubsection*{Metody}
-Pro experimentování byly využity metody SOM a CRSOM tak, jak jsou popsány v tomto textu. TODO
+V experimentech jsou výhradně použity metody SOM a CRSOM. Teoretické základy a analytické vyjádření těchto metod jsou popsány v \ref{sec:som_teo} a \ref{sec:crsom_teo}. Použitá implementace je pak rozebrána v \ref{sec:som_impl} a \ref{sec:som_impl}. 
+
 
 
 \subsubsection*{Nastavení metod}
+
+TODO: velikost mřížek
+
+Jak bylo popsáno v implementační části práce, pro metodu SOM byla použita samoorganizující síť dodaná v rámci neural network toolboxu. S tímto rozhodnutím bylo převzato velké množství nastavení, které je možné dohledat v dokumentaci\footnote{Dokumentace dostupná na: http://www.mathworks.com/help/nnet/ref/selforgmap.html}. Pro učení sítě SOM bylo vždy použito $200$ epoch. Mřížka neuronů v těchto sítích byla vždy pravoúhlá (\ref{fig:grid_top}).
+
+U sítě CRSOM je proměnlivost nastavení mnohem vetší. Všechny sítě tohoto typu mají společnou inicializaci: pro počáteční nastavení prototypových vektorů byla použita metoda \texttt{initsompc}, zatímco všechny váhy v kontextové síti byly nastaveny na $0$. Další parametry jako learning rate a počet epoch byly proměnlivé a budou dospecifikovány u konkrétních experimentů.
+
+
 
 
 \subsubsection*{Výsledky}
@@ -925,7 +938,8 @@ Pro experimentování byly využity metody SOM a CRSOM tak, jak jsou popsány v 
         \item Další v závislosti na cíli experimentu
     \end{itemize}
 
-\subsubsection*{Interpretace}
+\subsubsection*{Závěr}
+Interpretace
 
 
 \subsection{Semantic relevance index}
@@ -967,38 +981,262 @@ Kde:\\
 
 
   
+\section{Učení CRSOM}
+V této sekci jsou rozebrány některé aspekty učení CRSOM. Jako první téma je vliv normalizace vstupních dat na učení sítě. Dále je studován průběh učení CRSOM z pohledu chyby na výstupu sítě a nakonec formování mapy a význam kontextové sítě.
 
 
 
-\section{Normalizace dat a učení CRSOM}
-Skutečnost, že učení CRSOM je citlivé na nastavení učících parametrů (learning rate), je experimentálně ukázáno v \cite{hartono14}. Při implementaci CRSOM byla zjištěna další citlivost a to na způsobu normalizace dat.
+\subsection{Normalizace dat a učení CRSOM}
+
+Skutečnost, že učení CRSOM je citlivé na nastavení učících parametrů (např.: learning rate), je experimentálně ukázáno v \cite{hartono14}. Při implementaci CRSOM byla zjištěna další citlivost a to na způsobu normalizace dat.
+Cílem experimentu je ukázat závislost způsobu normalizace dat a průběhu učení a tyto závislosti interpretovat. 
+Pro účel tohoto experimentu byl zvolen KatyRamDataset (\ref{app:KatyRamDataset}). Všechny sítě v této sekci byly učeny s $LR=0.1$ po $500$ epoch.
+
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{norm-learnattrs0.png}
+  \caption{Veličiny učení}
+  \label{fig:learnattrs0}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{norm-resmap1300.png}
+  \caption{Sémantická mapa}
+  \label{fig:resmap0}
+\end{subfigure}
+\caption{Výsledky pro učení bez normalizace}
+\label{fig:nonorm}
+\end{figure}
+
+
+\subsubsection*{Bez normalizace dat}\label{sec:nonorm}
+
+V této sekci je rozebráno chování sítě CRSOM bez použití jakékoliv normalizace. Stejně tak jako pro všechny ostatní přístupy jsou zobrazeny obrázky (\ref{fig:nonorm}) definující učení a výslednou mapu. Obrázek vlevo (\ref{fig:learnattrs0}) se skládá ze tří podobrázků. Na každém je vykreslena jedna veličina učení. Na horním podobrázku je vykresleno průměná úprava prototypových vah. Na prostředním podobrázku je vykreslena průměrná hodnota výstupu skryté vrtsvy $O_h$. Na dolním podobrázku je pak vykreslena průměrná prostorová aktivace $e^{-\mathcal{I}_i^h(t)}$. Obrázek vpravo (\ref{fig:resmap0}) pak zobrazuje výslednou sémantickou mapu.
+
+
+
+Vysoce dimenzionální prostor zapříčinil obrovské absolutní vzdálenosti mezi vstupními vektory a nainicializovanými prototypovými vektory. Tím pádem je velikost $e^{-\mathcal{I}_i^h(t)}$ vždy zanedbatelně málá, v reprezentaci matlabovských čísel je rovna $0$. To implikuje nulový výstup ze skryté vrstvy respektive nulové úpravy prototypových vektorů. Sémantická mapa (\ref{fig:resmap0}) tak pouze zobrazuje počáteční stav prototypových vektorů. Hlavním cílem normalizace dat bude zredukovat absolutní velikosti vektorů.
 
 
 
 
-\subsubsection*{Cíl experimentu}
-Cílem experimentu je ukázat závislost způsobu normalizace dat a průběhu učení. 
-
-\subsubsection*{Dataset}
-
-\subsubsection*{Nastavení metod}
-Pro všechny experimenty v této sekci platí TODO
-
-\subsection{Bez normalizace dat}
-
-\subsection{mapstd}
-
-\subsection{mapminmax}
+\subsubsection*{Normalizace pomocí \texttt{mapminmax}}
+\texttt{mapminmax}\footnote{Dokumentace na: http://www.mathworks.com/help/nnet/ref/mapminmax.html} je funkce dostupná v matlabu a normalizuje vektor tak, aby maximum a minimum vektoru bylo rovnu předem stanoveným konstantám.
 
 
-\subsection{mapminmax}
 
-\subsection{mapminmax}
+Byly zkoumány průběhy učení a výsledky pro různé nastavení těchto konstant. Minimum bylo vždy $0$ a pro maxima byly voleny hodnoty $max\in\{0.1, 0.2, \dots, 1.6\}$. Jednotlivé atributy tak byly normalizovány do intervalu $[0; max]$.  Výsledné SRI pro naučené sítě jsou zaneseny v tabulce \ref{tab:sri}. Na obrázku \ref{fig:sriscatter} jsou vynesené dvojice hodnot: $max$ a příslušné výsledné SRI odpovídající sémantické mapě naučené CRSOM sítě. Horizontální přímka v hodnotě $0.3749$ představuje hodnotu SRI pro nenatrénovanou (pouze inicializovanou) mapu. 
 
-\subsection{Závěr}
+\vspace{\baselineskip}
+\noindent
+\begin{minipage}{\textwidth}
+  \begin{minipage}[b]{0.19\textwidth}
+  \centering
+        \begin{tabular}{|l|c|}
+        \hline
+        \multicolumn{1}{|c|}{max}                     & SRI  \\ \hline
+        {\color[HTML]{000000}  1.6 } & {\color[HTML]{000000} 0.3749} \\ \hline
+              1.5                        &  0.3749                      \\ \hline
+          1.4                        &  0.3749                      \\ \hline
+          1.3                        &  0.3749                      \\ \hline
+        1.2                        &  0.3709                      \\ \hline
+        1.1                        & 0.3230                      \\ \hline
+        1.0                        & 0.0448                      \\ \hline
+        0.9                        & 0.2288                      \\ \hline
+        0.8                        & 0.2028                      \\ \hline
+        0.7                        & 0.8640                      \\ \hline
+        0.6                        & 0.8030                      \\ \hline
+        0.5                        & 0.7341                      \\ \hline
+        0.4                        & 1.2298                      \\ \hline
+        0.3                        & 1.1536                      \\ \hline
+        0.2                        & 0.6344                      \\ \hline
+        0.1                        & 1.1069                      \\ \hline
+        
+        \end{tabular}
+      \captionof{table}{}
+      \label{tab:sri}
+    \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.79\textwidth}
+    \centering
+    \includegraphics[scale=0.2]{sri_scatter.png}
+    \captionof{figure}{}
+    \label{fig:sriscatter}
+  \end{minipage} 
+  \end{minipage}
+\vspace{\baselineskip}
+\noindent
 
 
-\section{Jednoduché datasety}
+Z výsledků je možné vypozorovat skutečnost, že hodnotám $max\geq1.3$ odpovídá $SRI=0.3749$, což je shodná hodnota s nenormalizovanou mapu. Přestože jsou hodnoty prostorové aktivace nenulové (\ref{fig:attrs1300}), pohybují se v řádech $10^{-4}$, což zapříčiňuje tak malé úpravy prototypových vektorů (v řádech $10^{-11}$), že se po učení se stanoveným počtem epoch mapa vůbec nezmění (\ref{fig:map1300}).
+
+
+
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{norm-learnattrs1300.png}
+  \caption{Veličiny učení}
+  \label{fig:attrs1300}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{norm-resmap1300.png}
+  \caption{Sémantická mapa}
+  \label{fig:map1300}
+\end{subfigure}
+\caption{Výsledky pro $max=1.3$}
+\label{fig:res1300}
+\end{figure}
+
+
+
+
+Nejnižší hodnota SRI odpovídá $max=1.0$. Na výsledné mapě (\ref{fig:map1000}) je vidět dominantní neuron s pozicí na mřížce $[6,9]$, který se stal BMU pro většinu vstupních dat. Tuto skutečnost lze vysvětlit tak, že tento neuron byl již od počátku učení aktivován nejvíce a navíc byl v obklopení neuronů, kterým byla přiřazena stejné sémantika, tím pádem byl přibližován mnohem větší silou, než ostatní neurony. Toto tvrzení je podloženo obrázkem \ref{fig:plotsompos1000} který zobrazuje první dvě dimenze prototypových vektorů spolu se vstupními daty.
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{norm-learnattrs1000.png}
+  \caption{Veličiny učení}
+  \label{fig:attrs1000}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{norm-resmap1000.png}
+  \caption{Sémantická mapa}
+  \label{fig:map1000}
+\end{subfigure}
+\caption{Výsledky pro $max=1.0$}
+\label{fig:res1000}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+	\includegraphics[scale=0.2]{plotsompos1000.png}
+\caption{Dominantní neuron}
+\label{fig:plotsompos1000}
+\end{center}
+\end{figure}
+
+
+Nejvyšší hodnota SRI odpovídá $max=0.4$. Výsledná sémantická mapa (\ref{fig:resmap400}) již odpovídá očekávaní. TODO: rozebrat dále 
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{norm-learnattrs400.png}
+  \caption{Veličiny učení}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{norm-resmap400.png}
+  \caption{Sémantická mapa}
+  \label{fig:resmap400}
+\end{subfigure}
+\caption{Výsledky pro  $max=0.4$}
+\label{fig:top}
+\end{figure}
+
+
+Tyto experimenty prokázaly citlivost učení CRSOM na normalizaci dat. Bez použití normalizace nedocházelo k žádným úpravám prototypových vektorů, proto se tento přístup ukázal jako nevhodný. Pro normalizaci bylo použito mapování atributů do předem zvoleného intervalu, jehož velikost byla empiricky testována. Testy ukázaly nutnost normalizace vstupních dat, nicméně není možné na jejich základě určit přesnou hodnotu $max$, která by vyhovovala obecně pro všechny problémy. Z toho důvodu se bude k hodnotě $max$ přistupovat jako k ostatním učícím parametrům a pro každý problém se bude hledat vhodná hodnota.
+
+
+
+
+
+\subsection{Průběh učení CRSOM}
+V této sekci bude studováno formování mapy pro síť CRSOM z předchozí sekce s $max=0.4$, jejíž výsledná sémantická mapa je na obr. \ref{fig:resmap400}. 
+
+\begin{figure}[htbp]
+    \begin{center}
+	\includegraphics[scale=0.25]{mse_top.png}
+	
+    \caption{Průměrná chyba sítě (nahoře), pruměrná topologická aktivace (dole)} 
+    \end{center}
+     \label{fig:msetopp}
+\end{figure}
+
+\subsubsection*{Chyba sítě}
+Chyba sítě CRSOM již byla nadefinována vztahem \ref{eq:e}. Na obrázku (\ref{fig:msetopp} nahoře) je zobrazena průměrná chyba sítě pro všechny epochy. Nemonotóní tvar této křivky je možné vysvělit následovně. Při klasické aplikaci metody nejstrmějšího sestupu se optimalizuje funkce vstupního prostoru a vah. Epochy mají navzájem stejnou množinu vstupů a úpravy vah podle gradientu nám zaručí nerostoucí průměrnou chybu.
+
+
+Oproti tomu při učení sítě CRSOM do funkce $E$ vstupuje ještě další parametr -- pořadí epochy. Tím se řídí \textit{topologická aktivace} neuronů, kerá s rostoucím pořadím epochy klesá -- a to exponenciálně. Tím pádem je funkce $E$ definována pro rozdílné epochy různě a není pravda, že celková chyba sítě musí monotóně klesat.
+
+
+Nárůst chyby, který je možný vidět  v rozmezí $200$-$250$ epochy, je možné vysvětlit prudkým poklesem topologické aktivace (\ref{fig:msetopp} dole). Následná opětovná konvergence $E$ k 0 je způsobená reakcí kontexové sítě na nastalou situaci a učení vah a biasu. V této fázi je již upravován pouze BMU.
+
+
+
+
+
+
+
+
+
+\subsubsection*{Kontextová síť}
+V této sekci bude studována kontextová síť. Kontextová síť se mimo jiné skládá z propojení neuronů ze skryté vrstvy a tolika výstupních složek, jako je počet tříd vstupních vektorů. Třídy, které představují sémantický kontext učení, jsou zakódovány v kódu \textit{1 z N} a proto každá výstupní složka představuje jednu třídu. Váhu  $v_{ik}$ tak lze interpretovat jako příslušnost $i$-tého neuronu k třídě $k$. 
+Na obrázku \ref{fig:citizenship} jsou vizualizovány tyto příslušnosti neuronů k jednotlivým třídám. Značka na diskrétní pozici $[x;y]$ představuje jeden neuron s pozicí $[x;y]$ v mřížce. Barva značky určuje třídu příslušnosti (modrá Katy Perry, zelená Ramones) a velikost určuje míru jistoty této příslušnosti.
+Na prvním obrázku jsou zobrazeny příslušnosti před učením síťe. Protože jsou váhy inicializovány na $0$, žádný neuron nepřísluší žádné třídě. S přibývajícími epochami je zřetelné rozdělování neuronů do dvou sfér vlivu, kde každá ze sfér odpovídá jedné třídě. 
+
+
+
+
+
+\begin{figure}[htp]
+    \centering
+    
+    \includegraphics[width=.32\textwidth]{citi0.png}
+    \includegraphics[width=.32\textwidth]{citi63.png}
+    \includegraphics[width=.32\textwidth]{citi500.png}
+    \caption{Příslušnost neuronů k třídám.}
+    \label{fig:citizenship}
+\end{figure}
+
+\subsubsection*{Průběh učení}
+Obrázek \ref{fig:mapform} zobrazuje formování sémantické mapy pro tytéž epochy jako na obrázku \ref{fig:citizenship}. První z obrázku odpovídá nainicalizované síti a poslední síti po uběhnutí všech $500$ epoch.
+Ve stejné chvíle jsou na obrázku \ref{fig:mappos} zachyceny první dvě dimenze prototypových vektorů spolu se vstupními daty.
+
+
+
+\begin{figure}[htp]
+    \centering
+    
+    \includegraphics[width=.32\textwidth]{form0.png}
+    \includegraphics[width=.32\textwidth]{form63.png}
+    \includegraphics[width=.32\textwidth]{form500.png}
+    \caption{Formování sémantické mapy.}
+    \label{fig:mapform}
+\end{figure}
+
+\begin{figure}[htp]
+    \centering
+    
+    \includegraphics[width=.32\textwidth]{pos0.png}
+    \includegraphics[width=.32\textwidth]{pos63.png}
+    \includegraphics[width=.32\textwidth]{pos500.png}
+    \caption{Pozice neuronů pro první dvě dimenze}
+    \label{fig:mappos}
+\end{figure}
+
+
+
+
+
+
+
+
+\section{Kapela jako sémantický kontext}
+
+\subsection{Katy Perry a Ramones}
 
 \subsection{David Bowie, Elvis Presley a AC/DC}
 \subsubsection*{Cíl experimentu}
@@ -1092,6 +1330,9 @@ Pro všechny experimenty v této sekci platí TODO
 	\item[KDD] \dots
 	\item[CPU] \dots
 \end{description}
+
+\chapter{Použité datasety}
+\section{Katy Perry a Ramones (KatyRamDataset)}\label{app:KatyRamDataset}
 
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % 

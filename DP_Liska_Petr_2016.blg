@@ -25,45 +25,46 @@ Warning--to sort, need author or key in preallocate
 Warning--to sort, need author or key in metacentrum
 Warning--to sort, need author or key in zvuk-ency
 Warning--to sort, need author or key in analyze
-You've used 19 entries,
+Warning--to sort, need author or key in selforgmapdoc
+You've used 20 entries,
             3151 wiz_defined-function locations,
-            698 strings with 7152 characters,
-and the built_in function-call counts, 4691 in all, are:
-= -- 342
-> -- 19
+            700 strings with 7225 characters,
+and the built_in function-call counts, 4936 in all, are:
+= -- 360
+> -- 20
 < -- 0
-+ -- 19
++ -- 20
 - -- 0
-* -- 173
-:= -- 353
-add.period$ -- 38
-call.type$ -- 19
-change.case$ -- 57
+* -- 182
+:= -- 371
+add.period$ -- 40
+call.type$ -- 20
+change.case$ -- 60
 chr.to.int$ -- 0
-cite$ -- 38
-duplicate$ -- 513
-empty$ -- 609
+cite$ -- 40
+duplicate$ -- 540
+empty$ -- 641
 format.name$ -- 0
-if$ -- 1103
+if$ -- 1161
 int.to.chr$ -- 0
-int.to.str$ -- 19
-missing$ -- 114
-newline$ -- 67
+int.to.str$ -- 20
+missing$ -- 120
+newline$ -- 70
 num.names$ -- 0
-pop$ -- 380
+pop$ -- 400
 preamble$ -- 1
-purify$ -- 38
+purify$ -- 40
 quote$ -- 0
-skip$ -- 208
+skip$ -- 219
 stack$ -- 0
-substring$ -- 133
-swap$ -- 190
+substring$ -- 140
+swap$ -- 200
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 76
-warning$ -- 19
+type$ -- 80
+warning$ -- 20
 while$ -- 0
-width$ -- 21
-write$ -- 142
-(There were 21 warnings)
+width$ -- 22
+write$ -- 149
+(There were 22 warnings)
