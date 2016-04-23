@@ -43,22 +43,18 @@
 \contentsline {section}{\numberline {4.2}U\IeC {\v c}en\IeC {\'\i } CRSOM}{33}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Normalizace dat a u\IeC {\v c}en\IeC {\'\i } CRSOM}{33}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Pr\IeC {\r u}b\IeC {\v e}h u\IeC {\v c}en\IeC {\'\i } CRSOM}{36}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3}Kapela jako s\IeC {\'e}mantick\IeC {\'y} kontext}{39}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Katy Perry a Ramones}{39}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}David Bowie, Elvis Presley a AC/DC}{39}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Metallica, Maddona a Louis Armstrong}{39}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Offspring a Sex Pistols}{39}{subsection.4.3.4}
-\contentsline {section}{\numberline {4.4}Slo\IeC {\v z}it\IeC {\'e} datasety}{39}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Historie u\IeC {\v z}ivatele}{39}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Rok 1960 a 1970}{39}{subsection.4.4.2}
-\contentsline {section}{\numberline {4.5}Velk\IeC {\'y} dataset}{39}{section.4.5}
-\contentsline {section}{\numberline {4.6}Zhodnocen\IeC {\'\i } experiment\IeC {\r u}}{39}{section.4.6}
-\contentsline {chapter}{\chapternumberline {5}Vyu\IeC {\v z}it\IeC {\'\i }}{41}{chapter.5}
-\contentsline {chapter}{Z{\' a}v{\v e}r}{43}{chapter*.77}
-\contentsline {section}{P\IeC {\v r}\IeC {\'\i }nosy}{43}{section*.78}
-\contentsline {section}{Mo\IeC {\v z}n\IeC {\'a} roz\IeC {\v s}\IeC {\'\i }\IeC {\v r}en\IeC {\'\i }}{43}{section*.79}
-\contentsline {chapter}{Literatura}{45}{section*.81}
-\contentsline {appendix}{\chapternumberline {A}Seznam pou\IeC {\v z}it\IeC {\'y}ch zkratek}{47}{appendix.A}
-\contentsline {appendix}{\chapternumberline {B}Pou\IeC {\v z}it\IeC {\'e} datasety}{49}{appendix.B}
-\contentsline {section}{\numberline {B.1}Katy Perry a Ramones (KatyRamDataset)}{49}{section.B.1}
-\contentsline {appendix}{\chapternumberline {C}Obsah p\IeC {\v r}ilo\IeC {\v z}en\IeC {\'e}ho CD}{51}{appendix.C}
+\contentsline {section}{\numberline {4.3}Testov\IeC {\'a}n\IeC {\'\i } reprezentace}{39}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Kapela jako s\IeC {\'e}mantick\IeC {\'y} kontext}{39}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Rok vzniku jako s\IeC {\'e}mantick\IeC {\'y} kontext}{39}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}Hled\IeC {\'a}n\IeC {\'\i } struktur}{41}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Poslucha\IeC {\v c}sk\IeC {\'a} historie jako s\IeC {\'e}mantick\IeC {\'y} kontext}{41}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Obl\IeC {\'\i }benost jako s\IeC {\'e}mantick\IeC {\'y} kontext}{42}{subsection.4.4.2}
+\contentsline {chapter}{\chapternumberline {5}Vyu\IeC {\v z}it\IeC {\'\i }}{45}{chapter.5}
+\contentsline {chapter}{Z{\' a}v{\v e}r}{47}{chapter*.85}
+\contentsline {section}{P\IeC {\v r}\IeC {\'\i }nosy}{47}{section*.86}
+\contentsline {section}{Mo\IeC {\v z}n\IeC {\'a} roz\IeC {\v s}\IeC {\'\i }\IeC {\v r}en\IeC {\'\i }}{47}{section*.87}
+\contentsline {chapter}{Literatura}{49}{section*.89}
+\contentsline {appendix}{\chapternumberline {A}Seznam pou\IeC {\v z}it\IeC {\'y}ch zkratek}{51}{appendix.A}
+\contentsline {appendix}{\chapternumberline {B}Pou\IeC {\v z}it\IeC {\'e} datasety}{53}{appendix.B}
+\contentsline {section}{\numberline {B.1}Katy Perry a Ramones (KatyRamDataset)}{53}{section.B.1}
+\contentsline {appendix}{\chapternumberline {C}Obsah p\IeC {\v r}ilo\IeC {\v z}en\IeC {\'e}ho CD}{55}{appendix.C}

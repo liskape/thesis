@@ -58,9 +58,37 @@
 % \newacronym{FIT}{FIT}{Fakulta informa{\v c}n{\' i}ch technologi{\' i}}
 
 \begin{introduction}
+
+\textit{Struktura} (z latinského struere, skládat, sestavovat, budovat, pořádat) označuje způsob složení, vnitřního uspořádání nějakého objektu, zejména pokud vykazuje nějaké pravidelnosti a zákonitosti. Existuje několik možných jak hledat strukturu v datech ... TODO
+V této práci bude struktura hledána pomocí \textit{shlukování}, což je analýza, která má za úkol najít homogenní skupiny objektů. 
+
+Struktury budou hledány v kolekcích skladeb populární hudby, jako představiteli multimediálních dat \cite{multimedia}. 
+
+Společné rysy takových dat: (nemá strukturu ve smyslu....) TODO
+
+
+Nejen pro interpretaci výsledků jsou nutné expertní znalosti z domény. Nicméně výhodou populární hudby je právě její rozšířenost mezi širší publikum, kde každý posluchač intuitivně snadno určí podobnost dvou skladeb nebo interpretů a jestli se mu konkrétní hudba líbí, nebo ne. 
+
+
+
+
+Je potřeba expert (vždy)
+Proč byly zvoleny: netriviální objekty, shlukování je na základě podobnosti, každý hudební nadšenec je schopen porovnat dvě skladby a určit intuitivní míru podobnosti. Zároveň je velmi obtížné zachytit tyto "oblíbené" znaky. Předpovídat atd,.  s pomocí počítačů
+
+
+- celé KDD
+- zvolené metody (vizuální extrakce shluků)
+- sémantický kontext
+
+
+- využití
+
+
 	%sem napište úvod Vaší práce
 	
 	\section{Cíl práce}
+	
+	vyzkoušet možnosti hledání shluků pomocí SOM a CRSOM
 \end{introduction}
 
 % POUŽITÉ METODY -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -585,7 +613,7 @@ V případě, že $ \delta_i^h(t)$ je zafixováno na $1$, CRSOM simuluje chován
 \end{figure}
 
 
-\subsubsection*{Rozdíl v interpretaci SOM a CRSOM}
+\subsubsection*{Rozdíl v interpretaci map SOM a CRSOM}
 Samoorganizující mapy jsou schopné vysoce dimenzionální prostor mapovat do 2D a zachovat při tom některé topologické vlastnosti vstupního prostoru. Pokud máme k datům nějaký kontext (třídy) a chceme je nějakým způsobem využít pro formování mapy, není jiná možnost, než využít třídy jako další atributy. Naopak CRSOM s těmito informacemi zachází explicitně a pomocí těchto tříd prostřednictvím regulačního signálu řídí formování mapy podle zadaného kontextu. SOM je schopný vizualizovat strukturu vstupního prostoru, zatímco CRSOM je schopná vizualizovat strukturu problému\cite{hartono14}.
 
 
@@ -891,8 +919,7 @@ Mimo akustické atributy, které je možné získat z nástroje Analyze, The Ech
 Poskytované atributy je možné rozdělit do tří kategorií. První kategorie jsou metadata. Do této kategorie patří například název skladby, jméno autora nebo rok vzniku. Další kategorií jsou atributy tzv.: socilání. Do sociálních atributů jsou zařazeny míry oblíbenosti, známosti apod. Poslední kategorií jsou algoritmicky získané atributy, které popisují sladbu jako celek. Příkladem takových atributů jsou danceability (míra vhodnosti skladby pro tancování) a valence (míra pozitivní energie, kterou skladba vyzařuje).\footnote{Vyčerpávající popis dostupných atributů je k nalezení na adrese: http://developer.echonest.com/docs/v4/song.html}
 
 \section{Výběr dat a předzpracování}
-Jak ilustrují předchozí sekce, možnosti výběru dat a způsobů předzpracování jsou rozsáhlé. Nicméně z důvodu jednoduchosti byly zvoleny pouze timbre vektory, které mají ambice reprezentovat hudení znaky skladby. Při zvolení čistě akustického atributu se také předejde vytváření něchtěných závislostí mezi daty a zvolenou sémantikou. Každá skladba je reprezentována rozdílným počtem segmentů a tím pádém také rozdílným počtem timbre vektorů. Pro získání konečných atributů byla použita kovarianční matice a průměrný vektor, stejně tak jako \textit{YearPredictionMSD datasetu}\footnote{Dostupný na https://archive.ics.uci.edu/ml/datasets/YearPredictionMSD.}. Tímto přístupem je možné pro každou skladbu získat $90$ atributů.
-
+Jak ilustrují předchozí sekce, možnosti výběru dat a způsobů předzpracování jsou rozsáhlé. Nicméně z důvodu jednoduchosti byly zvoleny pouze timbre vektory, které mají ambice reprezentovat hudení znaky skladby. Při zvolení čistě akustického atributu se také předejde vytváření něchtěných závislostí mezi daty a zvolenou sémantikou. Každá skladba je reprezentována rozdílným počtem segmentů a tím pádém také rozdílným počtem timbre vektorů. Pro získání konečných atributů byla použita kovarianční matice a průměrný vektor, stejně tak jako \textit{YearPredictionMSD datasetu}\footnote{Dostupný na https://archive.ics.uci.edu/ml/datasets/YearPredictionMSD.}. Tímto přístupem je možné pro každou skladbu získat $90$ desetinných čísel, které představují reprezentaci původního objektu. 
 
 
 
@@ -1003,7 +1030,7 @@ Pro účel tohoto experimentu byl zvolen KatyRamDataset (\ref{app:KatyRamDataset
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=.99\linewidth]{norm-resmap1300.png}
+  \includegraphics[width=.99\linewidth]{exp_kp_ram_norm_0.png}
   \caption{Sémantická mapa}
   \label{fig:resmap0}
 \end{subfigure}
@@ -1086,7 +1113,7 @@ Z výsledků je možné vypozorovat skutečnost, že hodnotám $max\geq1.3$ odpo
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=.99\linewidth]{norm-resmap1300.png}
+  \includegraphics[width=.99\linewidth]{exp_kp_ram_norm_0.png}
   \caption{Sémantická mapa}
   \label{fig:map1300}
 \end{subfigure}
@@ -1109,7 +1136,7 @@ Nejnižší hodnota SRI odpovídá $max=1.0$. Na výsledné mapě (\ref{fig:map1
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=.99\linewidth]{norm-resmap1000.png}
+  \includegraphics[width=.99\linewidth]{exp_kp_ram_1000_crsom.png}
   \caption{Sémantická mapa}
   \label{fig:map1000}
 \end{subfigure}
@@ -1138,7 +1165,7 @@ Nejvyšší hodnota SRI odpovídá $max=0.4$. Výsledná sémantická mapa (\ref
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=.99\linewidth]{norm-resmap400.png}
+  \includegraphics[width=.99\linewidth]{exp_kp_ram_crsom.png}
   \caption{Sémantická mapa}
   \label{fig:resmap400}
 \end{subfigure}
@@ -1194,9 +1221,12 @@ Na prvním obrázku jsou zobrazeny příslušnosti před učením síťe. Proto�
 \begin{figure}[htp]
     \centering
     
-    \includegraphics[width=.32\textwidth]{citi0.png}
-    \includegraphics[width=.32\textwidth]{citi63.png}
-    \includegraphics[width=.32\textwidth]{citi500.png}
+    \includegraphics[width=.32\textwidth]{exp_kp_ram_citi_0.png}
+    \includegraphics[width=.32\textwidth]{exp_kp_ram_citi_1.png}
+    \includegraphics[width=.32\textwidth]{exp_kp_ram_citi_63.png}
+        \includegraphics[width=.32\textwidth]{exp_kp_ram_citi_252.png}
+    \includegraphics[width=.32\textwidth]{exp_kp_ram_citi_378.png}
+    \includegraphics[width=.32\textwidth]{exp_kp_ram_citi_500.png}
     \caption{Příslušnost neuronů k třídám.}
     \label{fig:citizenship}
 \end{figure}
@@ -1210,9 +1240,12 @@ Ve stejné chvíle jsou na obrázku \ref{fig:mappos} zachyceny první dvě dimen
 \begin{figure}[htp]
     \centering
     
-    \includegraphics[width=.32\textwidth]{form0.png}
-    \includegraphics[width=.32\textwidth]{form63.png}
-    \includegraphics[width=.32\textwidth]{form500.png}
+    \includegraphics[width=.32\textwidth]{exp_kp_ram_norm_0.png}
+        \includegraphics[width=.32\textwidth]{exp_kp_ram_norm_1.png}
+    \includegraphics[width=.32\textwidth]{exp_kp_ram_norm_63.png}
+    \includegraphics[width=.32\textwidth]{exp_kp_ram_norm_252.png}
+    \includegraphics[width=.32\textwidth]{exp_kp_ram_norm_378.png}
+    \includegraphics[width=.32\textwidth]{exp_kp_ram_norm_500.png}
     \caption{Formování sémantické mapy.}
     \label{fig:mapform}
 \end{figure}
@@ -1220,41 +1253,42 @@ Ve stejné chvíle jsou na obrázku \ref{fig:mappos} zachyceny první dvě dimen
 \begin{figure}[htp]
     \centering
     
-    \includegraphics[width=.32\textwidth]{pos0.png}
-    \includegraphics[width=.32\textwidth]{pos63.png}
-    \includegraphics[width=.32\textwidth]{pos500.png}
+    \includegraphics[width=.32\textwidth]{exp_kp_ram_pos0.png}
+    \includegraphics[width=.32\textwidth]{exp_kp_ram_pos1.png}
+    \includegraphics[width=.32\textwidth]{exp_kp_ram_pos63.png}
+        \includegraphics[width=.32\textwidth]{exp_kp_ram_pos252.png}
+    \includegraphics[width=.32\textwidth]{exp_kp_ram_pos378.png}
+    \includegraphics[width=.32\textwidth]{exp_kp_ram_pos500.png}
     \caption{Pozice neuronů pro první dvě dimenze}
     \label{fig:mappos}
 \end{figure}
 
 
+\section{Testování reprezentace}
+Reprezentace původních skladeb, tedy příslušných $90$ atributů vzniklo netriviální extrakcí z akustických vlastností původních objektů. Tento přístup zabraňuje interpretovat výsledné shluky podle společných vlastností odvozených pouze na základě konkrétních hodnot atributů. Lepším přístupem je interpretovat shluky podle původních objektů, tedy skladeb, což je ovšem záležitost, kterou má v popisu činnosti expert domény. V této části proto nepůjde o interpretaci výsledných shluků, nýbrž o nalezení nějaké struktury. 
+
+
+Výsledkem této sekce by tak mělo být ujištění, že zvolené metody jsou schopné najít strukturu v kolekcích reprezentací hudebních skladeb v kontextu zvolené sémantiky. Budou voleny takové datasety u kterých předpokládáme vytvoření shluků nejen podle zvolené sémantiky učení. 
 
 
 
+\subsection{Kapela jako sémantický kontext}
 
+\subsubsection*{Katy Perry a Ramones}
 
-
-\section{Kapela jako sémantický kontext}
-
-\subsection{Katy Perry a Ramones}
-
-\subsection{David Bowie, Elvis Presley a AC/DC}
-\subsubsection*{Cíl experimentu}
-\subsubsection*{Dataset}
-\subsubsection*{Nastavení metod}
-\subsubsection*{Výsledky}
+- wtf neuron
 
 \begin{figure}
 \centering
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=.99\linewidth]{db_ep_acdc_som}
+  \includegraphics[width=.99\linewidth]{exp_kp_ram_som.png}
   \caption{}
   \label{fig:sub1}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=.99\linewidth]{db_ep_acdc_crsom}
+  \includegraphics[width=.99\linewidth]{exp_kp_ram_crsom.png}
   \caption{}
   \label{fig:sub2}
 \end{subfigure}
@@ -1262,49 +1296,183 @@ Ve stejné chvíle jsou na obrázku \ref{fig:mappos} zachyceny první dvě dimen
 \label{fig:top}
 \end{figure}
 
-\subsubsection*{Interpretace}
+
+\subsubsection*{David Bowie, Elvis Presley a AC/DC}
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{exp_db_ep_acdc_som.png}
+  \caption{}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{exp_db_ep_acdc_crsom.png}
+  \caption{}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{}
+\label{fig:top}
+\end{figure}
 % db_stones_acdc_ep=1000_norm=4_size=1.00_LR2=0.10_.mat
 
-\subsection{Metallica, Maddona a Louis Armstrong}
+\subsubsection*{Metallica, Maddona a Louis Armstrong}
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{exp_met_mad_la_som.png}
+  \caption{}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{exp_met_mad_la_crsom.png}
+  \caption{}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{}
+\label{fig:top}
+\end{figure}
 
 %met_mad_la_ep=2500_norm=4_size=1.00_LR2=0.05_.mat
 
-\subsection{Offspring a Sex Pistols}
+\subsubsection*{Offspring a Sex Pistols}
+
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{exp_sexp_off_som.png}
+  \caption{}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{exp_sexp_off_crsom.png}
+  \caption{}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{}
+\label{fig:top}
+\end{figure}
+
 % off-sexp_ep=2500_norm=4_size=1.00_LR2=0.10_.mat
 
-\section{Složité datasety}
 
-\subsection{Historie uživatele}
+\subsection{Rok vzniku jako sémantický kontext}
 
-\subsection{Rok 1960 a 1970}
+nemáme konkrétní skladby
+můžeme posuzovat data z dané sémantiky
+i přes konflikty utvořilo koncetrované clustery
 
-\section{Velký dataset}
+lepší zobrazování: crosses
 
-\section{Zhodnocení experimentů}
-- síla atributů, předzpracování a metod
-- Výpočetní náročnost
+\subsubsection*{Rok 1960 a 1970}
 
 
-  \begin{minipage}{\textwidth}
-  
-    \begin{minipage}[b]{0.39\textwidth}
-    \centering
-    \begin{tabular}{cc}\hline
-      Třída & \#záznamů \\ \hline
-        Katy Perry & 90 \\ \hline
-        Ramones & 100 \\ \hline
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{exp_60s70s_som.png}
+  \caption{}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{exp_60s70s_crsom.png}
+  \caption{}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{}
+\label{fig:top}
+\end{figure}
 
-      \end{tabular}
-      \captionof{table}{A table beside a figure}
-    \end{minipage}
-    \hfill
-  \begin{minipage}[b]{0.59\textwidth}
-    \centering
-    \includegraphics[scale=0.6]{trained_som_exampl}
-   \captionof{figure}{A table beside a figure}
-  \end{minipage}
+\subsubsection*{Rok 1970 a 2010}
 
-  \end{minipage}
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{exp_70s10s_som.png}
+  \caption{}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{exp_70s10s_crsom.png}
+  \caption{}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{}
+\label{fig:top}
+\end{figure}
+
+méně konfliktů (rozdílná hudba)
+
+
+
+
+
+
+\section{Hledání struktur}
+
+
+\subsection{Posluchačská historie jako sémantický kontext}
+- nedaří se odvodit žádnou strukturu pro daný sémantický kontext
+- je možné že žádná neni
+- clustorování dá vždy clustery?
+- 
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{exp_user_som.png}
+  \caption{}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{exp_user_crsom.png}
+  \caption{}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{}
+\label{fig:top}
+\end{figure}
+
+
+\subsection{Oblíbenost jako sémantický kontext}
+
+- porovnávat různé výsledky pro různé epochy, ...
+
+
+
+
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{exp_trend_fail_som.png}
+  \caption{}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{exp_trend_fail_crsom.png}
+  \caption{}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{}
+\label{fig:top}
+\end{figure}
+
 
 
 % -------------------------------------- Využití ---------------------------------------------------------------------------------------------------------------------------------------------------------------
