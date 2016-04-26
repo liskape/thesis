@@ -30,16 +30,22 @@
 \contentsline {figure}{\numberline {4.8}{\ignorespaces P\IeC {\v r}\IeC {\'\i }slu\IeC {\v s}nost neuron\IeC {\r u} k t\IeC {\v r}\IeC {\'\i }d\IeC {\'a}m.\relax }}{38}{figure.caption.67}
 \contentsline {figure}{\numberline {4.9}{\ignorespaces Formov\IeC {\'a}n\IeC {\'\i } s\IeC {\'e}mantick\IeC {\'e} mapy.\relax }}{38}{figure.caption.69}
 \contentsline {figure}{\numberline {4.10}{\ignorespaces Pozice neuron\IeC {\r u} pro prvn\IeC {\'\i } dv\IeC {\v e} dimenze\relax }}{39}{figure.caption.70}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces \relax }}{40}{figure.caption.72}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces \relax }}{40}{figure.caption.74}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces \relax }}{40}{figure.caption.76}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces \relax }}{41}{figure.caption.78}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces \relax }}{41}{figure.caption.80}
-\contentsline {figure}{\numberline {4.16}{\ignorespaces \relax }}{42}{figure.caption.82}
-\contentsline {figure}{\numberline {4.17}{\ignorespaces \relax }}{42}{figure.caption.83}
-\contentsline {figure}{\numberline {4.18}{\ignorespaces \relax }}{43}{figure.caption.84}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Katy Perry a Ramones (exp. \ref {exp:kp_ram})\relax }}{40}{figure.caption.72}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Sex Pistols a The Offspring (exp. \ref {exp:sexp-off})\relax }}{41}{figure.caption.74}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces David Bowie, Elvis Presley a AC/DC (exp. \ref {exp:db-ep-acdc})\relax }}{41}{figure.caption.76}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Metallica, Maddona a Louis Armstrong (exp. \ref {exp:met-mad-la})\relax }}{42}{figure.caption.78}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Dataset s n\IeC {\'a}hodnou s\IeC {\'e}mantikou (exp \ref {exp:met-mad-la-random})\relax }}{42}{figure.caption.79}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Skladby z 1960 a 1970 (exp. \ref {exp:60-vs-70}) \relax }}{43}{figure.caption.80}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Skladby z 1970 a 2010 (exp. \ref {exp:70-vs-10})\relax }}{43}{figure.caption.81}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Poslucha\IeC {\v c}sk\IeC {\'a} historie $3$ t\IeC {\v r}\IeC {\'\i }dy (exp. \ref {ex:user1})\relax }}{44}{figure.caption.82}
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Poslucha\IeC {\v c}sk\IeC {\'a} historie s rozd\IeC {\'\i }lnou s\IeC {\'e}mantikou (exp. \ref {ex:user2})\relax }}{45}{figure.caption.83}
+\contentsline {figure}{\numberline {4.20}{\ignorespaces Krabicov\IeC {\'y} diagram pro hotttnesss.\relax }}{45}{figure.caption.84}
+\contentsline {figure}{\numberline {4.21}{\ignorespaces Obl\IeC {\'\i }benost skladby (exp. \ref {ex:hotfail})\relax }}{46}{figure.caption.85}
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
+\addvspace {10pt}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {E.1}{\ignorespaces Sex Pistols a The Offspring (exp. \ref {exp:sexp-off})\relax }}{63}{figure.caption.94}

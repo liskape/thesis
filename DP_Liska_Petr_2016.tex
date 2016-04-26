@@ -1265,82 +1265,41 @@ Ve stejné chvíle jsou na obrázku \ref{fig:mappos} zachyceny první dvě dimen
 
 
 \section{Testování reprezentace}
-Reprezentace původních skladeb, tedy příslušných $90$ atributů vzniklo netriviální extrakcí z akustických vlastností původních objektů. Tento přístup zabraňuje interpretovat výsledné shluky podle společných vlastností odvozených pouze na základě konkrétních hodnot atributů. Lepším přístupem je interpretovat shluky podle původních objektů, tedy skladeb, což je ovšem záležitost, kterou má v popisu činnosti expert domény. V této části proto nepůjde o interpretaci výsledných shluků, nýbrž o nalezení nějaké struktury. 
+Reprezentace původních skladeb, tedy příslušných $90$ atributů vzniklo netriviální extrakcí z akustických vlastností původních objektů. Tento přístup zabraňuje interpretovat výsledné shluky podle společných vlastností odvozených pouze na základě konkrétních hodnot atributů. Lepším přístupem je interpretovat shluky podle původních objektů, tedy skladeb, což je ovšem záležitost, kterou má v popisu činnosti expert domény.
+
+V této části proto nepůjde primárně o interpretaci výsledných shluků, nýbrž o nalezení nějaké struktury. Výsledkem této sekce by tak mělo být ujištění, že zvolené metody jsou schopné najít strukturu v kolekcích reprezentací hudebních skladeb v kontextu zvolené sémantiky. Proto budou voleny takové datasety u kterých se struktura předpokládá.
 
 
-Výsledkem této sekce by tak mělo být ujištění, že zvolené metody jsou schopné najít strukturu v kolekcích reprezentací hudebních skladeb v kontextu zvolené sémantiky. Budou voleny takové datasety u kterých předpokládáme vytvoření shluků nejen podle zvolené sémantiky učení. 
 
-
-
-\subsection{Kapela jako sémantický kontext}
-
+\subsection{Interpret jako sémantický kontext}
 \subsubsection*{Katy Perry a Ramones}
+Jako první sémantika učení byla zvolena podle interpreta skladby. První zkoumaný dataset byl již představený --KatyRamDataset (\ref{app:KatyRamDataset}), který obsahuje skladby zpěvačky Katy Perry a kapely Ramones. Výsledky  experimentu (exp. \ref{exp:kp_ram}) jsou v podobě dvou sémantických map (obr. \ref{fig:kp_ram_res}). První mapa (obr. \ref{fig:kp_ram_som}) představuje natrénovanou samoorganizující mapu, zatímco druhá mapa (obr. \ref{fig:kp_ram_crsom}) pochází ze skryté vrstvy natrénované samoorganizující mapy se zahrnutým sémantickým kontextem.
 
-- wtf neuron
+	SOM při učení nebere v úvahu třídy vstupních vektorů a výsledná sémantická mapa vizualizuje pouze povahu vstupního prostoru. Podle této vizualizace (obr. \ref{fig:kp_ram_som}) lze konstatovat celkovou rozdílnost vektorů spadající do různých tříd.
+	
+	Oproti tomu CRSOM sémantický kontext zahrnuje do procesu učení explicitně a z příslušné sémantické mapy (obr. \ref{fig:kp_ram_crsom}) lze extrahovat rozdílné znalosti. Síť vytvořila dva koncentrované shluky v rozích mapy, což svědčí o dobré oddělitelnosti těchto dvou tříd. Konfliky v horním shluku (např neuron [3;14])implikuje podobné reprezentace pro skladby s rozdílnými sémantikami. Tato podobnost je již zřejmá z mapy SOM -- např. neuronem [2;9].  TODO více epoch. Neuron [15;13] představuje shluk odlehlých hodnot. Po prozkoumání objektů, které přísluší tomuto neuronu se ukázalo, že tyto nahrávky neobsahují hudbu, nýbrž se jedná o mluvené slovo Katy Perry a poskytovatel dat ho mylně zařadil mezi skladby.
 
 \begin{figure}
 \centering
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=.99\linewidth]{exp_kp_ram_som.png}
-  \caption{}
-  \label{fig:sub1}
+  \caption{SOM}
+  \label{fig:kp_ram_som}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=.99\linewidth]{exp_kp_ram_crsom.png}
-  \caption{}
-  \label{fig:sub2}
+  \caption{CRSOM}
+  \label{fig:kp_ram_crsom}
 \end{subfigure}
-\caption{}
-\label{fig:top}
+\caption{Katy Perry a Ramones (exp. \ref{exp:kp_ram})}
+\label{fig:kp_ram_res}
 \end{figure}
 
 
-\subsubsection*{David Bowie, Elvis Presley a AC/DC}
-
-\begin{figure}
-\centering
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=.99\linewidth]{exp_db_ep_acdc_som.png}
-  \caption{}
-  \label{fig:sub1}
-\end{subfigure}%
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=.99\linewidth]{exp_db_ep_acdc_crsom.png}
-  \caption{}
-  \label{fig:sub2}
-\end{subfigure}
-\caption{}
-\label{fig:top}
-\end{figure}
-% db_stones_acdc_ep=1000_norm=4_size=1.00_LR2=0.10_.mat
-
-\subsubsection*{Metallica, Maddona a Louis Armstrong}
-
-\begin{figure}
-\centering
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=.99\linewidth]{exp_met_mad_la_som.png}
-  \caption{}
-  \label{fig:sub1}
-\end{subfigure}%
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=.99\linewidth]{exp_met_mad_la_crsom.png}
-  \caption{}
-  \label{fig:sub2}
-\end{subfigure}
-\caption{}
-\label{fig:top}
-\end{figure}
-
-%met_mad_la_ep=2500_norm=4_size=1.00_LR2=0.05_.mat
-
-\subsubsection*{Offspring a Sex Pistols}
+\subsubsection*{The Offspring a Sex Pistols}
+Další dataset se skládá z diskografie kapel Sex Pistols a The Offspring. Mapa SOM (obr. \ref{fig:sexp_off_som}) zobrazuje větší promíchanost objektů v prostoru, než se tomu jednalo u  předchozího experimentu, což svědčí o větší podobnosti hudebních znaků těchto dvou kapel. I přes tento fakt jsou data dobře oddělitelné podle této sémantiky (obr. \ref{fig:sexp_off_crsom}). Výsledná mapa dokonce neobsahuje žádné konflikty, což lze přisoudit delšímu učení (exp. \ref{exp:sexp-off}), než v předchozím případě.
 
 
 \begin{figure}
@@ -1348,31 +1307,90 @@ Výsledkem této sekce by tak mělo být ujištění, že zvolené metody jsou s
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=.99\linewidth]{exp_sexp_off_som.png}
-  \caption{}
-  \label{fig:sub1}
+  \caption{SOM}
+  \label{fig:sexp_off_som}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=.99\linewidth]{exp_sexp_off_crsom.png}
-  \caption{}
+  \caption{CRSOM}
   \label{fig:sub2}
 \end{subfigure}
-\caption{}
+\caption{Sex Pistols a The Offspring (exp. \ref{exp:sexp-off})}
+\label{fig:sexp_off_crsom}
+\end{figure}
+
+\subsubsection*{David Bowie, Elvis Presley a AC/DC}
+Další zkoumaný dataset obsahuje skladby následujících interpretů: David Bowie, Elvis Presley a AC/DC. I zde se jedná o dobře rozlišitelné interprety o čemž svědčí výsledky experimentů (obr. \ref{fig:db_ep_acdc}).
+
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{exp_db_ep_acdc_som.png}
+  \caption{SOM}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{exp_db_ep_acdc_crsom.png}
+  \caption{CRSOM}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{David Bowie, Elvis Presley a AC/DC (exp. \ref{exp:db-ep-acdc})}
+\label{fig:db_ep_acdc}
+\end{figure}
+% db_stones_acdc_ep=1000_norm=4_size=1.00_LR2=0.10_.mat
+
+\subsubsection*{Metallica, Maddona a Louis Armstrong}
+Poslední dataset s daty rozdělenými do tříd podle interpretů je met-mad-la-dataset (\ref{d:met_mad_la}). Tak jako ve všech předchozích případech, i zde CRSOM síť dokázala sformovat dobře ucelené shluky podle dané sémantiky (obr. \ref{fig:metmadlacrsom}).
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{exp_met_mad_la_som.png}
+  \caption{SOM}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{exp_met_mad_la_crsom.png}
+  \caption{CRSOM}
+  \label{fig:metmadlacrsom}
+\end{subfigure}
+\caption{Metallica, Maddona a Louis Armstrong (exp. \ref{exp:met-mad-la})}
 \label{fig:top}
+\end{figure}
+%met_mad_la_ep=2500_norm=4_size=1.00_LR2=0.05_.mat
+
+
+Pro představu, jak vypadá sémantická mapa, ze které nelze extrahovat žádnou strukturu dat, byla vytvořena náhodná sémantika pro dataset met-mad-la. Sémantika byla vytvořena náhodným proházením tříd objektů. Sítě SOM a CRSOM byly učeny  se stejnými parametry jako v předchozím v případě. Výsledky tohoto experimentu jsou na obrázku \ref{fig:metmadlarandom}.
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{exp_met_mad_la_random_som.png}
+  \caption{SOM}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{exp_met_mad_la_random_crsom.png}
+  \caption{CRSOM}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{Dataset s náhodnou sémantikou (exp \ref{exp:met-mad-la-random})}
+\label{fig:metmadlarandom}
 \end{figure}
 
 % off-sexp_ep=2500_norm=4_size=1.00_LR2=0.10_.mat
 
 
 \subsection{Rok vzniku jako sémantický kontext}
-
-nemáme konkrétní skladby
-můžeme posuzovat data z dané sémantiky
-i přes konflikty utvořilo koncetrované clustery
-
-lepší zobrazování: crosses
-
-\subsubsection*{Rok 1960 a 1970}
+Další zkoumaná sémantika je rok vzniku sladby. Pro tento účel byly vytvořeny dva datasety 60-vs-70-dataset (\ref{app:60vs70dataset}) a 70-vs-10-dataset \ref{app:70vs10dataset}. V tomto případě se jedná o obrovské datasety, potažmo sítě, které bylo nutné učit po velký počet epoch, v řádech tisíců. Předpoklad, že pomocí CRSOM map bude možné extrahovat strukturu kolekcí, se naplnil a v obou případech je možné určit několik shluků pro jednotlivé sémantiky. Více shluků v rámci jedné třídy svědčí o rozdílnosti skladeb v jedné sémantice, což je další předpokládaný závěr.
 
 
 \begin{figure}
@@ -1380,36 +1398,34 @@ lepší zobrazování: crosses
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=.99\linewidth]{exp_60s70s_som.png}
-  \caption{}
+  \caption{SOM}
   \label{fig:sub1}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=.99\linewidth]{exp_60s70s_crsom.png}
-  \caption{}
+  \caption{CRSOM}
   \label{fig:sub2}
 \end{subfigure}
-\caption{}
+\caption{Skladby z 1960 a 1970 (exp. \ref{exp:60-vs-70}) }
 \label{fig:top}
 \end{figure}
-
-\subsubsection*{Rok 1970 a 2010}
 
 \begin{figure}
 \centering
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=.99\linewidth]{exp_70s10s_som.png}
-  \caption{}
+  \caption{SOM}
   \label{fig:sub1}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=.99\linewidth]{exp_70s10s_crsom.png}
-  \caption{}
+  \caption{CRSOM}
   \label{fig:sub2}
 \end{subfigure}
-\caption{}
+\caption{Skladby z 1970 a 2010 (exp. \ref{exp:70-vs-10})}
 \label{fig:top}
 \end{figure}
 
@@ -1424,32 +1440,49 @@ méně konfliktů (rozdílná hudba)
 
 
 \subsection{Posluchačská historie jako sémantický kontext}
-- nedaří se odvodit žádnou strukturu pro daný sémantický kontext
-- je možné že žádná neni
-- clustorování dá vždy clustery?
-- 
+V této sekci je použita historie přehrávání náhodného uživatele. Máme k dispozici přehrané skladby a k nim počet přehrání. Pro vytvoření tříd byla zvolena denormalizace do tří tříd:
+
+\begin{itemize}
+\item třída A: $1$ přehrání,
+\item třída B: $2-4$ přehrání,
+\item třída C: $\geq5$ přehrání.
+\end{itemize}
+
+Předpokladem je, že počty přehrání odrážejí uživatelskou oblíbenost skladby a tato oblíbenost je stanovena hudebními znaky. Výsledky učení v kontextu takto zvolené sémantiky jsou na obr. \ref{fig:user1}. Ze sémantické mapy SOM (obr. \ref{fig:usersom}) nelze odvodit žádné pravidelnosti. CRSOM mapa (obr. \ref{fig:usercrsom}) utvořila několik shluků, ale žádný z nich není koncentrovaný a homogenní. To je možné dát za vinu špatnému rozdělení do tříd, které nenese žádné pravidelnosti.
+
+První problém je se skladbami, které mají jediné přehrání a není u nich jasné, jestli se jedná o konečný počet. Ve shluku $1$ jsou koncentrované skladby všech tříd, což znamená, že i přes své rozdílné sémantiky nebyly učením odděleny, což implikuje  velmi podobné reprezentace. Za stanovených předpokladů je možné skladby s jedním přehráním ve shluku 1 interpretovat jako nově objevené a jediný počet přehrání je pouze dočasný, protože sdílejí hudbení znaky i s ostatními třídami.
+
+Další problém je uměle stanovená hranice pěti přehrání, která představuje vysoce oblíbenou skladbu. Shluky $2$ a $3$ obsahují pouze hudbu třídy B a C a je možné je označit jako oblíbené s potenciálem dalších přehrávání.
+
 \begin{figure}
 \centering
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=.99\linewidth]{exp_user_som.png}
-  \caption{}
-  \label{fig:sub1}
+  \caption{SOM mapa}
+  \label{fig:usersom}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=.99\linewidth]{exp_user_crsom.png}
-  \caption{}
-  \label{fig:sub2}
+  \includegraphics[width=.99\linewidth]{exp_user_crsom_ann.png}
+  \caption{anotovaná CRSOM mapa}
+  \label{fig:usercrsom}
 \end{subfigure}
-\caption{}
-\label{fig:top}
+\caption{Posluchačská historie $3$ třídy (exp. \ref{ex:user1})}
+\label{fig:user1}
 \end{figure}
 
 
-\subsection{Oblíbenost jako sémantický kontext}
+V dalším experimentu byla prozkoumána rozdílná sémantika pro stejná data:
 
-- porovnávat různé výsledky pro různé epochy, ...
+\begin{itemize}
+\item třída X: $1$ přehrání,
+\item třída Y: $\geq2$ přehrání.
+\end{itemize}
+
+Výsledky jsou k vidění na obr. \ref{fig:user2}. Narozdíl od předchozí sémantiky, takto zvolené třídy vytvářejí dobře oddělitelné shluky \ref{fig:user2crsom}. Sklady spadající do třídy Y vytváří nepříliš koncentrovaný shluk, což svědčí o hudební rozmanitosti těchto skladeb. Dva konfliky (neurony $[10;5]$ a $[11;6]$) byly BMU pro některé skladby s jedním přehráním. Pro podobnost reprezentací se skaldbami z třídy Y lze předpokládat další přehrávání těchto skladeb.
+
+Kategorie X vytvořila několik shluků, které učení CRSOM nepodařilo sloučit, což implikuje vysoké rozdílnosti v reprezentacích v rámci jedné třídy. Tento fakt je možné vysvětlit již zmíněným nejasným významem jednoho přehrání, který se dá iterpretovat jako neoblíbená hudba, nebo jako nová hudba.  
 
 
 
@@ -1459,24 +1492,75 @@ méně konfliktů (rozdílná hudba)
 \centering
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=.99\linewidth]{exp_trend_fail_som.png}
-  \caption{}
+  \includegraphics[width=.99\linewidth]{exp_user2_som.png}
+  \caption{SOM}
   \label{fig:sub1}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=.99\linewidth]{exp_trend_fail_crsom.png}
-  \caption{}
+  \includegraphics[width=.99\linewidth]{exp_user2_crsom.png}
+  \caption{CRSOM}
+  \label{fig:user2crsom}
+\end{subfigure}
+\caption{Posluchačská historie s rozdílnou sémantikou (exp. \ref{ex:user2})}
+\label{fig:user2}
+\end{figure}
+
+
+
+
+
+
+\subsection{Oblíbenost jako sémantický kontext}\label{sec:hotness}
+V této sekci budou zkoumány struktury hudebních kolekcí se sémantikou podle oblíbenosti. V představení dostupných dat bylo zmíněno, že API poskytuje míru současné oblíbenosti skladby atributem \textit{hotttnesss}. Tato hodnota je odvozena z mnoha zdrojů jako jsou zmínky na webu, hudební recenze, dále podle počtů stažení a přehrání \cite{hotttnesss}.
+
+Protože je atribut hotttnesss desetinné číslo, bylo nutné ho denormalizovat do dvou tříd (Fail a Hot). Konkrétní rozdělení je názorně předvedeno v krabicovém diagramu na obrázku \ref{fig:boxplot}.
+
+Z výsledků (obr. \ref{fig:hotfail}) lze usoudit, že podle této sémantiky jsou data dobře oddělitelná. Mapa neobsahuje koncentrované shluky, což svědčí o tom, že v obou třídách se vyskytují skladby z různých hudebních odvětví.
+
+
+
+\begin{figure}[htbp]
+\begin{center}
+	\includegraphics[scale=0.25]{exp_boxplot.png}
+\caption{Krabicový diagram pro hotttnesss.}
+\label{fig:boxplot}
+\end{center}
+\end{figure}
+
+  
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{exp_trend_fail2_som.png}
+  \caption{SOM}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{exp_trend_fail2_crsom.png}
+  \caption{CRSOM}
   \label{fig:sub2}
 \end{subfigure}
-\caption{}
-\label{fig:top}
+\caption{Oblíbenost skladby (exp. \ref{ex:hotfail})}
+\label{fig:hotfail}
 \end{figure}
 
 
 
 % -------------------------------------- Využití ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 \chapter{Využití}
+
+Využítí je poslední částí KDD. V této kapitole budou představeny dvě možnosti, jak využít získané výstupy z dataminingových metod. Obě možnosti představují koncepty teoreticky využitelného softwarového výrobeku.
+
+\section{Mapa hudebního vkusu}
+
+
+\section{Predikce úspěšnosti pro novou skladbu}
+Tento koncept byl inspirován experimenty v sekci \ref{sec:hotness}. 
+
 
 \begin{conclusion}
 	co se všechno udělalo v této práci (mělo by sedět s cílem)
@@ -1499,9 +1583,130 @@ méně konfliktů (rozdílná hudba)
 	\item[CPU] \dots
 \end{description}
 
-\chapter{Použité datasety}
-\section{Katy Perry a Ramones (KatyRamDataset)}\label{app:KatyRamDataset}
+\chapter{Definice pojmů}
 
+
+\chapter{Obsah přiloženého CD}
+
+%upravte podle skutecnosti
+
+\begin{figure}
+	\dirtree{%
+		.1 readme.txt\DTcomment{stručný popis obsahu CD}.
+		.1 exe\DTcomment{adresář se spustitelnou formou implementace}.
+		.1 src.
+		.2 impl\DTcomment{zdrojové kódy implementace}.
+		.2 thesis\DTcomment{zdrojová forma práce ve formátu \LaTeX{}}.
+		.1 text\DTcomment{text práce}.
+		.2 thesis.pdf\DTcomment{text práce ve formátu PDF}.
+		.2 thesis.ps\DTcomment{text práce ve formátu PS}.
+	}
+\end{figure}
+
+
+\chapter{Datasety}
+
+\section{Interpret jako sémantika}
+
+\subsection{Katy Perry a Ramones (katy-ram-dataset)}\label{sec:katy-ram-dataset}
+
+celkový počet záznamů
+Katy Perry 50\%
+Ramones 50\%
+
+\subsection{The Offspring a Sex (off-sexp-dataset)}\label{sec:off-sexp-dataset}
+
+\subsection{David Bowie, Elvis Presley a AC/DC (dp-ep-acdc-dataset)}\label{sec:dp-ep-acdc-dataset}
+
+\subsection{Metallica, Maddona a Louis Armstrong (met-mad-la-dataset)}\label{sec:met-mad-la-dataset}
+
+\subsection{Metallica, Maddona a Louis Armstrong náhodný (met-mad-la-random-dataset)}\label{sec:met-mad-la-random-dataset}
+
+\section{Rok vzniku skladby jako sémantika}
+
+\subsection{Skladby z roku 1960 a 1970 (60-vs-70-dataset)}\label{sec:60-vs-70-dataset}
+
+\subsection{Skladby z roku 1970 a 2010 (70-vs-10-dataset)}\label{sec:70-vs-10-dataset}
+
+\section{Počet přehrání jako sémantika}
+
+\subsection{Počty přehrání rozdělené do třech kategorií (user-3class-dataset)}\label{sec:user-3class-dataset}
+\subsection{Počty přehrání rozdělené do dvou kategorií (user-2class-dataset)}\label{sec:user-2class-dataset}
+
+\section{Oblíbenost jako sémantika}
+
+\subsection{Hot a fail skladby (hot-fail-dataset)}\label{sec:hot-fail-dataset}
+
+\chapter{Protokoly experimentů}
+\section{Experiment}
+
+- datset
+- SOM
+- CRSOM
+- ploterror?
+
+\subsection{Experiment}\label{exp:kp_ram}
+\subsubsection*{SOM}
+\dots
+\subsubsection*{CRSOM}
+\dots
+
+\section{David Bowie, Elvis Presley a AC/DC (db-ep-acdc-dataset)}\label{app:db-ep-acdc-dataset}
+\subsection{Experiment}\label{exp:db-ep-acdc}
+
+
+\section{Metallica, Maddona a Louis Armstrong (met-mad-la-dataset)}\label{app:met-mad-la}
+\subsection{Experiment}\label{exp:met-mad-la}
+
+\section{Sex Pistols a The Offspring (sexp-off-dataset)}\label{app:sexp-off}
+\subsection{Experiment}\label{exp:sexp-off}
+
+
+\section{Skladby z roku 1960 a 1970 (60-vs-70-dataset)}\label{app:60vs70dataset}
+\subsection{Experiment}\label{exp:60-vs-70}
+
+
+\section{Skladby z roku 1970 a 2010 (70-vs-10-dataset)}\label{app:70vs10dataset}
+\subsection{Experiment}\label{exp:70-vs-10}
+
+
+\begin{figure}
+\centering
+
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{exp_sexp_off_som.png}
+  \caption{SOM}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{exp_sexp_off_som.png}
+  \caption{SOM}
+  \label{fig:sub1}
+\end{subfigure}%
+
+
+
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{exp_sexp_off_som.png}
+  \caption{SOM}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{exp_sexp_off_som.png}
+  \caption{SOM}
+  \label{fig:sub1}
+\end{subfigure}%
+
+
+\caption{Sex Pistols a The Offspring (exp. \ref{exp:sexp-off})}
+\label{fig:top}
+
+
+\end{figure}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 % % Tuto kapitolu z výsledné práce ODSTRAŇTE.
@@ -1609,21 +1814,6 @@ méně konfliktů (rozdílná hudba)
 % 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 
-\chapter{Obsah přiloženého CD}
 
-%upravte podle skutecnosti
-
-\begin{figure}
-	\dirtree{%
-		.1 readme.txt\DTcomment{stručný popis obsahu CD}.
-		.1 exe\DTcomment{adresář se spustitelnou formou implementace}.
-		.1 src.
-		.2 impl\DTcomment{zdrojové kódy implementace}.
-		.2 thesis\DTcomment{zdrojová forma práce ve formátu \LaTeX{}}.
-		.1 text\DTcomment{text práce}.
-		.2 thesis.pdf\DTcomment{text práce ve formátu PDF}.
-		.2 thesis.ps\DTcomment{text práce ve formátu PS}.
-	}
-\end{figure}
 
 \end{document}
