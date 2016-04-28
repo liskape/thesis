@@ -13,31 +13,36 @@
 \BOOKMARK [1][-]{section.3.1}{\332vod do hudebn\355 problematiky}{chapter.3}% 13
 \BOOKMARK [1][-]{section.3.2}{MillionSongDataset a The Echo Nest}{chapter.3}% 14
 \BOOKMARK [1][-]{section.3.3}{Dostupn\351 atributy}{chapter.3}% 15
-\BOOKMARK [1][-]{section.3.4}{V\375ber dat a predzpracov\341n\355}{chapter.3}% 16
-\BOOKMARK [0][-]{chapter.4}{Experimenty}{}% 17
-\BOOKMARK [1][-]{section.4.1}{Protokol}{chapter.4}% 18
-\BOOKMARK [1][-]{section.4.2}{Ucen\355 CRSOM}{chapter.4}% 19
-\BOOKMARK [1][-]{section.4.3}{Testov\341n\355 reprezentace}{chapter.4}% 20
-\BOOKMARK [1][-]{section.4.4}{Hled\341n\355 struktur}{chapter.4}% 21
-\BOOKMARK [0][-]{chapter.5}{Vyu\236it\355}{}% 22
-\BOOKMARK [1][-]{section.5.1}{Mapa hudebn\355ho vkusu}{chapter.5}% 23
-\BOOKMARK [1][-]{section.5.2}{Predikce \372spe\235nosti pro novou skladbu}{chapter.5}% 24
-\BOOKMARK [0][-]{chapter*.79}{Z\341ver}{}% 25
-\BOOKMARK [1][-]{section*.80}{Pr\355nosy}{chapter*.79}% 26
-\BOOKMARK [1][-]{section*.81}{Mo\236n\341 roz\235\355ren\355}{chapter*.79}% 27
-\BOOKMARK [0][-]{section*.83}{Literatura}{}% 28
-\BOOKMARK [0][-]{appendix.A}{Seznam pou\236it\375ch zkratek}{}% 29
-\BOOKMARK [0][-]{appendix.B}{Definice pojmu}{}% 30
-\BOOKMARK [0][-]{appendix.C}{Obsah prilo\236en\351ho CD}{}% 31
-\BOOKMARK [0][-]{appendix.D}{Datasety}{}% 32
-\BOOKMARK [1][-]{section.D.1}{Interpret jako s\351mantika}{appendix.D}% 33
-\BOOKMARK [1][-]{section.D.2}{Rok vzniku skladby jako s\351mantika}{appendix.D}% 34
-\BOOKMARK [1][-]{section.D.3}{Pocet prehr\341n\355 jako s\351mantika}{appendix.D}% 35
-\BOOKMARK [1][-]{section.D.4}{Obl\355benost jako s\351mantika}{appendix.D}% 36
-\BOOKMARK [0][-]{appendix.E}{Protokoly experimentu}{}% 37
-\BOOKMARK [1][-]{section.E.1}{Experiment}{appendix.E}% 38
-\BOOKMARK [1][-]{section.E.2}{David Bowie, Elvis Presley a AC/DC \(db-ep-acdc-dataset\)}{appendix.E}% 39
-\BOOKMARK [1][-]{section.E.3}{Metallica, Maddona a Louis Armstrong \(met-mad-la-dataset\)}{appendix.E}% 40
-\BOOKMARK [1][-]{section.E.4}{Sex Pistols a The Offspring \(sexp-off-dataset\)}{appendix.E}% 41
-\BOOKMARK [1][-]{section.E.5}{Skladby z roku 1960 a 1970 \(60-vs-70-dataset\)}{appendix.E}% 42
-\BOOKMARK [1][-]{section.E.6}{Skladby z roku 1970 a 2010 \(70-vs-10-dataset\)}{appendix.E}% 43
+\BOOKMARK [1][-]{section.3.4}{S\351mantick\351 kontexty}{chapter.3}% 16
+\BOOKMARK [1][-]{section.3.5}{V\375ber dat a predzpracov\341n\355}{chapter.3}% 17
+\BOOKMARK [0][-]{chapter.4}{Experimenty}{}% 18
+\BOOKMARK [1][-]{section.4.1}{Protokol}{chapter.4}% 19
+\BOOKMARK [1][-]{section.4.2}{Ucen\355 CRSOM}{chapter.4}% 20
+\BOOKMARK [1][-]{section.4.3}{Testov\341n\355 reprezentace}{chapter.4}% 21
+\BOOKMARK [1][-]{section.4.4}{Hled\341n\355 struktur}{chapter.4}% 22
+\BOOKMARK [0][-]{chapter.5}{Vyu\236it\355}{}% 23
+\BOOKMARK [1][-]{section.5.1}{Mapa hudebn\355ho vkusu}{chapter.5}% 24
+\BOOKMARK [1][-]{section.5.2}{Predikce \372spe\235nosti pro novou skladbu}{chapter.5}% 25
+\BOOKMARK [0][-]{chapter*.81}{Z\341ver}{}% 26
+\BOOKMARK [1][-]{section*.82}{Pr\355nosy}{chapter*.81}% 27
+\BOOKMARK [1][-]{section*.83}{Mo\236n\341 roz\235\355ren\355}{chapter*.81}% 28
+\BOOKMARK [0][-]{section*.85}{Literatura}{}% 29
+\BOOKMARK [0][-]{appendix.A}{Seznam pou\236it\375ch zkratek}{}% 30
+\BOOKMARK [0][-]{appendix.B}{Definice pojmu}{}% 31
+\BOOKMARK [0][-]{appendix.C}{Obsah prilo\236en\351ho CD}{}% 32
+\BOOKMARK [0][-]{appendix.D}{Datasety}{}% 33
+\BOOKMARK [1][-]{section.D.1}{Interpret jako s\351mantika}{appendix.D}% 34
+\BOOKMARK [1][-]{section.D.2}{Rok vzniku skladby jako s\351mantika}{appendix.D}% 35
+\BOOKMARK [1][-]{section.D.3}{Pocet prehr\341n\355 jako s\351mantika}{appendix.D}% 36
+\BOOKMARK [1][-]{section.D.4}{Obl\355benost jako s\351mantika}{appendix.D}% 37
+\BOOKMARK [0][-]{appendix.E}{Protokoly experimentu}{}% 38
+\BOOKMARK [1][-]{section.E.1}{Katy Perry a Ramones}{appendix.E}% 39
+\BOOKMARK [1][-]{section.E.2}{Sex Pistols a The Offspring}{appendix.E}% 40
+\BOOKMARK [1][-]{section.E.3}{David Bowie, Elvis Presley a AC/DC}{appendix.E}% 41
+\BOOKMARK [1][-]{section.E.4}{Metallica, Maddona a Louis Armstrong}{appendix.E}% 42
+\BOOKMARK [1][-]{section.E.5}{Metallica, Maddona a Louis Armstrong n\341hodne}{appendix.E}% 43
+\BOOKMARK [1][-]{section.E.6}{Skladby z roku 1960 a 1970}{appendix.E}% 44
+\BOOKMARK [1][-]{section.E.7}{Skladby z roku 1970 a 2010}{appendix.E}% 45
+\BOOKMARK [1][-]{section.E.8}{U\236ivatelsk\341 historie 3 tr\355dy}{appendix.E}% 46
+\BOOKMARK [1][-]{section.E.9}{U\236ivatelsk\341 historie 2 tr\355dy}{appendix.E}% 47
+\BOOKMARK [1][-]{section.E.10}{Obl\355benost skladby}{appendix.E}% 48

@@ -14,11 +14,11 @@
 \contentsline {subsection}{\numberline {1.3.2}U\IeC {\v c}en\IeC {\'\i }}{8}{subsection.1.3.2}
 \contentsline {subsection}{\numberline {1.3.3}Vlastnosti}{9}{subsection.1.3.3}
 \contentsline {subsection}{\numberline {1.3.4}Vyu\IeC {\v z}it\IeC {\'\i }}{9}{subsection.1.3.4}
-\contentsline {section}{\numberline {1.4}CRSOM}{11}{section.1.4}
+\contentsline {section}{\numberline {1.4}CRSOM}{10}{section.1.4}
 \contentsline {subsection}{\numberline {1.4.1}Struktura s\IeC {\'\i }t\IeC {\v e}}{12}{subsection.1.4.1}
 \contentsline {subsection}{\numberline {1.4.2}U\IeC {\v c}en\IeC {\'\i }}{15}{subsection.1.4.2}
 \contentsline {subsection}{\numberline {1.4.3}Srovn\IeC {\'a}n\IeC {\'\i } se SOM }{16}{subsection.1.4.3}
-\contentsline {subsection}{\numberline {1.4.4}Vlastnosti a vyu\IeC {\v z}it\IeC {\'\i }}{17}{subsection.1.4.4}
+\contentsline {subsection}{\numberline {1.4.4}Vlastnosti a vyu\IeC {\v z}it\IeC {\'\i }}{18}{subsection.1.4.4}
 \contentsline {chapter}{\chapternumberline {2}N\IeC {\'a}vrh a implementace}{19}{chapter.2}
 \contentsline {section}{\numberline {2.1}SOM}{19}{section.2.1}
 \contentsline {section}{\numberline {2.2}CRSOM}{20}{section.2.2}
@@ -35,54 +35,56 @@
 \contentsline {section}{\numberline {3.3}Dostupn\IeC {\'e} atributy}{28}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}N\IeC {\'a}stroj Analyze}{28}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Dal\IeC {\v s}\IeC {\'\i } atributy}{29}{subsection.3.3.2}
-\contentsline {section}{\numberline {3.4}V\IeC {\'y}b\IeC {\v e}r dat a p\IeC {\v r}edzpracov\IeC {\'a}n\IeC {\'\i }}{29}{section.3.4}
-\contentsline {chapter}{\chapternumberline {4}Experimenty}{31}{chapter.4}
-\contentsline {section}{\numberline {4.1}Protokol}{31}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Semantic relevance index}{32}{subsection.4.1.1}
-\contentsline {section}{\numberline {4.2}U\IeC {\v c}en\IeC {\'\i } CRSOM}{32}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Transformace vstupn\IeC {\'\i }ch dat a vliv na u\IeC {\v c}en\IeC {\'\i }}{32}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Aspekty u\IeC {\v c}en\IeC {\'\i } CRSOM}{36}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3}Testov\IeC {\'a}n\IeC {\'\i } reprezentace}{39}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Interpret jako s\IeC {\'e}mantick\IeC {\'y} kontext}{39}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Rok vzniku jako s\IeC {\'e}mantick\IeC {\'y} kontext}{42}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}Hled\IeC {\'a}n\IeC {\'\i } struktur}{43}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Poslucha\IeC {\v c}sk\IeC {\'a} historie jako s\IeC {\'e}mantick\IeC {\'y} kontext}{43}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Obl\IeC {\'\i }benost jako s\IeC {\'e}mantick\IeC {\'y} kontext}{44}{subsection.4.4.2}
-\contentsline {chapter}{\chapternumberline {5}Vyu\IeC {\v z}it\IeC {\'\i }}{47}{chapter.5}
-\contentsline {section}{\numberline {5.1}Mapa hudebn\IeC {\'\i }ho vkusu}{47}{section.5.1}
-\contentsline {section}{\numberline {5.2}Predikce \IeC {\'u}sp\IeC {\v e}\IeC {\v s}nosti pro novou skladbu}{47}{section.5.2}
-\contentsline {chapter}{Z{\' a}v{\v e}r}{49}{chapter*.79}
-\contentsline {section}{P\IeC {\v r}\IeC {\'\i }nosy}{49}{section*.80}
-\contentsline {section}{Mo\IeC {\v z}n\IeC {\'a} roz\IeC {\v s}\IeC {\'\i }\IeC {\v r}en\IeC {\'\i }}{49}{section*.81}
-\contentsline {chapter}{Literatura}{51}{section*.83}
-\contentsline {appendix}{\chapternumberline {A}Seznam pou\IeC {\v z}it\IeC {\'y}ch zkratek}{53}{appendix.A}
-\contentsline {appendix}{\chapternumberline {B}Definice pojm\IeC {\r u}}{55}{appendix.B}
-\contentsline {appendix}{\chapternumberline {C}Obsah p\IeC {\v r}ilo\IeC {\v z}en\IeC {\'e}ho CD}{57}{appendix.C}
-\contentsline {appendix}{\chapternumberline {D}Datasety}{59}{appendix.D}
-\contentsline {section}{\numberline {D.1}Interpret jako s\IeC {\'e}mantika}{59}{section.D.1}
-\contentsline {subsection}{\numberline {D.1.1}Katy Perry a Ramones (katy-ram-dataset)}{59}{subsection.D.1.1}
-\contentsline {subsection}{\numberline {D.1.2}The Offspring a Sex (off-sexp-dataset)}{60}{subsection.D.1.2}
-\contentsline {subsection}{\numberline {D.1.3}David Bowie, Elvis Presley a AC/DC (dp-ep-acdc-dataset)}{60}{subsection.D.1.3}
-\contentsline {subsection}{\numberline {D.1.4}Metallica, Maddona a Louis Armstrong (met-mad-la-dataset)}{60}{subsection.D.1.4}
-\contentsline {subsection}{\numberline {D.1.5}Metallica, Maddona a Louis Armstrong n\IeC {\'a}hodn\IeC {\'y} (met-mad-la-random-dataset)}{60}{subsection.D.1.5}
-\contentsline {section}{\numberline {D.2}Rok vzniku skladby jako s\IeC {\'e}mantika}{60}{section.D.2}
-\contentsline {subsection}{\numberline {D.2.1}Skladby z roku 1960 a 1970 (60-vs-70-dataset)}{60}{subsection.D.2.1}
-\contentsline {subsection}{\numberline {D.2.2}Skladby z roku 1970 a 2010 (70-vs-10-dataset)}{60}{subsection.D.2.2}
-\contentsline {section}{\numberline {D.3}Po\IeC {\v c}et p\IeC {\v r}ehr\IeC {\'a}n\IeC {\'\i } jako s\IeC {\'e}mantika}{60}{section.D.3}
-\contentsline {subsection}{\numberline {D.3.1}Po\IeC {\v c}ty p\IeC {\v r}ehr\IeC {\'a}n\IeC {\'\i } rozd\IeC {\v e}len\IeC {\'e} do t\IeC {\v r}ech kategori\IeC {\'\i } (user-3class-dataset)}{60}{subsection.D.3.1}
-\contentsline {subsection}{\numberline {D.3.2}Po\IeC {\v c}ty p\IeC {\v r}ehr\IeC {\'a}n\IeC {\'\i } rozd\IeC {\v e}len\IeC {\'e} do dvou kategori\IeC {\'\i } (user-2class-dataset)}{60}{subsection.D.3.2}
-\contentsline {section}{\numberline {D.4}Obl\IeC {\'\i }benost jako s\IeC {\'e}mantika}{60}{section.D.4}
-\contentsline {subsection}{\numberline {D.4.1}Hot a fail skladby (hot-fail-dataset)}{60}{subsection.D.4.1}
-\contentsline {appendix}{\chapternumberline {E}Protokoly experiment\IeC {\r u}}{61}{appendix.E}
-\contentsline {section}{\numberline {E.1}Experiment}{61}{section.E.1}
-\contentsline {subsection}{\numberline {E.1.1}Experiment}{61}{subsection.E.1.1}
-\contentsline {section}{\numberline {E.2}David Bowie, Elvis Presley a AC/DC (db-ep-acdc-dataset)}{62}{section.E.2}
-\contentsline {subsection}{\numberline {E.2.1}Experiment}{62}{subsection.E.2.1}
-\contentsline {section}{\numberline {E.3}Metallica, Maddona a Louis Armstrong (met-mad-la-dataset)}{62}{section.E.3}
-\contentsline {subsection}{\numberline {E.3.1}Experiment}{62}{subsection.E.3.1}
-\contentsline {section}{\numberline {E.4}Sex Pistols a The Offspring (sexp-off-dataset)}{62}{section.E.4}
-\contentsline {subsection}{\numberline {E.4.1}Experiment}{62}{subsection.E.4.1}
-\contentsline {section}{\numberline {E.5}Skladby z roku 1960 a 1970 (60-vs-70-dataset)}{62}{section.E.5}
-\contentsline {subsection}{\numberline {E.5.1}Experiment}{62}{subsection.E.5.1}
-\contentsline {section}{\numberline {E.6}Skladby z roku 1970 a 2010 (70-vs-10-dataset)}{62}{section.E.6}
-\contentsline {subsection}{\numberline {E.6.1}Experiment}{62}{subsection.E.6.1}
+\contentsline {subsubsection}{\numberline {3.3.2.1}Atribut hotttnesss}{29}{subsubsection.3.3.2.1}
+\contentsline {section}{\numberline {3.4}S\IeC {\'e}mantick\IeC {\'e} kontexty}{29}{section.3.4}
+\contentsline {section}{\numberline {3.5}V\IeC {\'y}b\IeC {\v e}r dat a p\IeC {\v r}edzpracov\IeC {\'a}n\IeC {\'\i }}{30}{section.3.5}
+\contentsline {chapter}{\chapternumberline {4}Experimenty}{33}{chapter.4}
+\contentsline {section}{\numberline {4.1}Protokol}{33}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Semantic relevance index}{34}{subsection.4.1.1}
+\contentsline {section}{\numberline {4.2}U\IeC {\v c}en\IeC {\'\i } CRSOM}{34}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Transformace vstupn\IeC {\'\i }ch dat a vliv na u\IeC {\v c}en\IeC {\'\i }}{34}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Aspekty u\IeC {\v c}en\IeC {\'\i } CRSOM}{38}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}Testov\IeC {\'a}n\IeC {\'\i } reprezentace}{41}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Interpret jako s\IeC {\'e}mantick\IeC {\'y} kontext}{41}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Rok vzniku jako s\IeC {\'e}mantick\IeC {\'y} kontext}{43}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}Hled\IeC {\'a}n\IeC {\'\i } struktur}{44}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Poslucha\IeC {\v c}sk\IeC {\'a} historie jako s\IeC {\'e}mantick\IeC {\'y} kontext}{44}{subsection.4.4.1}
+\contentsline {paragraph}{Rozd\IeC {\v e}len\IeC {\'\i } dat do t\IeC {\v r}ech t\IeC {\v r}\IeC {\'\i }d}{45}{section*.75}
+\contentsline {paragraph}{Rozd\IeC {\v e}len\IeC {\'\i } dat do dvou t\IeC {\v r}\IeC {\'\i }d}{46}{section*.77}
+\contentsline {subsection}{\numberline {4.4.2}Obl\IeC {\'\i }benost jako s\IeC {\'e}mantick\IeC {\'y} kontext}{47}{subsection.4.4.2}
+\contentsline {chapter}{\chapternumberline {5}Vyu\IeC {\v z}it\IeC {\'\i }}{49}{chapter.5}
+\contentsline {section}{\numberline {5.1}Mapa hudebn\IeC {\'\i }ho vkusu}{49}{section.5.1}
+\contentsline {section}{\numberline {5.2}Predikce \IeC {\'u}sp\IeC {\v e}\IeC {\v s}nosti pro novou skladbu}{49}{section.5.2}
+\contentsline {chapter}{Z{\' a}v{\v e}r}{51}{chapter*.81}
+\contentsline {section}{P\IeC {\v r}\IeC {\'\i }nosy}{51}{section*.82}
+\contentsline {section}{Mo\IeC {\v z}n\IeC {\'a} roz\IeC {\v s}\IeC {\'\i }\IeC {\v r}en\IeC {\'\i }}{51}{section*.83}
+\contentsline {chapter}{Literatura}{53}{section*.85}
+\contentsline {appendix}{\chapternumberline {A}Seznam pou\IeC {\v z}it\IeC {\'y}ch zkratek}{55}{appendix.A}
+\contentsline {appendix}{\chapternumberline {B}Definice pojm\IeC {\r u}}{57}{appendix.B}
+\contentsline {appendix}{\chapternumberline {C}Obsah p\IeC {\v r}ilo\IeC {\v z}en\IeC {\'e}ho CD}{59}{appendix.C}
+\contentsline {appendix}{\chapternumberline {D}Datasety}{61}{appendix.D}
+\contentsline {section}{\numberline {D.1}Interpret jako s\IeC {\'e}mantika}{61}{section.D.1}
+\contentsline {subsection}{\numberline {D.1.1}Katy Perry a Ramones (katy-ram-dataset)}{61}{subsection.D.1.1}
+\contentsline {subsection}{\numberline {D.1.2}The Offspring a Sex (off-sexp-dataset)}{62}{subsection.D.1.2}
+\contentsline {subsection}{\numberline {D.1.3}David Bowie, Elvis Presley a AC/DC (dp-ep-acdc-dataset)}{62}{subsection.D.1.3}
+\contentsline {subsection}{\numberline {D.1.4}Metallica, Maddona a Louis Armstrong (met-mad-la-dataset)}{62}{subsection.D.1.4}
+\contentsline {subsection}{\numberline {D.1.5}Metallica, Maddona a Louis Armstrong n\IeC {\'a}hodn\IeC {\'y} (met-mad-la-random-dataset)}{62}{subsection.D.1.5}
+\contentsline {section}{\numberline {D.2}Rok vzniku skladby jako s\IeC {\'e}mantika}{62}{section.D.2}
+\contentsline {subsection}{\numberline {D.2.1}Skladby z roku 1960 a 1970 (60-vs-70-dataset)}{62}{subsection.D.2.1}
+\contentsline {subsection}{\numberline {D.2.2}Skladby z roku 1970 a 2010 (70-vs-10-dataset)}{62}{subsection.D.2.2}
+\contentsline {section}{\numberline {D.3}Po\IeC {\v c}et p\IeC {\v r}ehr\IeC {\'a}n\IeC {\'\i } jako s\IeC {\'e}mantika}{62}{section.D.3}
+\contentsline {subsection}{\numberline {D.3.1}Po\IeC {\v c}ty p\IeC {\v r}ehr\IeC {\'a}n\IeC {\'\i } rozd\IeC {\v e}len\IeC {\'e} do t\IeC {\v r}ech kategori\IeC {\'\i } (user-3class-dataset)}{62}{subsection.D.3.1}
+\contentsline {subsection}{\numberline {D.3.2}Po\IeC {\v c}ty p\IeC {\v r}ehr\IeC {\'a}n\IeC {\'\i } rozd\IeC {\v e}len\IeC {\'e} do dvou kategori\IeC {\'\i } (user-2class-dataset)}{62}{subsection.D.3.2}
+\contentsline {section}{\numberline {D.4}Obl\IeC {\'\i }benost jako s\IeC {\'e}mantika}{62}{section.D.4}
+\contentsline {subsection}{\numberline {D.4.1}Hot a fail skladby (hot-fail-dataset)}{62}{subsection.D.4.1}
+\contentsline {appendix}{\chapternumberline {E}Protokoly experiment\IeC {\r u}}{63}{appendix.E}
+\contentsline {section}{\numberline {E.1}Katy Perry a Ramones}{63}{section.E.1}
+\contentsline {section}{\numberline {E.2}Sex Pistols a The Offspring}{63}{section.E.2}
+\contentsline {section}{\numberline {E.3}David Bowie, Elvis Presley a AC/DC}{63}{section.E.3}
+\contentsline {section}{\numberline {E.4}Metallica, Maddona a Louis Armstrong}{63}{section.E.4}
+\contentsline {section}{\numberline {E.5}Metallica, Maddona a Louis Armstrong n\IeC {\'a}hodn\IeC {\v e}}{63}{section.E.5}
+\contentsline {section}{\numberline {E.6}Skladby z roku 1960 a 1970}{63}{section.E.6}
+\contentsline {section}{\numberline {E.7}Skladby z roku 1970 a 2010}{63}{section.E.7}
+\contentsline {section}{\numberline {E.8}U\IeC {\v z}ivatelsk\IeC {\'a} historie 3 t\IeC {\v r}\IeC {\'\i }dy}{63}{section.E.8}
+\contentsline {section}{\numberline {E.9}U\IeC {\v z}ivatelsk\IeC {\'a} historie 2 t\IeC {\v r}\IeC {\'\i }dy}{63}{section.E.9}
+\contentsline {section}{\numberline {E.10}Obl\IeC {\'\i }benost skladby}{63}{section.E.10}

@@ -3,8 +3,8 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: DP_Liska_Petr_2016.aux
 The style file: csn690.bst
 Database file #1: mybibliographyfile.bib
-Warning--I didn't find a database entry for "multimedia"
 Warning--I didn't find a database entry for "needed"
+Warning--I didn't find a database entry for "multimedia"
 Warning--I didn't find a database entry for "ruby_performance"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--to sort, need author or key in fayyad
@@ -15,6 +15,7 @@ Warning--to sort, need author or key in eurokomise
 Warning--to sort, need author or key in k-means-nphard
 Warning--to sort, need author or key in k-means-algo
 Warning--to sort, need author or key in junkie
+Warning--to sort, need author or key in cluster_som
 Warning--to sort, need author or key in som_dim_red
 Warning--to sort, need author or key in som_clustering
 Warning--to sort, need author or key in visual
@@ -27,45 +28,45 @@ Warning--to sort, need author or key in metacentrum
 Warning--to sort, need author or key in zvuk-ency
 Warning--to sort, need author or key in analyze
 Warning--to sort, need author or key in hotttnesss
-You've used 20 entries,
+You've used 21 entries,
             3151 wiz_defined-function locations,
-            701 strings with 7220 characters,
-and the built_in function-call counts, 4936 in all, are:
-= -- 360
-> -- 20
+            703 strings with 7280 characters,
+and the built_in function-call counts, 5181 in all, are:
+= -- 378
+> -- 21
 < -- 0
-+ -- 20
++ -- 21
 - -- 0
-* -- 182
-:= -- 371
-add.period$ -- 40
-call.type$ -- 20
-change.case$ -- 60
+* -- 191
+:= -- 389
+add.period$ -- 42
+call.type$ -- 21
+change.case$ -- 63
 chr.to.int$ -- 0
-cite$ -- 40
-duplicate$ -- 540
-empty$ -- 641
+cite$ -- 42
+duplicate$ -- 567
+empty$ -- 673
 format.name$ -- 0
-if$ -- 1161
+if$ -- 1219
 int.to.chr$ -- 0
-int.to.str$ -- 20
-missing$ -- 120
-newline$ -- 70
+int.to.str$ -- 21
+missing$ -- 126
+newline$ -- 73
 num.names$ -- 0
-pop$ -- 400
+pop$ -- 420
 preamble$ -- 1
-purify$ -- 40
+purify$ -- 42
 quote$ -- 0
-skip$ -- 219
+skip$ -- 230
 stack$ -- 0
-substring$ -- 140
-swap$ -- 200
+substring$ -- 147
+swap$ -- 210
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 80
-warning$ -- 20
+type$ -- 84
+warning$ -- 21
 while$ -- 0
-width$ -- 22
-write$ -- 149
-(There were 23 warnings)
+width$ -- 23
+write$ -- 156
+(There were 24 warnings)

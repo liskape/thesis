@@ -59,7 +59,11 @@
 
 \begin{introduction}
 
-\textit{Struktura} (z latinského struere, skládat, sestavovat, budovat, pořádat) označuje způsob složení, vnitřního uspořádání nějakého objektu, zejména pokud vykazuje nějaké pravidelnosti a zákonitosti. Existuje několik možných jak hledat strukturu v datech ... TODO
+\uv{\textit{Struktura (z latinského struere, skládat, sestavovat, budovat, pořádat) označuje způsob složení, vnitřního uspořádání nějakého objektu, zejména pokud vykazuje nějaké pravidelnosti a zákonitosti. Existuje několik možných jak hledat strukturu v datech}}\cite{needed}
+
+
+
+
 V této práci bude struktura hledána pomocí \textit{shlukování}, což je analýza, která má za úkol najít homogenní skupiny objektů. 
 
 Struktury budou hledány v kolekcích skladeb populární hudby, jako představiteli multimediálních dat \cite{multimedia}. 
@@ -68,7 +72,6 @@ Společné rysy takových dat: (nemá strukturu ve smyslu....) TODO
 
 
 Nejen pro interpretaci výsledků jsou nutné expertní znalosti z domény. Nicméně výhodou populární hudby je právě její rozšířenost mezi širší publikum, kde každý posluchač intuitivně snadno určí podobnost dvou skladeb nebo interpretů a jestli se mu konkrétní hudba líbí, nebo ne. 
-
 
 
 
@@ -220,7 +223,15 @@ K-means je oblíbený algoritmus shlukové analýzy, kde počet shluků je před
 Self organizing map (SOM), samoorganizující mapa, je umělá neuronová síť navržena Teuvo Kohonenem v 80. letech minulého století. Narozdíl od MLP se SOM skládá z jedné vrstvy speciálně uspořádaných neuronů. Dalším rozdílem je, že se učí bez učitele a to pomocí tzv. \textit{kompetitivní učení}.\cite{junkie}
 
 \subsection{Struktura sítě}
-SOM se typicky skládá z jedné vrstvy neuronů uspořádaných do pravidelné 2D mřížky\footnote{Je možné použít také 3D mřížky, nicméně v tomto textu budou použity výhradně 2D}. Topologie takové mřížky bývá zpravidla pravidelná a to hexagonání nebo pravoúhlá (obr. \ref{fig:top}). Složky vstupu jsou propojeny se všemi neurony.
+
+
+SOM se typicky skládá z jedné vrstvy neuronů uspořádaných do pravidelné 2D mřížky\footnote{Je možné použít také 3D mřížky, nicméně v tomto textu budou použity výhradně 2D} a každý neuron je propojen se všemi složkami vstupu. Topologie takové mřížky bývá zpravidla pravidelná a to hexagonání nebo pravoúhlá (obr. \ref{fig:topology}).
+
+
+
+
+Reprezentace sousedství je v mapě určena podle topologie mřížky. Například v topologii organizované do pravoúhlé mřížky (obr. \ref{fig:mesh}) má vnitřní neuron s indexem $[a;b]$ čtyři sousedy $[a+1;b]$, $[a-1;b]$, $[a;b+1]$ a $[a;b-1]$. Krajní neurony mají logicky sousedů méně.
+
 Stejně jako dopředné sítě, SOM má ve spojích uložené váhy. Tuto skutečnost je však názornější zachycovat jako tzv.: \textit{prototypové vektory}, které jsou uloženy u jednotlivých neuronů. Každý prototypové vektor  má stejnou dimenzi jako je dimenze vstupních dat.
 
 \begin{figure}
@@ -229,16 +240,16 @@ Stejně jako dopředné sítě, SOM má ve spojích uložené váhy. Tuto skute�
   \centering
   \includegraphics[width=.8\linewidth]{hex_top}
   \caption{Hexagonální topologie}
-  \label{fig:sub1}
+  \label{fig:hextop}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=.73\linewidth]{grid_top}
   \caption{Topologie organizovaná do pravoúhlé mřížky}
-  \label{fig:grid_top}
+  \label{fig:mesh}
 \end{subfigure}
 \caption{Modré značky představují neurony, zatímco červené spoje indikují sousedství.}
-\label{fig:top}
+\label{fig:topology}
 \end{figure}
 
 \subsection{Učení}
@@ -276,7 +287,10 @@ SOM, stejně jako mnoho dalších dataminingových metod, předpokládá, že p�
 
 Dále je chování samoorganizujících map ovlivněno počtem neuronů -- bylo ukázáno, že samoroganizující mapy s relativně malým počtem neuronů (oproti velikosti datasetu) se chovají podobně jako metoda K-means\cite{needed}. Prototypové vektory pak  představují středy shluků v původním prostoru.
 
-Naopak pro sítě s počtem neuronů srovnatelným s počtem vstupních dat, SOM učením vytváří diskrétní reprezentaci vstupního prostoru -- \textit{mapu}, ktera zachovává topologické vlastnosti prostoru, založené na sousednosti (co bylo blízko ve vstupním prostoru bude blízko i na mapě).
+Naopak pro sítě s počtem neuronů srovnatelným s počtem vstupních dat, SOM učením vytváří diskrétní reprezentaci vstupního prostoru -- \textit{mapu}, ktera zachovává topologické vlastnosti prostoru, založené na \textit{sousednosti}\cite{cluster_som}.
+
+
+Například topologie, která je organizována do pravoúhlé mřížky
 % neighboorhood function
 
 
@@ -750,7 +764,7 @@ Na čelní uzly je možné se přihlásit a zadávat úlohy spolu s požadavky n
 Druhým typem jsou \textit{výpočetní uzly}, které jsou vytěžovány plánovacím systémem \textit{Torque}. Torque dohlíží na efektivní a férové využívání zdrojů uživateli, a plánuje, kdy kdo dostane vyžádané stroje k dispozici. \cite{metacentrum}
 
 \subsubsection*{Git}
-Git je distribuovaný systém správy verzí. Git umožňuje snadným způsobem uchovávat různé verze souboru spolu s jejich kompletní historií. Nová verze se vytváří tzv. \textit{větvemi (branch)}. Ucelené změny v souborech se nazývají \textit{commity}, které  obsahují krátký text, který změnu kometuje. (ENH: pojmy co budou potřeba)
+Git je distribuovaný systém správy verzí. Git umožňuje snadným způsobem uchovávat různé verze souboru spolu s jejich kompletní historií. Nová verze se vytváří tzv. \textit{větvemi (branch)}. Ucelené změny v souborech se nazývají \textit{commity}, které  obsahují krátký text, který změnu komentuje.
 
 
 \subsubsection*{Zadávání úloh}
@@ -880,16 +894,36 @@ je reprezentována celkem třemi údaji: \textit{loudness\_start}, \textit{loudn
 
 \item[timbre] je 12-dimezionální vektor reprezentující jeden segment z hlediska barev tónů. Pro účely této práce je důležité, že takové vektory jsou vhodné na porovnávání mezi sebou. Toto tvrzení a další informace o způsobu získávání vektorů, které je mimo rámec této práce, jsou k naleznutí v oficiální dokumentaci nástroje \cite{analyze},
 
-\item[confidence] je číslo mezi 0 a 1, které symbolizuje jistotu analyzátoru pro konkrétní segment. Z důvodu zjednodušení nebude v této práci vůbec uvažován.
+\item[confidence] je číslo mezi $0$ a $1$, které symbolizuje jistotu analyzátoru pro konkrétní segment. Z důvodu zjednodušení nebude v této práci vůbec uvažován.
 \end{description}
 
 \subsection{Další atributy}
 Mimo akustické atributy, které je možné získat z nástroje Analyze, The Echo Nest poskytuje velké množství dalších prostřednictví svého webového API.
 
-Poskytované atributy je možné rozdělit do tří kategorií. První kategorie jsou metadata. Do této kategorie patří například název skladby, jméno autora nebo rok vzniku. Další kategorií jsou atributy tzv.: socilání. Do sociálních atributů jsou zařazeny míry oblíbenosti, známosti apod. Poslední kategorií jsou algoritmicky odhadnuté atributy, které popisují sladbu jako celek. Příkladem takových atributů jsou danceability (míra vhodnosti skladby pro tancování) a valence (míra pozitivní energie, kterou skladba vyzařuje).\footnote{Vyčerpávající popis dostupných atributů je k nalezení na adrese: http://developer.echonest.com/docs/v4/song.html}
+Poskytované atributy je možné rozdělit do tří kategorií. První kategorie jsou metadata. Do této kategorie patří například název skladby, jméno autora nebo rok vzniku. 
+Další kategorií jsou algoritmicky odhadnuté atributy, které popisují sladbu jako celek. Příkladem takových atributů jsou danceability (míra vhodnosti skladby pro tancování) a valence (míra pozitivní energie, kterou skladba vyzařuje).\footnote{Vyčerpávající popis dostupných atributů je k nalezení na adrese: http://developer.echonest.com/docs/v4/song.html}
+
+Poslední kategorií jsou atributy tzv.: socilání. Do sociálních atributů jsou zařazeny míry oblíbenosti, známosti apod. Jedním z atributů, který patří do této kategorie je atribut \textit{hotttnesss}.
+
+\subsubsection{Atribut hotttnesss}\label{sec:hotttnesss}
+
+Tato hodnota je udávana u interpretů a písní a odpovídá tomu, jak moc pozornosti se v současné době interpretu nebo písni dostává.
+Hotttnesss je desetinné číslo v intervalu $[0;1]$ a je odvozeno z mnoha tisíců zdrojů jako jsou zmínky na webu, na hudebních blozích a v hudebních recenzích. Dále je hotttnesss ovlivňován počtem stažení, počtem přehrání a dalšími informacemi\cite{hotttnesss}.
+
+\section{Sémantické kontexty}\label{sec:semcontext}
+Sémantický kontext pro vstupní data --- v našem případě rozdělení vstupních dat do tříd --- je možné učinit podle několika klíčů.
+
+Jako zdroj sémantik je možné využít metadata poskytnutá spolu s akustickými atributy. Pomocí metadat lze rozdělit skladby do tříd podle interpretů, lokace interpreta, žánrů, oblíbenosti a dalších. 
+
+Další možností je využití některých pomocných datasetů, které byli publikovány spolu s datasetem MillionSongDataset.
+
+Jako první takový je \textit{YearPredictionMSD dataset}\footnote{Dostupný na https://archive.ics.uci.edu/ml/datasets/YearPredictionMSD.}. Tento dataset obsahuje písně reprezentovány akustickými atributy spolu s cílovou proměnnou, která je rok vzniku skladby. 
+
+Další možností je vyžít \textit{Taste Profile dataset}\footnote{Dostupný na http://labrosa.ee.columbia.edu/millionsong/tasteprofile.}. Taste Profile dataset obsahuje přes 48 miliónů trojic: (uživatel, id písně, počet přehrání). Tímto způsobem je zaznamenán hudební vkus pro více než jeden milion uživatelů.
+
 
 \section{Výběr dat a předzpracování}
-Jak ilustrují předchozí sekce, možnosti výběru dat a způsobů předzpracování jsou rozsáhlé. Nicméně z důvodu jednoduchosti byly zvoleny pouze timbre vektory, které mají ambice reprezentovat hudení znaky skladby. Při zvolení čistě akustického atributu se také předejde vytváření něchtěných závislostí mezi daty a zvolenou sémantikou. Každá skladba je reprezentována rozdílným počtem segmentů a tím pádém také rozdílným počtem timbre vektorů. Pro získání konečných atributů byla použita kovarianční matice a průměrný vektor, stejně tak jako \textit{YearPredictionMSD datasetu}\footnote{Dostupný na https://archive.ics.uci.edu/ml/datasets/YearPredictionMSD.}. Tímto přístupem je možné pro každou skladbu získat $90$ desetinných čísel, které představují reprezentaci původního objektu. 
+Jak ilustrují předchozí sekce, možnosti výběru dat a způsobů předzpracování jsou rozsáhlé. Nicméně z důvodu jednoduchosti byly zvoleny pouze timbre vektory, které mají ambice nejlépe reprezentovat hudení znaky skladby. Při zvolení čistě akustického atributu se také předejde vytváření něchtěných závislostí mezi daty a zvolenou sémantikou. Každá skladba je reprezentována rozdílným počtem segmentů a tím pádém také rozdílným počtem timbre vektorů. Pro získání konečných atributů byla použita kovarianční matice a průměrný vektor, stejně tak jako v YearPredictionMSD datasetu. Tímto přístupem je možné pro každou skladbu získat $90$ desetinných čísel, které představují reprezentaci původního objektu. 
 
 
 
@@ -1209,7 +1243,13 @@ Ve stejné chvíle jsou na obrázku \ref{fig:mappos} zachyceny první dvě dimen
 
 
 \section{Testování reprezentace}
-Reprezentace písní, tedy příslušných $90$ desetinných atributů, vzniklo netriviální extrakcí z akustických vlastností původních objektů. V této části proto nepůjde primárně o interpretaci výsledných shluků, nýbrž o nalezení nějaké struktury. Výsledkem této sekce by tak mělo být ujištění, že zvolené metody jsou schopné najít strukturu v kolekcích reprezentací hudebních skladeb v kontextu zvolené sémantiky. Z toho důvodu budou voleny taková data se sémantickými kontexty u kterých se struktura předpokládá.
+Reprezentace písní, tedy příslušných $90$ desetinných atributů, vzniklo netriviální extrakcí z akustických vlastností původních objektů. Výsledkem této sekce by tak mělo být ujištění, že zvolené metody jsou schopné najít strukturu v kolekcích v takto zvolených reprezentací hudebních skladeb při zahrnutí sémantického kontextu.
+
+
+Z tohoto důvodu budou volena taková data se sémantickými kontexty u kterých se struktura předpokládá. V této části proto nepůjde primárně o interpretaci výsledných shluků, nýbrž o nalezení nějaké struktury. Případná validace nalezené struktury je záležitost, kterou má v popisu doménový expert.
+
+
+%Tento přístup zabraňuje interpretovat výsledné shluky podle společných vlastností odvozených pouze na základě konkrétních hodnot atributů. Lepším přístupem je interpretovat shluky podle původních objektů, tedy skladeb, což je ovšem záležitost, kterou má v popisu činnosti expert domény.
 
 
 \subsection{Interpret jako sémantický kontext}
@@ -1218,7 +1258,7 @@ Jako první sémantika učení byla zvolena podle interpreta skladby. První zko
 
 	SOM při učení nebere v úvahu třídy vstupních vektorů a výsledná sémantická mapa vizualizuje pouze povahu vstupního prostoru. Podle této vizualizace (obr. \ref{fig:kp_ram_som}) lze konstatovat celkovou rozdílnost vektorů spadající do různých tříd.
 	
-	Oproti tomu CRSOM sémantický kontext zahrnuje do procesu učení explicitně a z příslušné sémantické mapy (obr. \ref{fig:kp_ram_crsom}) lze extrahovat rozdílné znalosti. Síť vytvořila dva koncentrované shluky v rozích mapy, což svědčí o dobré oddělitelnosti těchto dvou tříd. Konfliky v horním shluku (např neuron [3;14]) implikuje podobné reprezentace pro skladby s rozdílnými sémantikami. Tato podobnost je již zřejmá z mapy SOM -- např. neuronem [2;9].  TODO více epoch. Neuron [15;13] představuje shluk odlehlých hodnot. Po prozkoumání objektů, které přísluší tomuto neuronu se ukázalo, že tyto nahrávky neobsahují hudbu, nýbrž se jedná o mluvené slovo Katy Perry a poskytovatel dat ho mylně zařadil mezi písně.
+	Oproti tomu CRSOM sémantický kontext zahrnuje do procesu učení explicitně a z příslušné sémantické mapy (obr. \ref{fig:kp_ram_crsom}) lze extrahovat rozdílné znalosti. Síť vytvořila dva koncentrované shluky v rozích mapy, což svědčí o dobré oddělitelnosti těchto dvou tříd. Konfliky v horním shluku (např neuron $[3;14]$) implikuje podobné reprezentace pro skladby s rozdílnými sémantikami. Tato podobnost je již zřejmá z mapy SOM -- např. neuronem $[2;9]$. Neuron $[15;13]$ představuje shluk odlehlých hodnot. Po prozkoumání objektů, které přísluší tomuto neuronu se ukázalo, že tyto nahrávky neobsahují hudbu, nýbrž se jedná o mluvené slovo Katy Perry a poskytovatel dat ho mylně zařadil mezi písně.
 
 \begin{figure}
 \centering
@@ -1234,13 +1274,13 @@ Jako první sémantika učení byla zvolena podle interpreta skladby. První zko
   \caption{CRSOM}
   \label{fig:kp_ram_crsom}
 \end{subfigure}
-\caption{Katy Perry a Ramones (exp. \ref{exp:kp_ram})}
+\caption{Katy Perry a Ramones (exp. \ref{exp:kat-ram})}
 \label{fig:kp_ram_res}
 \end{figure}
 
 
 \subsubsection*{The Offspring a Sex Pistols}
-Další dataset se skládá z diskografie kapel Sex Pistols a The Offspring. Mapa SOM (obr. \ref{fig:sexp_off_som}) zobrazuje větší promíchanost objektů v prostoru, než se tomu jednalo u  předchozího experimentu, což svědčí o větší podobnosti hudebních znaků těchto dvou kapel. I přes tento fakt jsou data dobře oddělitelné podle této sémantiky (obr. \ref{fig:sexp_off_crsom}). Výsledná mapa dokonce neobsahuje žádné konflikty, což lze přisoudit delšímu učení (exp. \ref{exp:sexp-off}), než v předchozím případě.
+Další dataset se skládá z diskografie kapel Sex Pistols a The Offspring. Mapa SOM (obr. \ref{fig:sexp_off_som}) zobrazuje větší promíchanost objektů v prostoru, než se tomu jednalo u  předchozího experimentu, což svědčí o větší podobnosti hudebních znaků těchto dvou kapel. I přes tento fakt jsou data dobře oddělitelné podle této sémantiky (obr. \ref{fig:sexp_off_crsom}). Výsledná mapa dokonce neobsahuje žádné konflikty, což lze přisoudit delšímu učení (exp. \ref{exp:sexp-off}), než tomu bylo v předchozím případě.
 
 
 \begin{figure}
@@ -1262,7 +1302,7 @@ Další dataset se skládá z diskografie kapel Sex Pistols a The Offspring. Map
 \end{figure}
 
 \subsubsection*{David Bowie, Elvis Presley a AC/DC}
-Další zkoumaný dataset obsahuje skladby následujících interpretů: David Bowie, Elvis Presley a AC/DC. I zde se jedná o dobře rozlišitelné interprety o čemž svědčí výsledky experimentů (obr. \ref{fig:db_ep_acdc}).
+Další zkoumaný dataset obsahuje skladby následujících interpretů: David Bowie, Elvis Presley a AC/DC. I zde se jedná o dobře rozlišitelné interprety o čemž svědčí výsledky experimentů (obr. \ref{fig:db_ep_acdc}). 
 
 
 \begin{figure}
@@ -1285,7 +1325,7 @@ Další zkoumaný dataset obsahuje skladby následujících interpretů: David B
 % db_stones_acdc_ep=1000_norm=4_size=1.00_LR2=0.10_.mat
 
 \subsubsection*{Metallica, Maddona a Louis Armstrong}
-Poslední dataset s daty rozdělenými do tříd podle interpretů je met-mad-la-dataset (\ref{d:met_mad_la}). Tak jako ve všech předchozích případech, i zde CRSOM síť dokázala sformovat dobře ucelené shluky podle dané sémantiky (obr. \ref{fig:metmadlacrsom}).
+Poslední dataset s daty rozdělenými do tříd podle interpretů je \texttt{met-mad-la-dataset} (\ref{sec:met-mad-la-dataset}). Tak jako ve všech předchozích případech, i zde CRSOM síť dokázala sformovat dobře ucelené shluky podle dané sémantiky (obr. \ref{fig:metmadlacrsom}). 
 
 \begin{figure}
 \centering
@@ -1307,7 +1347,7 @@ Poslední dataset s daty rozdělenými do tříd podle interpretů je met-mad-la
 %met_mad_la_ep=2500_norm=4_size=1.00_LR2=0.05_.mat
 
 
-Pro představu, jak vypadá sémantická mapa, ze které nelze extrahovat žádnou strukturu dat, byla vytvořena náhodná sémantika pro dataset met-mad-la. Sémantika byla vytvořena náhodným proházením tříd objektů. Sítě SOM a CRSOM byly učeny  se stejnými parametry jako v předchozím v případě. Výsledky tohoto experimentu jsou na obrázku \ref{fig:metmadlarandom}.
+Pro představu, jak vypadá sémantická mapa, ze které nelze extrahovat žádnou strukturu dat, byla vytvořena rozdílná sémantika pro stejný dataset. Sémantika byla vytvořena náhodným proházením tříd objektů. Sítě SOM a CRSOM byly učeny  se stejnými parametry jako v předchozím v případě. Výsledky tohoto experimentu jsou na obrázcích \ref{fig:metmadlarandom}.
 
 \begin{figure}
 \centering
@@ -1323,7 +1363,7 @@ Pro představu, jak vypadá sémantická mapa, ze které nelze extrahovat žádn
   \caption{CRSOM}
   \label{fig:sub2}
 \end{subfigure}
-\caption{Dataset s náhodnou sémantikou (exp \ref{exp:met-mad-la-random})}
+\caption{Dataset s náhodnou sémantikou (exp. \ref{exp:met-mad-la-random})}
 \label{fig:metmadlarandom}
 \end{figure}
 
@@ -1331,7 +1371,9 @@ Pro představu, jak vypadá sémantická mapa, ze které nelze extrahovat žádn
 
 
 \subsection{Rok vzniku jako sémantický kontext}
-Další zkoumaná sémantika je rok vzniku sladby. Pro tento účel byly vytvořeny dva datasety 60-vs-70-dataset (\ref{app:60vs70dataset}) a 70-vs-10-dataset \ref{app:70vs10dataset}. V tomto případě se jedná o obrovské datasety, potažmo sítě, které bylo nutné učit po velký počet epoch, v řádech tisíců. Předpoklad, že pomocí CRSOM map bude možné extrahovat strukturu kolekcí, se naplnil a v obou případech je možné určit několik shluků pro jednotlivé sémantiky. Více shluků v rámci jedné třídy svědčí o rozdílnosti skladeb v jedné sémantice, což je další předpokládaný závěr.
+Další zkoumaná sémantika je rok vzniku sladby. Pro tento účel byly vytvořeny dva datasety \texttt{60-vs-70-dataset} (\ref{sec:60-vs-70-dataset}) a \texttt{70-vs-10-dataset} \ref{sec:70-vs-10-dataset}. V tomto případě se jedná o obrovské datasety, potažmo sítě, které bylo nutné učit po velký počet epoch -- v řádech tisíců. 
+
+Předpoklad, že pomocí CRSOM map bude možné extrahovat strukturu kolekcí, se naplnil a v obou případech je možné určit několik shluků pro jednotlivé sémantiky. Více shluků v rámci jedné třídy svědčí o rozdílnosti skladeb v jedné sémantice, což je další předpokládaný závěr.
 
 
 \begin{figure}
@@ -1370,32 +1412,34 @@ Další zkoumaná sémantika je rok vzniku sladby. Pro tento účel byly vytvoř
 \label{fig:top}
 \end{figure}
 
-méně konfliktů (rozdílná hudba)
-
-
-
-
 
 
 \section{Hledání struktur}
 
 
-Tento přístup zabraňuje interpretovat výsledné shluky podle společných vlastností odvozených pouze na základě konkrétních hodnot atributů. Lepším přístupem je interpretovat shluky podle původních objektů, tedy skladeb, což je ovšem záležitost, kterou má v popisu činnosti expert domény.
 
 \subsection{Posluchačská historie jako sémantický kontext}
-V této sekci je použita historie přehrávání náhodného uživatele. Máme k dispozici přehrané skladby a k nim počet přehrání. Pro vytvoření tříd byla zvolena denormalizace do tří tříd:
+V této sekci je použita historie přehrávání náhodného uživatele. Máme k dispozici přehrané skladby a k nim počet přehrání \textit{(play count)} z datasetu Taste Profile, který byl představen v sekci \ref{sec:semcontext}. Z počtů přehrání byly následujícím způsobem vytvořeny tři třídy:
 
+\paragraph{Rozdělení dat do třech tříd}
 \begin{itemize}
-\item třída A: $1$ přehrání,
-\item třída B: $2-4$ přehrání,
-\item třída C: $\geq5$ přehrání.
+\item \textbf{třída A}: $1$ přehrání,
+\item  \textbf{třída B}: $2-4$ přehrání,
+\item  \textbf{třída C}: $\geq5$ přehrání.
 \end{itemize}
 
-Předpokladem je, že počty přehrání odrážejí uživatelskou oblíbenost skladby a tato oblíbenost je stanovena hudebními znaky. Výsledky učení v kontextu takto zvolené sémantiky jsou na obr. \ref{fig:user1}. Ze sémantické mapy SOM (obr. \ref{fig:usersom}) nelze odvodit žádné pravidelnosti. CRSOM mapa (obr. \ref{fig:usercrsom}) utvořila několik shluků, ale žádný z nich není koncentrovaný a homogenní. To je možné dát za vinu špatnému rozdělení do tříd, které nenese žádné pravidelnosti.
 
-První problém je se skladbami, které mají jediné přehrání a není u nich jasné, jestli se jedná o konečný počet. Ve shluku $1$ jsou koncentrované skladby všech tříd, což znamená, že i přes své rozdílné sémantiky nebyly učením odděleny, což implikuje  velmi podobné reprezentace. Za stanovených předpokladů je možné skladby s jedním přehráním ve shluku 1 interpretovat jako nově objevené a jediný počet přehrání je pouze dočasný, protože sdílejí hudbení znaky i s ostatními třídami.
+
+Předpokladem je, že počty přehrání odrážejí uživatelskou oblíbenost skladby a tato oblíbenost souvisí s hudebními znaky, které jsou zachycené v reprezentaci písní. Výsledky učení v kontextu takto zvolené sémantiky jsou na obr. \ref{fig:user1}. Narozdíl od předchozích experimentů, kde mapy obsahovaly z pohledu sémantiky homogenní shluky, v tomto případě (obr. \ref{fig:usersom}) síť vytvořila několik heterogenních shluků s několika konflikty. To je možné dát za vinu špatnému rozdělení do tříd, které neodráží žádné zákonitosti, které by bylo možné zachytit sémantickou mapou. Bylo identifikovány dva problémy se současným rozdělením do tříd, které souvisí se skutečností, že počty přehrání představují zachycení stavu v jednom okamžiku.
+
+
+První problém je se skladbami, které mají jediné přehrání. U takových písní není jasné, jestli se jedná o konečný počet -- to by pak bylo možné píseň interpretovat jako pro uživatele neoblíbenou. 
 
 Další problém je uměle stanovená hranice pěti přehrání, která představuje vysoce oblíbenou skladbu. Shluky $2$ a $3$ obsahují pouze hudbu třídy B a C a je možné je označit jako oblíbené s potenciálem dalších přehrávání.
+
+Ve shluku $1$ jsou koncentrované skladby všech tříd, což znamená, že i přes své rozdílné sémantiky nebyly učením odděleny, což implikuje  velmi podobné reprezentace. Za stanovených předpokladů je možné skladby s jedním přehráním ve shluku 1 interpretovat jako nově objevené a jelikož sdílejí hudební znaky s objekty z ostatních tříd, toto jediné přehrání interpretovat jako dočasné.
+
+
 
 \begin{figure}
 \centering
@@ -1411,23 +1455,22 @@ Další problém je uměle stanovená hranice pěti přehrání, která předsta
   \caption{anotovaná CRSOM mapa}
   \label{fig:usercrsom}
 \end{subfigure}
-\caption{Posluchačská historie $3$ třídy (exp. \ref{ex:user1})}
+\caption{Posluchačská historie $3$ třídy (exp. \ref{exp:user1})}
 \label{fig:user1}
 \end{figure}
 
 
-V dalším experimentu byla prozkoumána rozdílná sémantika pro stejná data:
+V dalším experimentu byla prozkoumána následující sémantika pro stejná data:
 
+\paragraph{Rozdělení dat do dvou tříd}
 \begin{itemize}
-\item třída X: $1$ přehrání,
-\item třída Y: $\geq2$ přehrání.
+\item \textbf{třída X:} $1$ přehrání,
+\item \textbf{třída Y:} $\geq2$ přehrání.
 \end{itemize}
 
-Výsledky jsou k vidění na obr. \ref{fig:user2}. Narozdíl od předchozí sémantiky, takto zvolené třídy vytvářejí dobře oddělitelné shluky \ref{fig:user2crsom}. Sklady spadající do třídy Y vytváří nepříliš koncentrovaný shluk, což svědčí o hudební rozmanitosti těchto skladeb. Dva konfliky (neurony $[10;5]$ a $[11;6]$) byly BMU pro některé skladby s jedním přehráním. Pro podobnost reprezentací se skaldbami z třídy Y lze předpokládat další přehrávání těchto skladeb.
+Výsledky jsou k vidění na obr. \ref{fig:user2}. Narozdíl od předchozí sémantiky, takto zvolené třídy vytvářejí vzájemně dobře oddělitelné shluky (obr. \ref{fig:user2crsom}). Sklady spadající do třídy Y vytváří nepříliš koncentrovaný shluk, což svědčí o hudební rozmanitosti těchto skladeb. Dva konfliky (neurony $[10;5]$ a $[11;6]$) byly BMU pro některé skladby s jedním přehráním. Pro podobnost reprezentací se skladbami z třídy Y lze předpokládat, že uživatel tyto skladby přehraje v buducnu.
 
-Kategorie X vytvořila několik shluků, které učení CRSOM nepodařilo sloučit, což implikuje vysoké rozdílnosti v reprezentacích v rámci jedné třídy. Tento fakt je možné vysvětlit již zmíněným nejasným významem jednoho přehrání, který se dá iterpretovat jako neoblíbená hudba, nebo jako nová hudba.  
-
-
+Kategorie X vytvořila několik shluků, které učení CRSOM nepodařilo sloučit, což implikuje vysoké rozdílnosti v reprezentacích v rámci jedné třídy. Tento fakt je možné vysvětlit již zmíněným nejasným významem jednoho přehrání, který se dá iterpretovat jako neoblíbená hudba nebo jako nová hudba.  
 
 
 
@@ -1445,21 +1488,23 @@ Kategorie X vytvořila několik shluků, které učení CRSOM nepodařilo slouč
   \caption{CRSOM}
   \label{fig:user2crsom}
 \end{subfigure}
-\caption{Posluchačská historie s rozdílnou sémantikou (exp. \ref{ex:user2})}
+\caption{Posluchačská historie s rozdílnou sémantikou (exp. \ref{exp:user2})}
 \label{fig:user2}
 \end{figure}
 
 
 
-
-
-
 \subsection{Oblíbenost jako sémantický kontext}\label{sec:hotness}
-V této sekci budou zkoumány struktury hudebních kolekcí se sémantikou podle oblíbenosti. V představení dostupných dat bylo zmíněno, že API poskytuje míru současné oblíbenosti skladby atributem \textit{hotttnesss}. Tato hodnota je odvozena z mnoha zdrojů jako jsou zmínky na webu, hudební recenze, dále podle počtů stažení a přehrání \cite{hotttnesss}.
+V této sekci budou zkoumány struktury hudebních kolekcí se sémantikou podle současné oblíbenosti. V představení dostupných dat (konkrétně sekce \ref{sec:hotttnesss}) byl představen atributut hotttnesss, který tuto informaci obsahuje.
+
 
 Protože je atribut hotttnesss desetinné číslo, bylo nutné ho denormalizovat do dvou tříd (Fail a Hot). Konkrétní rozdělení je názorně předvedeno v krabicovém diagramu na obrázku \ref{fig:boxplot}.
 
-Z výsledků (obr. \ref{fig:hotfail}) lze usoudit, že podle této sémantiky jsou data dobře oddělitelná. Mapa neobsahuje koncentrované shluky, což svědčí o tom, že v obou třídách se vyskytují skladby z různých hudebních odvětví.
+
+
+Z výsledků (obr. \ref{fig:hotfail}) lze konstatovat, že třídy písní rozdělené podle oblíbenosti jsou dobře oddělitelné, dokonce se žádný neuron nestal BMU pro vstupní vektory s rozdílnými třídami.
+
+Přesto mapa neobsahuje koncentrované shluky, což svědčí o tom, že v obou třídách se vyskytují skladby z různých hudebních odvětví.
 
 
 
@@ -1487,7 +1532,7 @@ Z výsledků (obr. \ref{fig:hotfail}) lze usoudit, že podle této sémantiky js
   \caption{CRSOM}
   \label{fig:sub2}
 \end{subfigure}
-\caption{Oblíbenost skladby (exp. \ref{ex:hotfail})}
+\caption{Oblíbenost skladby (exp. \ref{exp:hotfail})}
 \label{fig:hotfail}
 \end{figure}
 
@@ -1548,7 +1593,7 @@ Tento koncept byl inspirován experimenty v sekci \ref{sec:hotness}.
 	}
 \end{figure}
 
-
+% Datasety -----------------------------------------------------------------------------
 \chapter{Datasety}\label{app:datasets}
 
 \section{Interpret jako sémantika}
@@ -1582,37 +1627,48 @@ Ramones 50\%
 
 \subsection{Hot a fail skladby (hot-fail-dataset)}\label{sec:hot-fail-dataset}
 
+
+
+% Experimenty -----------------------------------------------------------------
 \chapter{Protokoly experimentů}\label{app:protocols}
-\section{Experiment}
+
+
+\section{Katy Perry a Ramones}\label{exp:kat-ram}
+
+\section{Sex Pistols a The Offspring}\label{exp:sexp-off}
 
 - datset
 - SOM
 - CRSOM
 - ploterror?
 
-\subsection{Experiment}\label{exp:kp_ram}
-\subsubsection*{SOM}
-\dots
-\subsubsection*{CRSOM}
-\dots
-
-\section{David Bowie, Elvis Presley a AC/DC (db-ep-acdc-dataset)}\label{app:db-ep-acdc-dataset}
-\subsection{Experiment}\label{exp:db-ep-acdc}
+\section{David Bowie, Elvis Presley a AC/DC}\label{exp:db-ep-acdc}
 
 
-\section{Metallica, Maddona a Louis Armstrong (met-mad-la-dataset)}\label{app:met-mad-la}
-\subsection{Experiment}\label{exp:met-mad-la}
+\section{Metallica, Maddona a Louis Armstrong}\label{exp:met-mad-la}
 
-\section{Sex Pistols a The Offspring (sexp-off-dataset)}\label{app:sexp-off}
-\subsection{Experiment}\label{exp:sexp-off}
+\section{Metallica, Maddona a Louis Armstrong náhodně}\label{exp:met-mad-la-random}
 
 
-\section{Skladby z roku 1960 a 1970 (60-vs-70-dataset)}\label{app:60vs70dataset}
-\subsection{Experiment}\label{exp:60-vs-70}
 
 
-\section{Skladby z roku 1970 a 2010 (70-vs-10-dataset)}\label{app:70vs10dataset}
-\subsection{Experiment}\label{exp:70-vs-10}
+
+
+
+\section{Skladby z roku 1960 a 1970}\label{exp:60-vs-70}
+
+
+\section{Skladby z roku 1970 a 2010}\label{exp:70-vs-10}
+
+\section{Uživatelská historie 3 třídy}\label{exp:user1}
+
+
+\section{Uživatelská historie 2 třídy}\label{exp:user2}
+
+
+\section{Oblíbenost skladby}\label{exp:hotfail}
+
+
 
 
 \begin{figure}
