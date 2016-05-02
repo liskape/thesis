@@ -25,6 +25,8 @@
 
 \usepackage{dirtree} %directory tree visualisation
 
+\newenvironment{myquote}{\list{}{\leftmargin=0.3in\rightmargin=0.3in}\item[]}{\endlist}
+
 % % list of acronyms
 % \usepackage[acronym,nonumberlist,toc,numberedsection=autolabel]{glossaries}
 % \iflanguage{czech}{\renewcommand*{\acronymname}{Seznam pou{\v z}it{\' y}ch zkratek}}{}
@@ -59,43 +61,51 @@
 
 \begin{introduction}
 
-\uv{\textit{Struktura (z latinského struere, skládat, sestavovat, budovat, pořádat) označuje způsob složení, vnitřního uspořádání nějakého objektu, zejména pokud vykazuje nějaké pravidelnosti a zákonitosti. Existuje několik možných jak hledat strukturu v datech}}\cite{needed}
+\begin{quote}
+    \uv{\textit{Data -- kolekce faktů (čísel, slov, měření, pozorování, \dots), které byly převedeny do formy zpracovatelné počítačem.}}
+\end{quote}
+
+Data představují jedno z nejdůležitějších aktiv sloužící jako konkurenční výhoda, což nutí firmy zaznamenávat a ukládat co největší množství dostupných informací\cite{most_val_asset}. Nejen z tohoto důvodu se celkový objem dat každé dva roky zdvojnásobí\cite{double}. Nicméně uložená nezpracovaná data samotná jsou bezcenná. Pravá hodnota dat přichází se \textit{znalostmi}, které je z nich možné vytěžit. Mezi základní znalosti o neznámých datech představuje nalezení jejich struktury.
+
+\begin{quote}
+    \uv{\textit{Struktura (z latinského struere, skládat, sestavovat, budovat, pořádat) označuje způsob složení, vnitřního uspořádání nějakého objektu, zejména pokud vykazuje nějaké pravidelnosti a zákonitosti.}}\cite{struktura}
+\end{quote}
+
+Struktura bude hledána v kolekcích písní populární hudby, jako představiteli multimediálních dat \cite{multimedia}. Hudba je doména, která díky své masové oblíbenosti, poskytuje obrovské množství stále rostoucích dat a s tím souvisejících možností. Počítačové zpracování a vizualizace může pomoci objevovovat nové znalosti, které by bylo prakticky nemožné bez pomoci počítačů a speciálních metod.
 
 
 
 
-V této práci bude struktura hledána pomocí \textit{shlukování}, což je analýza, která má za úkol najít homogenní skupiny objektů. 
-
-Struktury budou hledány v kolekcích skladeb populární hudby, jako představiteli multimediálních dat \cite{multimedia}. 
-
-Společné rysy takových dat: (nemá strukturu ve smyslu....) TODO
-
-
-Nejen pro interpretaci výsledků jsou nutné expertní znalosti z domény. Nicméně výhodou populární hudby je právě její rozšířenost mezi širší publikum, kde každý posluchač intuitivně snadno určí podobnost dvou skladeb nebo interpretů a jestli se mu konkrétní hudba líbí, nebo ne. 
+%Poznání interpreta z nahrávky, odhadnutí roku vzniku skladby, přiřazení žánru písni — to jsou akce, které snadno zvládne větší hudební nadšenec. Oproti tomu zvládat tyto úkoly pomocí počítačů je velice obtížné.
 
 
 
-Je potřeba expert (vždy)
-Proč byly zvoleny: netriviální objekty, shlukování je na základě podobnosti, každý hudební nadšenec je schopen porovnat dvě skladby a určit intuitivní míru podobnosti. Zároveň je velmi obtížné zachytit tyto "oblíbené" znaky. Předpovídat atd,.  s pomocí počítačů
 
 
-- celé KDD
-- zvolené metody (vizuální extrakce shluků)
-- sémantický kontext
-
-
-- využití
+Struktury z dat je možné extrahovat různými způsoby. Jedním z nich je \textit{shluková analýza}. Nejen pro shlukovou analýzu, ale i jiné metody vytěžování znalostí z dat, platí, že pro maximální efektivitu je důležité zahrnout do procesu vytěžování člověka. Tím se zkombinuje kreativita a obecné znalosti člověka s obrovskými kapacitami úložišť a výpočetní silou dnešních počítačů.
+Těžištěm této práce se tak staly \textit{samoorganizující mapy}, které umožňují vizualizovat vysoce dimenzionální data při zachování topologických vlastností. Kromě klasických samoorganizujících map, které vznikly v 80. letech, je také použita jejich novější varianta, která zahrnuje do učení \textit{sémantický kontext}.
 
 
 	%sem napište úvod Vaší práce
 	
 	\section{Cíl práce}
+	Cílem této práce je uskutečnit všechny nutné kroky k získání a využití znalostí z kolekcí písní populární hudby pomocí samoorganujících map a samoorganizujících map se zahrnutým sémantickým kontextem a tyto znalosti poté využít.
 	
-	vyzkoušet možnosti hledání shluků pomocí SOM a CRSOM
+Mezi nutné kroky patří mimo jiné důkladné nastudování zmíněných metod spolu s jejich implementací, získání dat, příprava dat a vytvoření vhodného prostředí pro provádění experimentů. Využití znalostí spočívá ve vedení diskuze nad výsledky experimentů a implementace prototypu, které bude demostrovat využitelnost výsledků.
+
+
+
+
+	\section{Členění práce}
+	Tento text dokumentuje nejdůležitější činnosti k dosažení výše uvedeného cíle v celkem pěti kapitolách. První kapitola Použité metody \ref{poumetod} obsahuje obecný popis činností nutných k extrakci znalostí z dat a důkladný popis použitých metod. Kapitola druhá \ref{navrhimpl} zmiňuje nastalé překážky a jejich řešení při implementaci metod a tvorby experimentálního prostředí. Další kapitola \label{ch:empl_prepro} představuje zdroj použitých dat spolu se základním popisem domény. Dále lze v této kapitole najít popis předzpracování zvolených atrubutů. Následující kapitola \ref{ch:experiments} obsahuje výsledky provádéných experimentů.  TODO: poslední kapitola
+	
+
+	
+	
 \end{introduction}
 
 % POUŽITÉ METODY -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-\chapter{Použité metody}
+\chapter{Použité metody}\label{poumetod}
 \section{Dobývání znalostí z databází (KDD)}
 \textit{Dobývání znalostí z databází (Knowledge discovery in databases, KDD)} představuje netriviální extrakci nových a reálně využitelných znalostí z dat\cite{kddb}. 
 
@@ -317,26 +327,27 @@ Jedním způsobem, jak zobrazovat natrénovanou mapu, je zobrazit vstupní data 
 \begin{figure}[htbp]
 \begin{center}
 	\includegraphics[scale=0.5]{iris_plotsompos.png}
-\caption{Zobrazení natrénované SOM s neurony uspořádanými do pravoúhlé mřížky 5x5 pro náhodný dvoudimenzionální problém.}
+\caption{Zobrazení natrénované SOM s neurony uspořádanými do pravoúhlé mřížky 5x5 pro náhodný dvoudimenzionální problém}
 \label{fig:plotsompos}
 \end{center}
 \end{figure}
 
 
-Další možností je vizualizovat mřížku spolu s dalšími informacemi (třídy), které mohou být již obsaženy ve vstupních vektorech. Pro každý vstupní vektor se spočítá jeho BMU na natrénované SOM. Takovému neuronu se pak přiřadí třída patřící onomu vstupnímu vektoru. Po aplikaci všech vstupních vektorů nastane pro každý neuron jedna z následujících možností:
+Další možností je vizualizovat mřížku spolu s dalšími informacemi (třídy), které mohou být již obsaženy ve vstupních vektorech. Pro každý vstupní vektor se spočítá jeho BMU na natrénované SOM. Takovému neuronu se pak přiřadí třída patřící onomu vstupnímu vektoru. Po aplikaci všech vstupních vektorů se provede následující vykreslení:
 
 \begin{itemize}
-\item neuron má přiřazenu třídu $k$ -- vykreslí se s barvou přiřazené třídě $k$,
-\item  neuron má přiřazené dvě a více tříd -- vykreslí jako černý křížek.
+\item neuron nemá nic přiřazeno -- nevykreslí se vůbec,
+\item neuron má přiřazenu třídu $k$ -- vykreslí se s barvou přiřazené třídě $k$ s velikostí úměrné počtu přiřazených vstupních vektorů, 
+\item  neuron má přiřazené dvě a více tříd -- vykreslí se jako černý křížek.
 \end{itemize}
  
-Velikost každého neuronu pak roste s počtem přiřazených tříd, přičemž neuron bez přiřazené třídy má nulovou velikost a na mapě se vůbec nebjeví. Takové vykreslení se nazývá \textit{sémantická mapa}, jejíž příklad je na obr. \ref{fig:semanticmap}.
+Takové vykreslení se nazývá \textit{sémantická mapa}, jejíž příklad je na obr. \ref{fig:semanticmap}.
 
 
 \begin{figure}[htbp]
 \begin{center}
 	\includegraphics[scale=0.3]{exp_sem_map.png}
-\caption{Příklad sémantické mapy pro tři třídy.}
+\caption{Příklad sémantické mapy pro tři třídy}
 \label{fig:semanticmap}
 \end{center}
 \end{figure}
@@ -358,7 +369,7 @@ CRSOM se skládá ze tří vrstev neuronů. Prostřední (skrytá) vrstva je org
 \begin{figure}[htbp]
 \begin{center}
 	\includegraphics[scale=0.6]{crsom_structure}
-\caption{Struktura sítě CRSOM.}
+\caption{Struktura sítě CRSOM}
 \label{fig:crsom_structure}
  \captionsetup{font={footnotesize,bf,it}}
   \caption*{zdroj:\cite{hartono14}}
@@ -591,7 +602,7 @@ Formování mapy CRSOM je ukázáno na obr. \ref{fig:cr}. Vstupní data tvoří 
 \begin{figure}[htp]    
     \centering
     \includegraphics[width=0.6\textwidth]{feature_space_with_classes.png}
-    \caption{Dataset Iris omezený na dvě dimenze.}
+    \caption{Dataset Iris omezený na dvě dimenze}
     \label{fig:iris2d}
 \end{figure}
 
@@ -605,7 +616,7 @@ V případě, že $ \delta_i^h(t)$ je zafixováno na $1$, CRSOM simuluje chován
     \includegraphics[width=.32\textwidth]{cr1.png}
     \includegraphics[width=.32\textwidth]{cr2.png}
     \includegraphics[width=.32\textwidth]{cr3.png}
-    \caption{Mapa CRSOM se formuje s ohledem na sémantický kontext.}
+    \caption{Mapa CRSOM se formuje s ohledem na sémantický kontext}
     \label{fig:cr}
 \end{figure}
 
@@ -632,7 +643,7 @@ Samoorganizující mapy jsou schopné vysoce dimenzionální prostor mapovat do 
 Kromě toho je možné považovat mapu jako cílový produkt učení. Vzniklá mapa pak může sloužit k vizualizacím klasifikačního problému pro daný sémantický kontext. Dále je možné z mapy extrahovat znalosti a strukturu v podobě vytvořených shluků, stejně jako u SOM s tím rozdílem, že výsledek CRSOM respektuje při formování sémantický kontext učení a je možné z výsledné sémantické mapy extrahovat rozdílné znalosti \cite{lms}.
 
 % -------------------------------------- Návrh a implementace ---------------------------------------------------------------------------------------------------------------------------------------------------------------
-\chapter{Návrh a implementace}
+\chapter{Návrh a implementace}\label{navrhimpl}
 V této kapitole jsou rozebrány nutné kroky pro použití vybraných metod. Zaprvé bylo nutné zajistit implementace oněch metod a zadruhé navrhnout a implementovat platformu pro experimentování s metodami. Pro implementaci metod bylo zvoleno prostředí \textit{Matlab}. Pro práci s experimenty byly zvoleny \textit{Ruby}, \textit{MongoDb}, \textit{Git} a \textit{MetaCentrum}. V této kapitole jsou popsány důvody pro zvolení právě těchto technologií a nástrojů, spolu s popisem jejich využití a vzájemného propojení. 
 
 
@@ -645,7 +656,7 @@ Pro samoorganizující mapy se v Matlabu používá funkce \texttt{selforgmap}\f
         som = selforgmap([10 10])
         trained_som = train(som, inputs)
     \end{minted} 
-    \caption{Vytvoření samoorganizující mapy v prostředí Matlab.} 
+    \caption{Vytvoření samoorganizující mapy v prostředí Matlab} 
     \label{somcode}
 \end{listing}
 
@@ -688,7 +699,7 @@ for i = 1:NEURONS
     delta_h(i) =  first_part(i) * s;
 end
 \end{minted} 
-\caption{Kód zapsaný pomocí for smyčky.} 
+\caption{Kód zapsaný pomocí for smyčky} 
 \label{for-code}
 \end{listing}
 
@@ -697,7 +708,7 @@ end
 s = sum((repmat(delta_k', NEURONS, 1).*(cn.IW{1}'))')';
 delta_h = first_part .* s;
 \end{minted} 
-\caption{Vektorizovaný kód.} 
+\caption{Vektorizovaný kód} 
 \label{vector-code}
 \end{listing}
 
@@ -718,6 +729,7 @@ První verze používaly oddělenou kontextovou síť vytvořenou pomocí funkce
 TODO
 
 \subsubsection{Publikování sítě}
+
 TODO
 
 \section{Implementace experimentů}
@@ -772,7 +784,7 @@ Jednou z výhod takového přístupu je uchování kompletní historie experimen
 \begin{figure}[htbp]
 \begin{center}
 	\includegraphics[scale=0.9]{up.png}
-\caption{Zadávání úloh do MetaCentra.}
+\caption{Zadávání úloh do MetaCentra}
 \label{fig:up}
 \end{center}
 \end{figure}
@@ -781,7 +793,7 @@ Jednou z výhod takového přístupu je uchování kompletní historie experimen
 \begin{figure}[htbp]
 \begin{center}
 	\includegraphics[scale=0.7]{semantic_commit}
-\caption{Příklad strojově generovaného komentáře.}
+\caption{Příklad strojově generovaného komentáře}
 \label{fig:semantic_commit}
 \end{center}
 \end{figure}
@@ -794,7 +806,7 @@ Kromě logů jsou do souborového systému v MetaCentru ukládany také další 
 \begin{figure}[htbp]
 \begin{center}
 	\includegraphics[scale=0.9]{down.png}
-\caption{Vyzvedávání výsledků z MetaCentra.}
+\caption{Vyzvedávání výsledků z MetaCentra}
 \label{fig:down}
 \end{center}
 \end{figure}
@@ -879,7 +891,7 @@ Tento nástroj je volně dostupný prostřednictvím webového API. Vstupem prog
 
 
 \end{minted}
-\caption{Výstup nástroje Analyze pro skladbu Billie Jean.} 
+\caption{Výstup nástroje Analyze pro skladbu Billie Jean} 
 \label{json-example}
 \end{listing}
 
@@ -927,7 +939,7 @@ Jak ilustrují předchozí sekce, možnosti výběru dat a způsobů předzpraco
 
 
 % -------------------------------------- Experimenty ---------------------------------------------------------------------------------------------------------------------------------------------------------------
-\chapter{Experimenty}
+\chapter{Experimenty}\label{ch:experiments}
 \section{Protokol}
 
 V této sekci jsou uvedena společná nastavení, zatímco proměnné parametry jednotlivých experimentů jsou uvedeny v příloze \ref{app:protocols}. Spojení těchto informací postačí k replikaci jakéhokoliv experimentu.
@@ -1203,7 +1215,7 @@ Na prvním obrázku jsou zobrazeny příslušnosti před učením síťe. Proto�
         \includegraphics[width=.32\textwidth]{exp_kp_ram_citi_252.png}
     \includegraphics[width=.32\textwidth]{exp_kp_ram_citi_378.png}
     \includegraphics[width=.32\textwidth]{exp_kp_ram_citi_500.png}
-    \caption{Příslušnost neuronů k třídám.}
+    \caption{Příslušnost neuronů k třídám}
     \label{fig:citizenship}
 \end{figure}
 
@@ -1222,7 +1234,7 @@ Ve stejných chvílích jsou na obrázku \ref{fig:mappos} zachyceny první dvě 
     \includegraphics[width=.32\textwidth]{exp_kp_ram_norm_252.png}
     \includegraphics[width=.32\textwidth]{exp_kp_ram_norm_378.png}
     \includegraphics[width=.32\textwidth]{exp_kp_ram_norm_500.png}
-    \caption{Formování sémantické mapy.}
+    \caption{Formování sémantické mapy}
     \label{fig:mapform}
 \end{figure}
 
@@ -1509,7 +1521,7 @@ Přesto mapa neobsahuje koncentrované shluky, což svědčí o tom, že v obou 
 \begin{figure}[htbp]
 \begin{center}
 	\includegraphics[scale=0.25]{exp_boxplot.png}
-\caption{Krabicový diagram pro hotttnesss.}
+\caption{Krabicový diagram pro hotttnesss}
 \label{fig:boxplot}
 \end{center}
 \end{figure}
@@ -1596,35 +1608,176 @@ Tento koncept byl inspirován experimenty v sekci \ref{sec:hotness}.
 
 \section{Interpret jako sémantika}
 
-\subsection{Katy Perry a Ramones (katy-ram-dataset)}\label{sec:katy-ram-dataset}
+\begin{table}[!htbp]
 
-celkový počet záznamů
-Katy Perry 50\%
-Ramones 50\%
+    \captionsetup{
+      justification=raggedright,
+      singlelinecheck=false
+    }
+    \caption{\texttt{katy-ram-dataset}}
+    \label{sec:katy-ram-dataset}
+    \begin{tabular}{|c|c|l|}
+    \hline
+    celkový počet záznamů      & Katy Perry                  & Ramones                   \\ \hline
+    {\color[HTML]{000000} 242} & {\color[HTML]{000000} 63\%} & \multicolumn{1}{c|}{37\%} \\ \hline
+    \end{tabular}
+\end{table}
 
-\subsection{The Offspring a Sex (off-sexp-dataset)}\label{sec:off-sexp-dataset}
+\begin{table}[!htbp]
 
-\subsection{David Bowie, Elvis Presley a AC/DC (dp-ep-acdc-dataset)}\label{sec:dp-ep-acdc-dataset}
+	    \captionsetup{
+      justification=raggedright,
+      singlelinecheck=false
+    }
 
-\subsection{Metallica, Maddona a Louis Armstrong (met-mad-la-dataset)}\label{sec:met-mad-la-dataset}
+    \caption{\texttt{off-sexp-dataset}}
+    \label{sec:off-sexp-dataset}
+    \begin{tabular}{|c|c|l|}
+    \hline
+    celkový počet záznamů      & The Offspring                  & Sex Pistols                   \\ \hline
+    {\color[HTML]{000000} 211} & {\color[HTML]{000000} 63\%} & \multicolumn{1}{c|}{37\%} \\ \hline
+    \end{tabular}
+\end{table}
 
-\subsection{Metallica, Maddona a Louis Armstrong náhodný (met-mad-la-random-dataset)}\label{sec:met-mad-la-random-dataset}
+
+\begin{table}[!htbp]
+    \captionsetup{
+      justification=raggedright,
+      singlelinecheck=false
+    }
+
+    \caption{\texttt{dp-ep-acdc-dataset}}
+    \label{sec:db-ep-acdc-dataset}
+    \begin{tabular}{|c|c|l|l|}
+    \hline
+    celkový počet záznamů      & David Bowie                  & Elvis Presley                   &  AC/DC                     \\ \hline
+    {\color[HTML]{000000} 465} & {\color[HTML]{000000} 36\%} & \multicolumn{1}{c|}{35\%} & \multicolumn{1}{c|}{29\%} \\ \hline
+    \end{tabular}
+\end{table}
+
+
+\begin{table}[!htbp]
+    \captionsetup{
+      justification=raggedright,
+      singlelinecheck=false
+    }
+
+    \caption{\texttt{met-mad-la-dataset}}
+    \label{sec:met-mad-la-dataset}
+    \begin{tabular}{|c|c|l|l|}
+    \hline
+    celkový počet záznamů      & Metallica                  & Louis Armstrong                   &  Maddona                     \\ \hline
+    {\color[HTML]{000000} 343} & {\color[HTML]{000000} 39\%} & \multicolumn{1}{c|}{26\%} & \multicolumn{1}{c|}{35\%} \\ \hline
+    \end{tabular}
+\end{table}
+
+
+
+\begin{table}[!htbp]
+    \captionsetup{
+      justification=raggedright,
+      singlelinecheck=false
+    }
+
+    \caption{\texttt{met-mad-la-random-dataset}}
+    \label{sec:met-mad-la-random-dataset}
+    \begin{tabular}{|c|c|l|l|}
+    \hline
+    celkový počet záznamů      & --                 & --                  &  --                     \\ \hline
+    {\color[HTML]{000000} 343} & {\color[HTML]{000000} 39\%} & \multicolumn{1}{c|}{26\%} & \multicolumn{1}{c|}{35\%} \\ \hline
+    \end{tabular}
+\end{table}
+
 
 \section{Rok vzniku skladby jako sémantika}
 
-\subsection{Skladby z roku 1960 a 1970 (60-vs-70-dataset)}\label{sec:60-vs-70-dataset}
 
-\subsection{Skladby z roku 1970 a 2010 (70-vs-10-dataset)}\label{sec:70-vs-10-dataset}
+\begin{table}[!htbp]
+    \captionsetup{
+      justification=raggedright,
+      singlelinecheck=false
+    }
+
+    \caption{\texttt{60-vs-70-dataset}}
+    \label{sec:60-vs-70-dataset}
+    \begin{tabular}{|c|c|l|}
+    \hline
+    celkový počet záznamů      & Skladba z roku 1960                  & Skladba z roku 1970                   \\ \hline
+    {\color[HTML]{000000} 2773} & {\color[HTML]{000000} 16\%} & \multicolumn{1}{c|}{84\%} \\ \hline
+    \end{tabular}
+\end{table}
+
+
+
+\begin{table}[!htbp]
+    \captionsetup{
+      justification=raggedright,
+      singlelinecheck=false
+    }
+
+    \caption{\texttt{70-vs-10-dataset}}
+    \label{sec:70-vs-10-dataset}
+    \begin{tabular}{|c|c|l|}
+    \hline
+    celkový počet záznamů      & Skladba z roku 1970                  & Skladba z roku 2010                   \\ \hline
+    {\color[HTML]{000000} 4698} & {\color[HTML]{000000} 50\%} & \multicolumn{1}{c|}{50\%} \\ \hline
+    \end{tabular}
+\end{table}
+
+
 
 \section{Počet přehrání jako sémantika}
 
-\subsection{Počty přehrání rozdělené do třech kategorií (user-3class-dataset)}\label{sec:user-3class-dataset}
-\subsection{Počty přehrání rozdělené do dvou kategorií (user-2class-dataset)}\label{sec:user-2class-dataset}
+
+
+\begin{table}[!htbp]
+    \captionsetup{
+      justification=raggedright,
+      singlelinecheck=false
+    }
+
+    \caption{\texttt{user-3class-dataset}}
+    \label{sec:user-3class-dataset}
+    \begin{tabular}{|c|c|l|l|}
+    \hline
+    celkový počet záznamů      & 1 přehrání                  & 2--4 přehrání                   &  více než 4 přehrání                    \\ \hline
+    {\color[HTML]{000000} 521} & {\color[HTML]{000000} 67\%} & \multicolumn{1}{c|}{23\%} & \multicolumn{1}{c|}{10\%} \\ \hline
+    \end{tabular}
+\end{table}
+
+
+
+\begin{table}[!htbp]
+    \captionsetup{
+      justification=raggedright,
+      singlelinecheck=false
+    }
+
+    \caption{\texttt{user-2class-dataset}}
+    \label{sec:user-2class-dataset}
+    \begin{tabular}{|c|c|l|}
+    \hline
+    celkový počet záznamů      & 1 přehrání                  & více než 1 přehrání                   \\ \hline
+    {\color[HTML]{000000} 521} & {\color[HTML]{000000} 67\%} & \multicolumn{1}{c|}{33\%} \\ \hline
+    \end{tabular}
+\end{table}
 
 \section{Oblíbenost jako sémantika}
 
-\subsection{Hot a fail skladby (hot-fail-dataset)}\label{sec:hot-fail-dataset}
+\begin{table}[!htbp]
+    \captionsetup{
+      justification=raggedright,
+      singlelinecheck=false
+    }
 
+    \caption{\texttt{hot-fail-dataset}}
+    \label{sec:hot-fail-dataset}
+    \begin{tabular}{|c|c|l|}
+    \hline
+    celkový počet záznamů      &  Hot                  & Fail                   \\ \hline
+    {\color[HTML]{000000} 363} & {\color[HTML]{000000} 43\%} & \multicolumn{1}{c|}{57\%} \\ \hline
+    \end{tabular}
+\end{table}
 
 
 % Experimenty -----------------------------------------------------------------
@@ -1633,21 +1786,118 @@ Ramones 50\%
 
 \section{Katy Perry a Ramones}\label{exp:kat-ram}
 
+\begin{figure}[htbp]
+\begin{tabular}{p{0.5\textwidth}p{0.5\textwidth}}
+    \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[scale=0.3]{err_katy-ram.png}
+    \label{fig:fig1}
+    \end{minipage}
+    &
+    \begin{minipage}{.5\textwidth}
+		\begin{description}
+            \item[dataset:] \texttt{katy-ram-dataset}(\ref{sec:katy-ram-dataset})
+            \item[normalizace:] interval $[0;0.5]$
+            \item[počet epoch:] $500$
+            \item[learning rate:] $0.1$
+        \end{description}
+\end{minipage}
+\end{tabular}
+\end{figure}
+
+
+
 \section{Sex Pistols a The Offspring}\label{exp:sexp-off}
 
-- datset
-- SOM
-- CRSOM
-- ploterror?
+\begin{figure}[htbp]
+\begin{tabular}{p{0.5\textwidth}p{0.5\textwidth}}
+    \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[scale=0.3]{err_sexp-ram.png}
+    \label{fig:fig1}
+    \end{minipage}
+    &
+    \begin{minipage}{.5\textwidth}
+		\begin{description}
+            \item[dataset:] \texttt{off-sexp-dataset}(\ref{sec:off-sexp-dataset})
+            \item[normalizace:] interval $[0;0.4]$
+            \item[počet epoch:] $2500$
+            \item[learning rate:] $0.1$
+        \end{description}
+\end{minipage}
+\end{tabular}
+\end{figure}
+
+
+
 
 \section{David Bowie, Elvis Presley a AC/DC}\label{exp:db-ep-acdc}
+
+\begin{figure}[htbp]
+\begin{tabular}{p{0.5\textwidth}p{0.5\textwidth}}
+    \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[scale=0.3]{err_db-ep-acdc.png}
+    \label{fig:fig1}
+    \end{minipage}
+    &
+    \begin{minipage}{.5\textwidth}
+		\begin{description}
+            \item[dataset:] \texttt{off-sexp-dataset}(\ref{sec:db-ep-acdc-dataset})
+            \item[normalizace:] interval $[0;0.5]$
+            \item[počet epoch:] $2000$
+            \item[learning rate:] $0.1$
+        \end{description}
+\end{minipage}
+\end{tabular}
+\end{figure}
+
 
 
 \section{Metallica, Maddona a Louis Armstrong}\label{exp:met-mad-la}
 
+\begin{figure}[htbp]
+\begin{tabular}{p{0.5\textwidth}p{0.5\textwidth}}
+    \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[scale=0.3]{err_met-mad-la.png}
+    \label{fig:fig1}
+    \end{minipage}
+    &
+    \begin{minipage}{.5\textwidth}
+		\begin{description}
+            \item[dataset:] \texttt{met-mad-la-dataset}(\ref{sec:met-mad-la-dataset})
+            \item[normalizace:] interval $[0;0.5]$
+            \item[počet epoch:] $2500$
+            \item[learning rate:] $0.05$
+        \end{description}
+\end{minipage}
+\end{tabular}
+\end{figure}
+
+
+
 \section{Metallica, Maddona a Louis Armstrong náhodně}\label{exp:met-mad-la-random}
 
 
+\begin{figure}[htbp]
+\begin{tabular}{p{0.5\textwidth}p{0.5\textwidth}}
+    \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[scale=0.3]{err_met-mad-la-random.png}
+    \label{fig:fig1}
+    \end{minipage}
+    &
+    \begin{minipage}{.5\textwidth}
+		\begin{description}
+            \item[dataset:] \texttt{met-mad-la-random-dataset}(\ref{sec:met-mad-la-random-dataset})
+            \item[normalizace:] interval $[0;0.5]$
+            \item[počet epoch:] $2500$
+            \item[learning rate:] $0.05$
+        \end{description}
+\end{minipage}
+\end{tabular}
+\end{figure}
 
 
 
@@ -1655,57 +1905,113 @@ Ramones 50\%
 
 \section{Skladby z roku 1960 a 1970}\label{exp:60-vs-70}
 
+\begin{figure}[htbp]
+\begin{tabular}{p{0.5\textwidth}p{0.5\textwidth}}
+    \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[scale=0.3]{err_60-vs-70.png}
+    \label{fig:fig1}
+    \end{minipage}
+    &
+    \begin{minipage}{.5\textwidth}
+		\begin{description}
+            \item[dataset:] \texttt{60-vs-70-dataset}(\ref{sec:60-vs-70-dataset})
+            \item[normalizace:] interval $[0;0.5]$
+            \item[počet epoch:] $2000$
+            \item[learning rate:] $0.05$
+        \end{description}
+\end{minipage}
+\end{tabular}
+\end{figure}
+
 
 \section{Skladby z roku 1970 a 2010}\label{exp:70-vs-10}
 
+
+\begin{figure}[htbp]
+\begin{tabular}{p{0.5\textwidth}p{0.5\textwidth}}
+    \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[scale=0.3]{err_70-vs-10.png}
+    \label{fig:fig1}
+    \end{minipage}
+    &
+    \begin{minipage}{.5\textwidth}
+		\begin{description}
+            \item[dataset:] \texttt{70-vs-10-dataset}(\ref{sec:70-vs-10-dataset})
+            \item[normalizace:] interval $[0;0.5]$
+            \item[počet epoch:] $5000$
+            \item[learning rate:] $0.05$
+        \end{description}
+\end{minipage}
+\end{tabular}
+\end{figure}
+
 \section{Uživatelská historie 3 třídy}\label{exp:user1}
 
+\begin{figure}[htbp]
+\begin{tabular}{p{0.5\textwidth}p{0.5\textwidth}}
+    \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[scale=0.3]{err_user1.png}
+    \label{fig:fig1}
+    \end{minipage}
+    &
+    \begin{minipage}{.5\textwidth}
+		\begin{description}
+            \item[dataset:] \texttt{user-3class-dataset}(\ref{sec:user-3class-dataset})
+            \item[normalizace:] interval $[0;0.5]$
+            \item[počet epoch:] $5000$
+            \item[learning rate:] $0.1$
+        \end{description}
+\end{minipage}
+\end{tabular}
+\end{figure}
 
 \section{Uživatelská historie 2 třídy}\label{exp:user2}
+
+\begin{figure}[htbp]
+\begin{tabular}{p{0.5\textwidth}p{0.5\textwidth}}
+    \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[scale=0.3]{err_user2.png}
+    \label{fig:fig1}
+    \end{minipage}
+    &
+    \begin{minipage}{.5\textwidth}
+		\begin{description}
+            \item[dataset:] \texttt{user-2class-dataset}(\ref{sec:user-2class-dataset})
+            \item[normalizace:] interval $[0;0.5]$
+            \item[počet epoch:] $5000$
+            \item[learning rate:] $0.1$
+        \end{description}
+\end{minipage}
+\end{tabular}
+\end{figure}
 
 
 \section{Oblíbenost skladby}\label{exp:hotfail}
 
-
-
-
-\begin{figure}
-\centering
-
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=1\linewidth]{exp_sexp_off_som.png}
-  \caption{SOM}
-  \label{fig:sub1}
-\end{subfigure}%
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=1\linewidth]{exp_sexp_off_som.png}
-  \caption{SOM}
-  \label{fig:sub1}
-\end{subfigure}%
-
-
-
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=1\linewidth]{exp_sexp_off_som.png}
-  \caption{SOM}
-  \label{fig:sub1}
-\end{subfigure}%
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=1\linewidth]{exp_sexp_off_som.png}
-  \caption{SOM}
-  \label{fig:sub1}
-\end{subfigure}%
-
-
-\caption{Sex Pistols a The Offspring (exp. \ref{exp:sexp-off})}
-\label{fig:top}
-
-
+\begin{figure}[htbp]
+\begin{tabular}{p{0.5\textwidth}p{0.5\textwidth}}
+    \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[scale=0.3]{err_hot-fail.png}
+    \label{fig:fig1}
+    \end{minipage}
+    &
+    \begin{minipage}{.5\textwidth}
+		\begin{description}
+            \item[dataset:] \texttt{hot-fail-dataset}(\ref{sec:hot-fail-dataset})
+            \item[normalizace:] interval $[0;0.5]$
+            \item[počet epoch:] $4000$
+            \item[learning rate:] $0.1$
+        \end{description}
+\end{minipage}
+\end{tabular}
 \end{figure}
+
+
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 % % Tuto kapitolu z výsledné práce ODSTRAŇTE.

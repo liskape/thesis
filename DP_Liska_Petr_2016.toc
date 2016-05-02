@@ -2,7 +2,8 @@
 \select@language {czech}
 \contentsline {subsection}{Odkaz na tuto pr{\' a}ci}{viii}{section*.1}
 \contentsline {chapter}{{\' U}vod}{1}{chapter*.5}
-\contentsline {section}{C\IeC {\'\i }l pr\IeC {\'a}ce}{1}{section*.6}
+\contentsline {section}{C\IeC {\'\i }l pr\IeC {\'a}ce}{2}{section*.6}
+\contentsline {section}{\IeC {\v C}len\IeC {\v e}n\IeC {\'\i } pr\IeC {\'a}ce}{2}{section*.7}
 \contentsline {chapter}{\chapternumberline {1}Pou\IeC {\v z}it\IeC {\'e} metody}{3}{chapter.1}
 \contentsline {section}{\numberline {1.1}Dob\IeC {\'y}v\IeC {\'a}n\IeC {\'\i } znalost\IeC {\'\i } z datab\IeC {\'a}z\IeC {\'\i } (KDD)}{3}{section.1.1}
 \contentsline {subsection}{\numberline {1.1.1}Datamining}{5}{subsection.1.1.1}
@@ -49,42 +50,32 @@
 \contentsline {subsection}{\numberline {4.3.2}Rok vzniku jako s\IeC {\'e}mantick\IeC {\'y} kontext}{43}{subsection.4.3.2}
 \contentsline {section}{\numberline {4.4}Hled\IeC {\'a}n\IeC {\'\i } struktur}{44}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}Poslucha\IeC {\v c}sk\IeC {\'a} historie jako s\IeC {\'e}mantick\IeC {\'y} kontext}{44}{subsection.4.4.1}
-\contentsline {paragraph}{Rozd\IeC {\v e}len\IeC {\'\i } dat do t\IeC {\v r}ech t\IeC {\v r}\IeC {\'\i }d}{45}{section*.75}
-\contentsline {paragraph}{Rozd\IeC {\v e}len\IeC {\'\i } dat do dvou t\IeC {\v r}\IeC {\'\i }d}{46}{section*.77}
+\contentsline {paragraph}{Rozd\IeC {\v e}len\IeC {\'\i } dat do t\IeC {\v r}ech t\IeC {\v r}\IeC {\'\i }d}{45}{section*.76}
+\contentsline {paragraph}{Rozd\IeC {\v e}len\IeC {\'\i } dat do dvou t\IeC {\v r}\IeC {\'\i }d}{46}{section*.78}
 \contentsline {subsection}{\numberline {4.4.2}Obl\IeC {\'\i }benost jako s\IeC {\'e}mantick\IeC {\'y} kontext}{47}{subsection.4.4.2}
 \contentsline {chapter}{\chapternumberline {5}Vyu\IeC {\v z}it\IeC {\'\i }}{49}{chapter.5}
 \contentsline {section}{\numberline {5.1}Mapa hudebn\IeC {\'\i }ho vkusu}{49}{section.5.1}
 \contentsline {section}{\numberline {5.2}Predikce \IeC {\'u}sp\IeC {\v e}\IeC {\v s}nosti pro novou skladbu}{49}{section.5.2}
-\contentsline {chapter}{Z{\' a}v{\v e}r}{51}{chapter*.81}
-\contentsline {section}{P\IeC {\v r}\IeC {\'\i }nosy}{51}{section*.82}
-\contentsline {section}{Mo\IeC {\v z}n\IeC {\'a} roz\IeC {\v s}\IeC {\'\i }\IeC {\v r}en\IeC {\'\i }}{51}{section*.83}
-\contentsline {chapter}{Literatura}{53}{section*.85}
+\contentsline {chapter}{Z{\' a}v{\v e}r}{51}{chapter*.82}
+\contentsline {section}{P\IeC {\v r}\IeC {\'\i }nosy}{51}{section*.83}
+\contentsline {section}{Mo\IeC {\v z}n\IeC {\'a} roz\IeC {\v s}\IeC {\'\i }\IeC {\v r}en\IeC {\'\i }}{51}{section*.84}
+\contentsline {chapter}{Literatura}{53}{section*.86}
 \contentsline {appendix}{\chapternumberline {A}Seznam pou\IeC {\v z}it\IeC {\'y}ch zkratek}{55}{appendix.A}
 \contentsline {appendix}{\chapternumberline {B}Definice pojm\IeC {\r u}}{57}{appendix.B}
 \contentsline {appendix}{\chapternumberline {C}Obsah p\IeC {\v r}ilo\IeC {\v z}en\IeC {\'e}ho CD}{59}{appendix.C}
 \contentsline {appendix}{\chapternumberline {D}Datasety}{61}{appendix.D}
 \contentsline {section}{\numberline {D.1}Interpret jako s\IeC {\'e}mantika}{61}{section.D.1}
-\contentsline {subsection}{\numberline {D.1.1}Katy Perry a Ramones (katy-ram-dataset)}{61}{subsection.D.1.1}
-\contentsline {subsection}{\numberline {D.1.2}The Offspring a Sex (off-sexp-dataset)}{62}{subsection.D.1.2}
-\contentsline {subsection}{\numberline {D.1.3}David Bowie, Elvis Presley a AC/DC (dp-ep-acdc-dataset)}{62}{subsection.D.1.3}
-\contentsline {subsection}{\numberline {D.1.4}Metallica, Maddona a Louis Armstrong (met-mad-la-dataset)}{62}{subsection.D.1.4}
-\contentsline {subsection}{\numberline {D.1.5}Metallica, Maddona a Louis Armstrong n\IeC {\'a}hodn\IeC {\'y} (met-mad-la-random-dataset)}{62}{subsection.D.1.5}
 \contentsline {section}{\numberline {D.2}Rok vzniku skladby jako s\IeC {\'e}mantika}{62}{section.D.2}
-\contentsline {subsection}{\numberline {D.2.1}Skladby z roku 1960 a 1970 (60-vs-70-dataset)}{62}{subsection.D.2.1}
-\contentsline {subsection}{\numberline {D.2.2}Skladby z roku 1970 a 2010 (70-vs-10-dataset)}{62}{subsection.D.2.2}
 \contentsline {section}{\numberline {D.3}Po\IeC {\v c}et p\IeC {\v r}ehr\IeC {\'a}n\IeC {\'\i } jako s\IeC {\'e}mantika}{62}{section.D.3}
-\contentsline {subsection}{\numberline {D.3.1}Po\IeC {\v c}ty p\IeC {\v r}ehr\IeC {\'a}n\IeC {\'\i } rozd\IeC {\v e}len\IeC {\'e} do t\IeC {\v r}ech kategori\IeC {\'\i } (user-3class-dataset)}{62}{subsection.D.3.1}
-\contentsline {subsection}{\numberline {D.3.2}Po\IeC {\v c}ty p\IeC {\v r}ehr\IeC {\'a}n\IeC {\'\i } rozd\IeC {\v e}len\IeC {\'e} do dvou kategori\IeC {\'\i } (user-2class-dataset)}{62}{subsection.D.3.2}
 \contentsline {section}{\numberline {D.4}Obl\IeC {\'\i }benost jako s\IeC {\'e}mantika}{62}{section.D.4}
-\contentsline {subsection}{\numberline {D.4.1}Hot a fail skladby (hot-fail-dataset)}{62}{subsection.D.4.1}
 \contentsline {appendix}{\chapternumberline {E}Protokoly experiment\IeC {\r u}}{63}{appendix.E}
 \contentsline {section}{\numberline {E.1}Katy Perry a Ramones}{63}{section.E.1}
 \contentsline {section}{\numberline {E.2}Sex Pistols a The Offspring}{63}{section.E.2}
-\contentsline {section}{\numberline {E.3}David Bowie, Elvis Presley a AC/DC}{63}{section.E.3}
-\contentsline {section}{\numberline {E.4}Metallica, Maddona a Louis Armstrong}{63}{section.E.4}
-\contentsline {section}{\numberline {E.5}Metallica, Maddona a Louis Armstrong n\IeC {\'a}hodn\IeC {\v e}}{63}{section.E.5}
-\contentsline {section}{\numberline {E.6}Skladby z roku 1960 a 1970}{63}{section.E.6}
-\contentsline {section}{\numberline {E.7}Skladby z roku 1970 a 2010}{63}{section.E.7}
-\contentsline {section}{\numberline {E.8}U\IeC {\v z}ivatelsk\IeC {\'a} historie 3 t\IeC {\v r}\IeC {\'\i }dy}{63}{section.E.8}
-\contentsline {section}{\numberline {E.9}U\IeC {\v z}ivatelsk\IeC {\'a} historie 2 t\IeC {\v r}\IeC {\'\i }dy}{63}{section.E.9}
-\contentsline {section}{\numberline {E.10}Obl\IeC {\'\i }benost skladby}{63}{section.E.10}
+\contentsline {section}{\numberline {E.3}David Bowie, Elvis Presley a AC/DC}{64}{section.E.3}
+\contentsline {section}{\numberline {E.4}Metallica, Maddona a Louis Armstrong}{64}{section.E.4}
+\contentsline {section}{\numberline {E.5}Metallica, Maddona a Louis Armstrong n\IeC {\'a}hodn\IeC {\v e}}{64}{section.E.5}
+\contentsline {section}{\numberline {E.6}Skladby z roku 1960 a 1970}{65}{section.E.6}
+\contentsline {section}{\numberline {E.7}Skladby z roku 1970 a 2010}{65}{section.E.7}
+\contentsline {section}{\numberline {E.8}U\IeC {\v z}ivatelsk\IeC {\'a} historie 3 t\IeC {\v r}\IeC {\'\i }dy}{65}{section.E.8}
+\contentsline {section}{\numberline {E.9}U\IeC {\v z}ivatelsk\IeC {\'a} historie 2 t\IeC {\v r}\IeC {\'\i }dy}{66}{section.E.9}
+\contentsline {section}{\numberline {E.10}Obl\IeC {\'\i }benost skladby}{66}{section.E.10}
