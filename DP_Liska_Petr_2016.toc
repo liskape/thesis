@@ -25,8 +25,7 @@
 \contentsline {section}{\numberline {2.2}CRSOM}{20}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Make it work}{20}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Make it right and make it fast}{20}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Kone\IeC {\v c}n\IeC {\'y} design}{22}{subsection.2.2.3}
-\contentsline {subsubsection}{\numberline {2.2.3.1}Publikov\IeC {\'a}n\IeC {\'\i } s\IeC {\'\i }t\IeC {\v e}}{22}{subsubsection.2.2.3.1}
+\contentsline {subsection}{\numberline {2.2.3}V\IeC {\'y}sledn\IeC {\'a} s\IeC {\'\i }\IeC {\v t}}{22}{subsection.2.2.3}
 \contentsline {section}{\numberline {2.3}Implementace experiment\IeC {\r u}}{22}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Tvorba dataset\IeC {\r u}}{22}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Framework na experimenty}{23}{subsection.2.3.2}

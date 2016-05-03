@@ -63,10 +63,11 @@ Coursera: {Proces dobývání znalostí}. [online], Naposledy navštíveno 3.
   5. 2016.
 \urlprefix\biburl{https://www.coursera.org/learn/machine-learning/lecture/93VPG/k-means-algorithm}
 
-\bibitem{junkie}
-{Kohonen's Self Organizing Feature Maps}. [online], Naposledy navštíveno 3.
-  5. 2016.
-\urlprefix\biburl{http://www.ai-junkie.com/ann/som/som1.html}
+\bibitem{kohonen}
+Kohonen, T.: Essentials of the Self-organizing Map. \emph{Neural Netw.}, ro\v
+  cn\'\i{}k~37, Leden 2013: s. 52--65, ISSN 0893-6080,
+  \doi{10.1016/j.neunet.2012.09.018}.
+\urlprefix\biburl{http://dx.doi.org/10.1016/j.neunet.2012.09.018}
 
 \bibitem{somsub}
 Ba{\c{c}}{\~a}o, F.; Lobo, V.; Painho, M.: \emph{Computational Science -- ICCS
@@ -132,6 +133,11 @@ Hartono, P.; Ogawa, K.: Visualizing Learning Management System data using
 \bibitem{preallocate}
 {Vectorization}. [online], Naposledy navštíveno 3. 5. 2016.
 \urlprefix\biburl{http://www.mathworks.com/help/matlab/matlab_prog/preallocating-arrays.html}
+
+\bibitem{ruby_performance}
+{Benchmark language implementations}. [online], Naposledy navštíveno 3. 5.
+  2016.
+\urlprefix\biburl{https://attractivechaos.github.io/plb/}
 
 \bibitem{metacentrum}
 {MetaCentrum wiki}. [online], Naposledy navštíveno 3. 5. 2016.

@@ -3,58 +3,45 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: DP_Liska_Petr_2016.aux
 The style file: csn690.bst
 Database file #1: mybibliographyfile.bib
-Warning--I didn't find a database entry for "needed"
-Warning--I didn't find a database entry for "ruby_performance"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Warning--to sort, need author or key in struktura
-Warning--to sort, need author or key in junkie
-Warning--to sort, need author or key in makeit
-Warning--to sort, need author or key in vector
-Warning--to sort, need author or key in preallocate
-Warning--to sort, need author or key in metacentrum
-Warning--to sort, need author or key in zvuk-ency
-Warning--can't use both author and editor fields in hbcap
-Warning--can't use both author and editor fields in somsub
-Warning--can't use both author and editor fields in adaptivemultim
-You've used 29 entries,
+You've used 30 entries,
             3151 wiz_defined-function locations,
-            830 strings with 10383 characters,
-and the built_in function-call counts, 11604 in all, are:
-= -- 841
-> -- 259
-< -- 22
-+ -- 130
-- -- 72
-* -- 644
-:= -- 1247
-add.period$ -- 57
-call.type$ -- 29
-change.case$ -- 100
+            837 strings with 10385 characters,
+and the built_in function-call counts, 12092 in all, are:
+= -- 881
+> -- 266
+< -- 24
++ -- 133
+- -- 74
+* -- 662
+:= -- 1302
+add.period$ -- 59
+call.type$ -- 30
+change.case$ -- 110
 chr.to.int$ -- 0
-cite$ -- 39
-duplicate$ -- 1137
-empty$ -- 1228
-format.name$ -- 82
-if$ -- 2597
+cite$ -- 30
+duplicate$ -- 1190
+empty$ -- 1278
+format.name$ -- 84
+if$ -- 2710
 int.to.chr$ -- 0
-int.to.str$ -- 29
-missing$ -- 247
-newline$ -- 119
-num.names$ -- 44
-pop$ -- 553
+int.to.str$ -- 30
+missing$ -- 258
+newline$ -- 123
+num.names$ -- 46
+pop$ -- 562
 preamble$ -- 1
-purify$ -- 94
+purify$ -- 104
 quote$ -- 0
-skip$ -- 448
+skip$ -- 473
 stack$ -- 0
-substring$ -- 437
-swap$ -- 615
-text.length$ -- 22
+substring$ -- 466
+swap$ -- 649
+text.length$ -- 24
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 108
-warning$ -- 10
-while$ -- 73
-width$ -- 31
-write$ -- 289
-(There were 12 warnings)
+type$ -- 112
+warning$ -- 0
+while$ -- 78
+width$ -- 32
+write$ -- 301
