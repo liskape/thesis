@@ -9,96 +9,155 @@
 \providecommand{\eprint}[2][]{\biburl{#2}}
 
 \bibitem{fayyad}
-{MS Windows NT} Kernel Description.
-  \url{http://www.csd.uwo.ca/faculty/ling/cs435/fayyad.pdf}, accessed:
-  2010-09-30.
+Fayyad, U.; Piatetsky-shapiro, G.; Smyth, P.: From Data Mining to Knowledge
+  Discovery in Databases. \emph{AI Magazine}, ro\v cn\'\i{}k~17, 1996: s.
+  37--54.
+
+\bibitem{most_val_asset}
+Warme, T.: {Data: your most valuable asset. A business case for data
+  governance.} [online], Naposledy navštíveno 3. 5. 2016.
+\urlprefix\biburl{https://www.linkedin.com/pulse/20141119183044-243338813-data-your-most-valuable-asset-a-business-case-for-data-governance}
+
+\bibitem{double}
+Johnston, S.~J.: {World's Data Doubling Every Two Years}. [online], Naposledy
+  navštíveno 3. 5. 2016.
+\urlprefix\biburl{http://www.infostor.com/storage-management/worlds-data-doubling-every-two-years-.html}
+
+\bibitem{struktura}
+[online], Naposledy navštíveno 3. 5. 2016.
+\urlprefix\biburl{http://slovnik-cizich-slov.abz.cz/web.php/slovo/struktura}
+
+\bibitem{multimedia}
+Marshall, D.: {Multimedia data}. [online], Naposledy navštíveno 3. 5. 2016.
+\urlprefix\biburl{https://www.cs.cf.ac.uk/Dave/Multimedia/node141.html}
 
 \bibitem{kddb}
-Knowledge Discovery in Databases.
-  \url{http://www.amazon.com/dp/0262660709/ref=rdr_ext_tmbf}, accessed:
-  2010-09-30.
+Piateski, G.; Frawley, W.: \emph{Knowledge Discovery in Databases}. Cambridge,
+  MA, USA: MIT Press, 1991, ISBN 0262660709.
 
 \bibitem{hbcap}
-Intro .. \url{http://www.ise.bgu.ac.il/faculty/liorr/hbchap1.pdf}, accessed:
-  2010-09-30.
+Maimon, O.; Rokach, L.: \emph{Data Mining and Knowledge Discovery Handbook},
+  kapitola Introduction to Knowledge Discovery in Databases. Boston, MA:
+  Springer US, 2005, ISBN 978-0-387-25465-4, s. 1--17,
+  \doi{10.1007/0-387-25465-X_1}.
+\urlprefix\biburl{http://dx.doi.org/10.1007/0-387-25465-X_1}
 
 \bibitem{g_in_g_out}
-Intro ..
-  \url{http://searchsoftwarequality.techtarget.com/definition/garbage-in-garbage-out},
-  accessed: 2010-09-30.
+Rouse, M.: {garbage in, garbage out (GIGO)}. [online], Naposledy navštíveno
+  3. 5. 2016.
+\urlprefix\biburl{http://searchsoftwarequality.techtarget.com/definition/garbage-in-garbage-out}
 
 \bibitem{eurokomise}
-Eurokomise. \url{http://euromise.vse.cz/kdd/index.php}, accessed: 2010-09-30.
+Berka, P.: {Proces dobývání znalostí)}. [online], Naposledy navštíveno 3.
+  5. 2016.
+\urlprefix\biburl{http://euromise.vse.cz/kdd/index.php}
 
 \bibitem{k-means-nphard}
-HARTONO.
-  \url{chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/http://www.imsc.res.in/~meena/papers/kmeans.pdf},
-  accessed: 2010-09-30.
+Mahajan, M.; Nimbhorkar, P.; Varadarajan, K.: The Planar K-means Problem is
+  NP-hard. \emph{Theor. Comput. Sci.}, ro\v cn\'\i{}k 442, \v Cervenec 2012: s.
+  13--21, ISSN 0304-3975, \doi{10.1016/j.tcs.2010.05.034}.
+\urlprefix\biburl{http://dx.doi.org/10.1016/j.tcs.2010.05.034}
 
 \bibitem{k-means-algo}
-HARTONO.
-  \url{https://www.coursera.org/learn/machine-learning/lecture/93VPG/k-means-algorithm},
-  accessed: 2010-09-30.
+Coursera: {Proces dobývání znalostí}. [online], Naposledy navštíveno 3.
+  5. 2016.
+\urlprefix\biburl{https://www.coursera.org/learn/machine-learning/lecture/93VPG/k-means-algorithm}
 
 \bibitem{junkie}
-junkie. \url{http://www.ai-junkie.com/ann/som/som1.html}, accessed: 2010-09-30.
+{Kohonen's Self Organizing Feature Maps}. [online], Naposledy navštíveno 3.
+  5. 2016.
+\urlprefix\biburl{http://www.ai-junkie.com/ann/som/som1.html}
+
+\bibitem{somsub}
+Ba{\c{c}}{\~a}o, F.; Lobo, V.; Painho, M.: \emph{Computational Science -- ICCS
+  2005: 5th International Conference, Atlanta, GA, USA, May 22-25, 2005,
+  Proceedings, Part III}, kapitola Self-organizing Maps as Substitutes for
+  K-Means Clustering. Berlin, Heidelberg: Springer Berlin Heidelberg, 2005,
+  ISBN 978-3-540-32118-7, s. 476--483, \doi{10.1007/11428862_65}.
+\urlprefix\biburl{http://dx.doi.org/10.1007/11428862_65}
 
 \bibitem{cluster_som}
-{MS Windows NT} Kernel Description.
-  \url{http://www.saedsayad.com/clustering_som.htm}, accessed: 2010-09-30.
+Sayad, D.~S.: {An Introduction to Data Mining}. [online], Naposledy
+  navštíveno 3. 5. 2016.
+\urlprefix\biburl{http://www.saedsayad.com/clustering_som.htm}
 
 \bibitem{som_dim_red}
-Intro ..
-  \url{http://138.100.76.11/visionguided2/sites/files/campoy%20ijcnn09.pdf},
-  accessed: 2010-09-30.
+Campoy, P.: Dimensionality reduction by self organizing maps that preserve
+  distances in output space. In \emph{2009 International Joint Conference on
+  Neural Networks}, June 2009, ISSN 2161-4393, s. 432--438,
+  \doi{10.1109/IJCNN.2009.5179009}.
 
 \bibitem{som_clustering}
-Intro ..
-  \url{chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/http://lib.tkk.fi/Diss/2002/isbn951226093X/article4.pdf},
-  accessed: 2010-09-30.
+Vesanto, J.; Alhoniemi, E.: Clustering of the Self-Organizing Map. 2000.
 
 \bibitem{visual}
-Intro .. \url{http://dl.acm.org/citation.cfm?id=614508}, accessed: 2010-09-30.
+Keim, D.~A.: Information Visualization and Visual Data Mining. \emph{IEEE
+  Transactions on Visualization and Computer Graphics}, ro\v cn\'\i{}k~8, \v
+  c.~1, Leden 2002: s. 1--8, ISSN 1077-2626, \doi{10.1109/2945.981847}.
+\urlprefix\biburl{http://dx.doi.org/10.1109/2945.981847}
 
-\bibitem{hartono14}
-HARTONO. \url{http://arxiv.org/pdf/1412.6567.pdf}, accessed: 2010-09-30.
+\bibitem{hartonomain}
+Hartono, P.; Hollensen, P.; Trappenberg, T.: Learning-Regulated Context
+  Relevant Topographical Map. \emph{IEEE Transactions on Neural Networks and
+  Learning Systems}, ro\v cn\'\i{}k~26, \v c.~10, Oct 2015: s. 2323--2335, ISSN
+  2162-237X, \doi{10.1109/TNNLS.2014.2379275}.
+
+\bibitem{iris}
+FISHER, R.~A.: THE USE OF MULTIPLE MEASUREMENTS IN TAXONOMIC PROBLEMS.
+  \emph{Annals of Eugenics}, ro\v cn\'\i{}k~7, \v c.~2, 1936: s. 179--188, ISSN
+  2050-1439, \doi{10.1111/j.1469-1809.1936.tb02137.x}.
+\urlprefix\biburl{http://dx.doi.org/10.1111/j.1469-1809.1936.tb02137.x}
+
+\bibitem{hartono13}
+Hartono, P.; Trappenberg, T.: Classificability-regulated self-organizing map
+  using restricted RBF. In \emph{Neural Networks (IJCNN), The 2013
+  International Joint Conference on}, Aug 2013, ISSN 2161-4393, s. 1--5,
+  \doi{10.1109/IJCNN.2013.6706732}.
 
 \bibitem{lms}
-Metacentrum.
-  \url{http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=6974469&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D6974469},
-  accessed: 2010-09-30.
+Hartono, P.; Ogawa, K.: Visualizing Learning Management System data using
+  Context-Relevant Self-Organizing Map. In \emph{2014 IEEE International
+  Conference on Systems, Man, and Cybernetics (SMC)}, Oct 2014, ISSN 1062-922X,
+  s. 3487--3491, \doi{10.1109/SMC.2014.6974469}.
 
 \bibitem{makeit}
-Make It Work Make It Right Make It Fast.
-  \url{http://c2.com/cgi/wiki?MakeItWorkMakeItRightMakeItFast}, accessed:
-  2010-09-30.
+{Make It Work Make It Right Make It Fast}. [online], Naposledy navštíveno 3.
+  5. 2016.
+\urlprefix\biburl{http://c2.com/cgi/wiki?MakeItWorkMakeItRightMakeItFast}
 
 \bibitem{vector}
-HARTONO.
-  \url{http://www.mathworks.com/help/matlab/matlab_prog/vectorization.html},
-  accessed: 2010-09-30.
+{Vectorization}. [online], Naposledy navštíveno 3. 5. 2016.
+\urlprefix\biburl{http://www.mathworks.com/help/matlab/matlab_prog/vectorization.html}
 
 \bibitem{preallocate}
-HARTONO.
-  \url{http://www.mathworks.com/help/matlab/matlab_prog/preallocating-arrays.html},
-  accessed: 2010-09-30.
+{Vectorization}. [online], Naposledy navštíveno 3. 5. 2016.
+\urlprefix\biburl{http://www.mathworks.com/help/matlab/matlab_prog/preallocating-arrays.html}
 
 \bibitem{metacentrum}
-Metacentrum. \url{https://wiki.metacentrum.cz/wiki/Main_Pagel}, accessed:
-  2010-09-30.
+{MetaCentrum wiki}. [online], Naposledy navštíveno 3. 5. 2016.
+\urlprefix\biburl{https://wiki.metacentrum.cz/wiki/Main_Pagel}
 
 \bibitem{zvuk-ency}
-Metacentrum.
-  \url{http://fyzika.jreichl.com/main.article/view/152-zvukove-vlneni},
-  accessed: 2010-09-30.
+{Encyklopedie fyziky}. [online], Naposledy navštíveno 3. 5. 2016.
+\urlprefix\biburl{http://fyzika.jreichl.com/main.article/view/152-zvukove-vlneni}
+
+\bibitem{adaptivemultim}
+Schindler, A.; Rauber, A.: \emph{Adaptive Multimedia Retrieval: Semantics,
+  Context, and Adaptation: 10th International Workshop, AMR 2012, Copenhagen,
+  Denmark, October 24-25, 2012, Revised Selected Papers}, kapitola Capturing
+  the Temporal Domain in Echonest Features for Improved Classification
+  Effectiveness. Cham: Springer International Publishing, 2014, ISBN
+  978-3-319-12093-5, s. 214--227, \doi{10.1007/978-3-319-12093-5_13}.
+\urlprefix\biburl{http://dx.doi.org/10.1007/978-3-319-12093-5_13}
 
 \bibitem{analyze}
-Analyze documentation.
-  \url{developer.echonest.com/docs/v4/_static/AnalyzeDocumentation.pdf},
-  accessed: 2010-09-30.
+Jehan, T.: {Analyzer Documentation}. [online], Naposledy navštíveno 3. 5.
+  2016.
+\urlprefix\biburl{developer.echonest.com/docs/v4/_static/AnalyzeDocumentation.pdf}
 
 \bibitem{hotttnesss}
-{MS Windows NT} Kernel Description.
-  \url{https://musicmachinery.com/tag/hotttnesss/}, accessed: 2010-09-30.
+Lamere, P.: {Posts Tagged hotttnesss}. [online], Naposledy navštíveno 3. 5.
+  2016.
+\urlprefix\biburl{https://musicmachinery.com/tag/hotttnesss/}
 
 \end{thebibliography}

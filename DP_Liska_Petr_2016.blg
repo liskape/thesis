@@ -4,69 +4,57 @@ The top-level auxiliary file: DP_Liska_Petr_2016.aux
 The style file: csn690.bst
 Database file #1: mybibliographyfile.bib
 Warning--I didn't find a database entry for "needed"
-Warning--I didn't find a database entry for "multimedia"
 Warning--I didn't find a database entry for "ruby_performance"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Warning--to sort, need author or key in fayyad
-Warning--to sort, need author or key in kddb
-Warning--to sort, need author or key in hbcap
-Warning--to sort, need author or key in g_in_g_out
-Warning--to sort, need author or key in eurokomise
-Warning--to sort, need author or key in k-means-nphard
-Warning--to sort, need author or key in k-means-algo
+Warning--to sort, need author or key in struktura
 Warning--to sort, need author or key in junkie
-Warning--to sort, need author or key in cluster_som
-Warning--to sort, need author or key in som_dim_red
-Warning--to sort, need author or key in som_clustering
-Warning--to sort, need author or key in visual
-Warning--to sort, need author or key in hartono14
-Warning--to sort, need author or key in lms
 Warning--to sort, need author or key in makeit
 Warning--to sort, need author or key in vector
 Warning--to sort, need author or key in preallocate
 Warning--to sort, need author or key in metacentrum
 Warning--to sort, need author or key in zvuk-ency
-Warning--to sort, need author or key in analyze
-Warning--to sort, need author or key in hotttnesss
-You've used 21 entries,
+Warning--can't use both author and editor fields in hbcap
+Warning--can't use both author and editor fields in somsub
+Warning--can't use both author and editor fields in adaptivemultim
+You've used 29 entries,
             3151 wiz_defined-function locations,
-            703 strings with 7280 characters,
-and the built_in function-call counts, 5181 in all, are:
-= -- 378
-> -- 21
-< -- 0
-+ -- 21
-- -- 0
-* -- 191
-:= -- 389
-add.period$ -- 42
-call.type$ -- 21
-change.case$ -- 63
+            830 strings with 10383 characters,
+and the built_in function-call counts, 11604 in all, are:
+= -- 841
+> -- 259
+< -- 22
++ -- 130
+- -- 72
+* -- 644
+:= -- 1247
+add.period$ -- 57
+call.type$ -- 29
+change.case$ -- 100
 chr.to.int$ -- 0
-cite$ -- 42
-duplicate$ -- 567
-empty$ -- 673
-format.name$ -- 0
-if$ -- 1219
+cite$ -- 39
+duplicate$ -- 1137
+empty$ -- 1228
+format.name$ -- 82
+if$ -- 2597
 int.to.chr$ -- 0
-int.to.str$ -- 21
-missing$ -- 126
-newline$ -- 73
-num.names$ -- 0
-pop$ -- 420
+int.to.str$ -- 29
+missing$ -- 247
+newline$ -- 119
+num.names$ -- 44
+pop$ -- 553
 preamble$ -- 1
-purify$ -- 42
+purify$ -- 94
 quote$ -- 0
-skip$ -- 230
+skip$ -- 448
 stack$ -- 0
-substring$ -- 147
-swap$ -- 210
-text.length$ -- 0
+substring$ -- 437
+swap$ -- 615
+text.length$ -- 22
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 84
-warning$ -- 21
-while$ -- 0
-width$ -- 23
-write$ -- 156
-(There were 24 warnings)
+type$ -- 108
+warning$ -- 10
+while$ -- 73
+width$ -- 31
+write$ -- 289
+(There were 12 warnings)

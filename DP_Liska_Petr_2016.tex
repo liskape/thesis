@@ -109,7 +109,7 @@ Mezi nutné kroky patří mimo jiné důkladné nastudování zmíněných metod
 \section{Dobývání znalostí z databází (KDD)}
 \textit{Dobývání znalostí z databází (Knowledge discovery in databases, KDD)} představuje netriviální extrakci nových a reálně využitelných znalostí z dat\cite{kddb}. 
 
-Cílem KDD je získat cenné nové informace, které nebyly z neopracovaných dat explicitně viditelné a vhodným způsobem a formou pak tyto informace zobrazit, popřípadě využít v reálných systémech.\cite{fayyad}
+Cílem KDD je získat cenné nové informace, které nebyly z neopracovaných dat explicitně viditelné a vhodným způsobem a formou pak tyto informace zobrazit, popřípadě využít v reálných systémech \cite{fayyad}.
 
 KDD se dá popsat jako proces skládající se z několika kroků. Tyto kroky se zpravidla iterativně opakují a některé vyžadují vysokou interakci uživatele. Kroky KDD, tak jak jsou popsány v \cite{hbcap}, jsou následující:
 
@@ -295,7 +295,7 @@ Kde:\\
 \subsection{Vlastnosti}
 SOM, stejně jako mnoho dalších dataminingových metod, předpokládá, že příslušnost tříd je definovaná podobností atributů.
 
-Dále je chování samoorganizujících map ovlivněno počtem neuronů -- bylo ukázáno, že samoroganizující mapy s relativně malým počtem neuronů (oproti velikosti datasetu) se chovají podobně jako metoda K-means\cite{needed}. Prototypové vektory pak  představují středy shluků v původním prostoru.
+Dále je chování samoorganizujících map ovlivněno počtem neuronů -- bylo ukázáno, že samoroganizující mapy s relativně malým počtem neuronů (oproti velikosti datasetu) se chovají podobně jako metoda K-means\cite{somsub}. Prototypové vektory pak  představují středy shluků v původním prostoru.
 
 Naopak pro sítě s počtem neuronů srovnatelným s počtem vstupních dat, SOM učením vytváří diskrétní reprezentaci vstupního prostoru -- \textit{mapu}, která zachovává topologické vlastnosti prostoru, založené na \textit{sousednosti}\cite{cluster_som}.
 
@@ -307,7 +307,7 @@ Naopak pro sítě s počtem neuronů srovnatelným s počtem vstupních dat, SOM
 
 Jelikož se vlastnosti samoorganizujících map různí podle počtu použitých neuronů, využití se liší taktéž podle tohoto parametru.
 
-SOM s malým počtem neuronů je možné využít tam, kde je možné použít K-means\cite{needed}.
+SOM s malým počtem neuronů je možné využít tam, kde je možné použít K-means\cite{somsub}.
 
 
 Naopak samoorganizující mapy s velkým\footnote{Velký počet v tomto smyslu představuje řádově srovnatelný s počtem vstupních vektorů.} počtem neuronů se používají převážně jako nástroj pro redukci dimenzionality.  Toho lze využít v transformaci dat při procesu KDD (\ref{subsec:transformace}), podobně, jako ostatní metody s tímto účelem\cite{som_dim_red}. Kterýkoliv vektor ze vstupního prostoru je namapován na pozici v mřížce -- ta je určena pozicí neuronu, který se aktivuje pro příslušný vstupní vektor, jinými slovy je pro něj BMU.
@@ -359,7 +359,7 @@ ENH: další možnosti
 
 
 \section{CRSOM}\label{sec:crsom_teo}
-\textit{Context-relevant self organizing map, Samoorganizující mapa se zahrnutým sémantickým kontextem (CRSOM)} je umělá neuronová síť navržena Pitoyo Hartonem. Na rozdíl od kasické SOM se CRSOM učí s učitelem, z čehož vyplývá, že k učení je nutné znát dvojice vstupní a výstupní vektor. Právě výstupní vektory určují tzv. \textit{sémantický kontext učení}, což mohou být například třídy vstupních vektorů.
+\textit{Context-relevant self organizing map, Samoorganizující mapa se zahrnutým sémantickým kontextem (CRSOM)} je umělá neuronová síť navržena Pitoyo Hartonem \cite{hartonomain}. Na rozdíl od kasické SOM se CRSOM učí s učitelem, z čehož vyplývá, že k učení je nutné znát dvojice vstupní a výstupní vektor. Právě výstupní vektory určují tzv. \textit{sémantický kontext učení}, což mohou být například třídy vstupních vektorů.
 
 \subsection{Struktura sítě}
 CRSOM se skládá ze tří vrstev neuronů. Prostřední (skrytá) vrstva je organizovaná do 2D mřížky neuronů, tzn. stejně jako u klasické samoorganizující mapy.
@@ -372,7 +372,7 @@ CRSOM se skládá ze tří vrstev neuronů. Prostřední (skrytá) vrstva je org
 \caption{Struktura sítě CRSOM}
 \label{fig:crsom_structure}
  \captionsetup{font={footnotesize,bf,it}}
-  \caption*{zdroj:\cite{hartono14}}
+  \caption*{zdroj:\cite{hartonomain}}
 \end{center}
 \end{figure}
  
@@ -413,7 +413,7 @@ Kde:\\
  
 
 Druhý člen představuje \textit{topologickou restrikci} v mapě neuronů (\ref{eq:4}). Jinými slovy jde o aktivování neuronů v závislosti na pozici v mřížce. Čím blíže je neuron k BMU, tím je tato aktivace vyšší, zároveň tato aktivace klesá s časem, díky funkci $s(t)$ popsané vztahem \ref{eq:5}.  
-V této praci byly parametry $s_0$ a $s_{end}$ nastaveny na $200$ a $0.01$, stejně tak, jak je navrženo a empiricky otestováno v originální publikaci \cite{hartono14}.
+V této praci byly parametry $s_0$ a $s_{end}$ nastaveny na $200$ a $0.01$, stejně tak, jak je navrženo a empiricky otestováno v originální publikaci \cite{hartonomain}.
 
 
 \vspace{\baselineskip}
@@ -594,7 +594,7 @@ Tento člen slouží jako \textit{regulační signál}, který je určen velikos
 
 Pouze v případě $ \delta_i^h(t) > 0 $, je neuron $i$ přiblížen ke vstupnímu vektoru. V případě $ \delta_i^h(t) < 0 $ je naopak oddálen. Z toho vyplývá, že ke vstupnímu vektoru jsou přiblíženy pouze prototypové vektory neuronů, které přispívají ke snížení chyby, ostatní jsou naopak pokutovány oddálením. To má za důsledek rozdílné chování oproti SOM, kde mapa je formována pouze na základě vstupního prostoru, zatímco u CRSOM je mapa formována na základě vstupního prostoru a dodaného semantického kontextu. 
 
-Formování mapy CRSOM je ukázáno na obr. \ref{fig:cr}. Vstupní data tvoří dataset Iris\ref{iris} omezený na dvě dimenze \ref{fig:iris2d}. Toto omezení umožní vizualizovat mapu a vstupní data na jednom grafu bez ztráty informace. Ze série obrázků (\ref{fig:cr}) je vidět, že formování respektuje sémantický kontext, kterým jsou v tomto případě jednotlivé třídy datasetu Iris. Mapa vytváří shluky, které odpovídají rozložení tříd ve vstupním prostoru.
+Formování mapy CRSOM je ukázáno na obr. \ref{fig:cr}. Vstupní data tvoří dataset Iris\cite{iris} omezený na dvě dimenze \ref{fig:iris2d}. Toto omezení umožní vizualizovat mapu a vstupní data na jednom grafu bez ztráty informace. Ze série obrázků (\ref{fig:cr}) je vidět, že formování respektuje sémantický kontext, kterým jsou v tomto případě jednotlivé třídy datasetu Iris. Mapa vytváří shluky, které odpovídají rozložení tříd ve vstupním prostoru.
 
 
 
@@ -632,7 +632,7 @@ V případě, že $ \delta_i^h(t)$ je zafixováno na $1$, CRSOM simuluje chován
 
 
 \subsubsection*{Rozdíl v interpretaci map SOM a CRSOM}
-Samoorganizující mapy jsou schopné vysoce dimenzionální prostor mapovat do 2D a zachovat při tom některé topologické vlastnosti vstupního prostoru. Pokud máme k datům nějaký sémantický kontext (třídy) a chceme je nějakým způsobem využít pro formování mapy, není jiná možnost, než využít třídy jako další atributy. Naopak CRSOM s těmito informacemi zachází explicitně a pomocí těchto tříd prostřednictvím regulačního signálu řídí formování mapy podle zadaného kontextu. SOM je schopný vizualizovat strukturu vstupního prostoru, zatímco CRSOM je schopná vizualizovat strukturu problému\cite{hartono14}.
+Samoorganizující mapy jsou schopné vysoce dimenzionální prostor mapovat do 2D a zachovat při tom některé topologické vlastnosti vstupního prostoru. Pokud máme k datům nějaký sémantický kontext (třídy) a chceme je nějakým způsobem využít pro formování mapy, není jiná možnost, než využít třídy jako další atributy. Naopak CRSOM s těmito informacemi zachází explicitně a pomocí těchto tříd prostřednictvím regulačního signálu řídí formování mapy podle zadaného kontextu. SOM je schopný vizualizovat strukturu vstupního prostoru, zatímco CRSOM je schopná vizualizovat strukturu problému\cite{hartono13}.
 
 
 
@@ -664,7 +664,7 @@ Pro samoorganizující mapy se v Matlabu používá funkce \texttt{selforgmap}\f
 
 
 Implementace CRSOM byla mnohem náročnější. Jedním z důvodů bylo to, že v době implementace bylo k dispozici pouze analytické vyjádření fungování sítě, bez jakékoliv vzorové implementace.
-Správnost sítě tak bylo možné verifikovat pouze na základě výstupů z experimentů provedených Hartonem na známých datových sadách\cite{hartono14}.
+Správnost sítě tak bylo možné verifikovat pouze na základě výstupů z experimentů provedených Hartonem na známých datových sadách\cite{hartonomain}.
 
 Další překážkou bylo, že prováděné experimenty byly spouštěny pro $30 000$ epoch, což by znamenalo několik dní výpočtů pro první naivní implementace.
 	
@@ -672,10 +672,10 @@ Postup pro implementaci sítě tak, jak byla navržena Hartonem, byl inspirován
 Tento přístup logicky prioritizuje vývoj software: jako první by měla být zaručena korektní implementace. Až poté je možné implementaci vylepšovat ve směrech designu, robustnosti a výkonu. Pro zachování správnosti software je nutné zavést regresní testování, které zaručí pokračující korektnost i po změnách v rámci \uv{Make it right} a \uv{make it fast}.
 
 \subsection{Make it work}
- Jak bylo zmíněno, první naivní implementace sítě není možné verifikovat oproti Hartonovým experimentům, na druhou stranu je z definice sítě a z dostupných publikací (např.: \cite{hartono14}) zřejmé, jak se bude mapa formovat pro jednoduché příklady. Takovým jednoduchým příkladem je například dobře známý dataset Iris. Tento dataset byl navíc omezen na dvě dimenze, což poskytuje možnost vizualizovat neurony, určené prototypovými vektory, spolu se vstupními daty v jednom vykreslení. Vizualizace formování se ukázala jako velmi platná pro pochopení a ladění fungování sítě. Kromě zobrazování neuronů na mapě spolu se vstupními daty byly ukládány a zanášeny do grafů další hodnoty významné pro průběh učení. Mezi takové hodnoty patří například hodnota funkce $E(t)$, průměrné výstupy neuronů ze skryté vrstvy, průměrná topologická restrikce a další.
+ Jak bylo zmíněno, první naivní implementace sítě není možné verifikovat oproti Hartonovým experimentům, na druhou stranu je z definice sítě a z dostupných publikací (např.: \cite{hartonomain}) zřejmé, jak se bude mapa formovat pro jednoduché příklady. Takovým jednoduchým příkladem je například dobře známý dataset Iris. Tento dataset byl navíc omezen na dvě dimenze, což poskytuje možnost vizualizovat neurony, určené prototypovými vektory, spolu se vstupními daty v jednom vykreslení. Vizualizace formování se ukázala jako velmi platná pro pochopení a ladění fungování sítě. Kromě zobrazování neuronů na mapě spolu se vstupními daty byly ukládány a zanášeny do grafů další hodnoty významné pro průběh učení. Mezi takové hodnoty patří například hodnota funkce $E(t)$, průměrné výstupy neuronů ze skryté vrstvy, průměrná topologická restrikce a další.
  
-Další překážkou byla vysoká citlivost metody na nastavení parametrů učení\cite{hartono14}. Slabé výsledky tak nemusí vždy znamenat chybu v implementaci, nýbrž například nevhodné nastavení učících parametrů. Tomuto problému bylo čeleno pomocí prohledávání prostoru parametrů a kontrolování všech výsledků, alespoň z počátku verifikace.
-Pomocí těchto přístupů se podařilo naimplementovat CRSOM, která dávala srovnatelné výsledky na stejných datasetech podle originálních publikací \cite{hartono14}. (ENH: doložení obrázky)
+Další překážkou byla vysoká citlivost metody na nastavení parametrů učení\cite{hartonomain}. Slabé výsledky tak nemusí vždy znamenat chybu v implementaci, nýbrž například nevhodné nastavení učících parametrů. Tomuto problému bylo čeleno pomocí prohledávání prostoru parametrů a kontrolování všech výsledků, alespoň z počátku verifikace.
+Pomocí těchto přístupů se podařilo naimplementovat CRSOM, která dávala srovnatelné výsledky na stejných datasetech podle originálních publikací \cite{hartonomain}. (ENH: doložení obrázky)
 
 \subsection{Make it right and make it fast}
 
@@ -729,8 +729,7 @@ První verze používaly oddělenou kontextovou síť vytvořenou pomocí funkce
 TODO
 
 \subsubsection{Publikování sítě}
-
-TODO
+%Veškerý kód je dostupný ve veřejném github repozitáři na adrese https://github.com/liskape/crsom.
 
 \section{Implementace experimentů}
 
@@ -902,7 +901,9 @@ je reprezentována celkem třemi údaji: \textit{loudness\_start}, \textit{loudn
  
 \item[pitches] je 12-dimenzionální vektor, kde každá dimenze představuje dominanci hudebního tónu v segmentu. Hudební tóny jsou popořadě: C, C\#, D, D\#, E, F, F\#, G, G\#, A, A\#, B,
 
-\item[timbre] je 12-dimezionální vektor reprezentující jeden segment z hlediska barev tónů. Pro účely této práce je důležité, že takové vektory jsou vhodné na porovnávání mezi sebou. Toto tvrzení a další informace o způsobu získávání vektorů jsou k nalezení v oficiální dokumentaci nástroje \cite{analyze},
+\item[timbre] je 12-dimezionální vektor reprezentující jeden segment z hlediska barev tónů. Samotná společnost The Echo Nest timbre vektor neformálně popisuje jako principiálně stejně jako \textit{Mel-frequency cepstral coefficients (MFCC)}, které se úspěšně používá v úlohách rozpoznávání řeči. Konkrétní význam a způsob získávání těchto vysoce abstraktních hodnot je bohužel proprietární. Porovnání s ostatními metodami z pohledu extrakce popisu zvuku je možné dohledat v publikaci \cite{adaptivemultim}.
+
+Pro účely této práce je důležité, že takové vektory jsou vhodné na porovnávání mezi sebou a mají za cíl dobře reprezentovat hudební znaky. Toto tvrzení a další informace o způsobu získávání vektorů jsou k nalezení v oficiální dokumentaci nástroje \cite{analyze},
 
 \item[confidence] je číslo mezi $0$ a $1$, které symbolizuje jistotu analyzátoru pro konkrétní segment. Z důvodu zjednodušení nebude v této práci vůbec uvažován.
 \end{description}
@@ -967,7 +968,7 @@ Velikosti mřížek neuronů jsou nastavovány v závislosti na velikosti vstupn
 
 
 \subsection{Semantic relevance index}
-Semantic relevance index (SRI) je míra, která kvantifikuje schopnost výsledných map zachovávat sémantický význam dat v nízce dimenzionální mapě \cite{hartono14}. SRI je poměr mezi $I_{class}$ a $O_{class}$. $O_{class}$ je míra, která určuje jak moc jsou data s rozdílným významem (třídou) na mapě rozdělena (\ref{eq:oclass}). Oproti tomu $I_{class}$ udává, jak moc jsou data se stejným významem mapována k sobě (\ref{eq:iclass}).
+Semantic relevance index (SRI) je míra, která kvantifikuje schopnost výsledných map zachovávat sémantický význam dat v nízce dimenzionální mapě \cite{hartonomain}. SRI je poměr mezi $I_{class}$ a $O_{class}$. $O_{class}$ je míra, která určuje jak moc jsou data s rozdílným významem (třídou) na mapě rozdělena (\ref{eq:oclass}). Oproti tomu $I_{class}$ udává, jak moc jsou data se stejným významem mapována k sobě (\ref{eq:iclass}).
 
 
 
@@ -1011,7 +1012,7 @@ V této sekci jsou rozebrány některé charakteristiky učení CRSOM. Jako prvn
 
 \subsection{Transformace vstupních dat a vliv na učení}
 
-Skutečnost, že učení CRSOM je citlivé na nastavení učících parametrů (např.: learning rate), je experimentálně ukázáno v \cite{hartono14}. Při implementaci CRSOM byla zjištěna další citlivost a to na způsobu normalizace dat.
+Skutečnost, že učení CRSOM je citlivé na nastavení učících parametrů (např.: learning rate), je experimentálně ukázáno v \cite{hartonomain}. Při implementaci CRSOM byla zjištěna další citlivost a to na způsobu normalizace dat.
 Cílem experimentu je ukázat závislost způsobu normalizace dat a průběhu učení a tyto závislosti interpretovat. 
 Pro účel tohoto experimentu byl zvolen \texttt{katy-ram-dataset} (\ref{sec:katy-ram-dataset}). Všechny sítě v této sekci byly učeny s $LR=0.1$ po $500$ epoch.
 
