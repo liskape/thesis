@@ -166,4 +166,29 @@ Lamere, P.: {Posts Tagged hotttnesss}. [online], Naposledy navštíveno 3. 5.
   2016.
 \urlprefix\biburl{https://musicmachinery.com/tag/hotttnesss/}
 
+\bibitem{autopredict}
+Dhanaraj, R.; Logan, B.: Automatic prediction of hit songs. In \emph{In
+  Proceedings of the International Conference on Music Information Retrieval
+  (ISMIR)}, 2005, s. 488--491.
+
+\bibitem{notascience}
+Pachet, F.; Roy, P.: Hit song science is not yet a science. In \emph{InProc. of
+  the 9thInternational Conference on Music Information Retrieval (ISMIR 2008)},
+  2008, s. 355--360.
+
+\bibitem{scienceagain}
+Ni, Y.; Santos-Rodriguez, R.; Mcvicar, M.; aj.: Hit song science once again a
+  science. \emph{4th International Workshop on Machine Learning and Music},
+  2011.
+
+\bibitem{succpredict}
+Neal, M.: {A Machine Successfully Predicted the Hit Dance Songs of 2015}.
+  [online], Naposledy navštíveno 3. 5. 2016.
+\urlprefix\biburl{http://motherboard.vice.com/read/a-machine-successfully-predicted-the-hit-dance-songs-of-2015}
+
+\bibitem{dancehitsong}
+Herremans, D.; Martens, D.; Sörensen, K.: Dance hit song prediction. Working
+  papers, University of Antwerp, Faculty of Applied Economics, 2014.
+\urlprefix\biburl{http://EconPapers.repec.org/RePEc:ant:wpaper:2014003}
+
 \end{thebibliography}

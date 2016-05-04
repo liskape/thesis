@@ -55,6 +55,14 @@
 \contentsline {chapter}{\chapternumberline {5}Vyu\IeC {\v z}it\IeC {\'\i }}{49}{chapter.5}
 \contentsline {section}{\numberline {5.1}Mapa hudebn\IeC {\'\i }ho vkusu}{49}{section.5.1}
 \contentsline {section}{\numberline {5.2}Predikce \IeC {\'u}sp\IeC {\v e}\IeC {\v s}nosti pro novou skladbu}{49}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Re\IeC {\v s}er\IeC {\v s}e}{49}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}N\IeC {\'a}vrh vyu\IeC {\v z}it\IeC {\'\i }}{50}{subsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.2.1}Z\IeC {\'a}kladn\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }pady u\IeC {\v z}it\IeC {\'\i }}{50}{subsubsection.5.2.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2.2}Proof of concept}{50}{subsubsection.5.2.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Natr\IeC {\'e}nov\IeC {\'a}n\IeC {\'\i } mapy}{50}{subsection.5.2.3}
+\contentsline {subsubsection}{\numberline {5.2.3.1}Data}{50}{subsubsection.5.2.3.1}
+\contentsline {subsubsection}{\numberline {5.2.3.2}V\IeC {\'y}sledn\IeC {\'a} mapa}{50}{subsubsection.5.2.3.2}
+\contentsline {subsection}{\numberline {5.2.4}Diskuze o vyu\IeC {\v z}itelnosti}{50}{subsection.5.2.4}
 \contentsline {chapter}{Z{\' a}v{\v e}r}{51}{chapter*.82}
 \contentsline {section}{P\IeC {\v r}\IeC {\'\i }nosy}{51}{section*.83}
 \contentsline {section}{Mo\IeC {\v z}n\IeC {\'a} roz\IeC {\v s}\IeC {\'\i }\IeC {\v r}en\IeC {\'\i }}{51}{section*.84}

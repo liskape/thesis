@@ -1558,10 +1558,43 @@ Využítí je poslední částí KDD. V této kapitole budou představeny dvě m
 
 
 \section{Predikce úspěšnosti pro novou skladbu}
-Tento koncept byl inspirován experimenty v sekci \ref{sec:hotness}. 
+Využití CRSOM na predikci oblíbenosti skladby bylo inspirováno posledním experimentem (\ref{sec:hotness}). Následná rešerše ukázala, že toto téma je velmi oblíbené a zároveň z vědeckého hlediska rozporuplné.
 
 
 
+\subsection{Rešerše}
+
+Dokladem oblíbenosti je termín \textit{Hit Song Science (HSS)}, který představuje snahu automatizovaně předpovídat úspěch písně metodami jako je strojové učení.
+
+Rozporuplnost tohoto tématu ukazují publikace s názvy jako: \textit{Automatic prediction of hit songs}~\cite{autopredict}, \textit{Hit song science is not yet a science}~\cite{notascience} a \textit{Hit song science once again a science}~\cite{scienceagain}.
+
+Nepředvídatelnost kulturního trhu, proměnlivost trendů a předpokládaná neschopnost odvození popularity z technických atributů písní patří mezi hlavní kritiky HSS a podle (notascience) nebylo možné předpovídat popularitu písně pomocí tehdy nejmodernějších metod strojového učení.
+(TODO:V publikaci (60\% acc))
+
+
+Navzdory tomu všemu byl sestrojen model, který úspěšně předpověděl populární taneční písně pro rok 2015~\cite{succpredict}, což představuje úspěch v odvětví HSS. Na rozdíl od všech předchozích publikací, úspěšný model používal The Echo Nest jako zdroj dat — tzn. stejný jako v této práci. Nejúspěšnějším modelem se stala \textit{Logistická regrese}, další zkoumané modely a výsledky jsou k nalezení v originální publikaci~\cite{dancehitsong}
+ Tento model se dočkal nasazení v podobě webové služby, která po nahrání libovolné písně odpoví desetinným číslem, které představuje pravděpodobnost, že se z nahraná píseň stane populární, v tomto případě, že se dostane do nejlepších 10 písní (TODO: jaký žebříček).
+ 
+ \subsection{Návrh využití}
+Z rešerše vyplývá, že předikce úpěšnosti hudební skladby z akustických vlastností je nesnadný úkol. V této práci nepůjde o překonání výsledků v přesnosti predikce, nýbrž bude využit jiný přístup k tomuto problému, který nabízí samoorganizující mapa se zahrnutým sémantickým kontextem.
+
+S velkým množstvím prediktivních modelů (např. MLP) je nutné zacházet jako s \textit{black box}. To znamená, že nelze jednoduše vysvětlit rozhodnutí modelu pro konkrétní vstupní data, to se týká i zmíněné impementace (TODO jméno).
+
+Oproti tomu natrénovaná CRSOM nabízí pohled na strukturu dat a dokáže umístit nová data na mapu na základě pozice neuronu, který se aktivuje (stane se BMU) pro novou píseň.
+Pokud natrénovaná mapa obsahuje dobře oddělené shluky, uživatel sám dokáže intuitivně určit pravděpodobnost úspěchu písně podle pozice vítězného neuronu. K podpoření jeho závěru mu dále dopomůže interaktivní prozkoumávání mapy spolu s ukázkami písní.
+
+ \subsubsection{Základní případy užití}
+
+
+ \subsubsection{Proof of concept}
+ 
+ \subsection{Natrénování mapy}
+ \subsubsection{Data}
+ \subsubsection{Výsledná mapa}
+ 
+  \subsection{Diskuze o využitelnosti}
+ 
+%---------------------------- Závěr ------------------------------------
 \begin{conclusion}
 	co se všechno udělalo v této práci (mělo by sedět s cílem)
 	+ nějaké další návrhy
